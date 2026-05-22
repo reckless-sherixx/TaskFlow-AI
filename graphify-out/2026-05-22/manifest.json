@@ -1,0 +1,182 @@
+{
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components.json": {
+    "mtime": 1779462519.4084096,
+    "ast_hash": "531afb7d1c630c0fafb8ba07819004e9",
+    "semantic_hash": "531afb7d1c630c0fafb8ba07819004e9"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\next-env.d.ts": {
+    "mtime": 1779462680.9254768,
+    "ast_hash": "29f60a376e12bf72b67d4994fcc84214",
+    "semantic_hash": "29f60a376e12bf72b67d4994fcc84214"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\next.config.ts": {
+    "mtime": 1779404009.0,
+    "ast_hash": "9b77af189a21a7a64e4bd7a426f64176",
+    "semantic_hash": "9b77af189a21a7a64e4bd7a426f64176"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\package.json": {
+    "mtime": 1779463183.9877534,
+    "ast_hash": "fe2df0370c85695facbd4ede397a9a0d",
+    "semantic_hash": "fe2df0370c85695facbd4ede397a9a0d"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\postcss.config.mjs": {
+    "mtime": 1779404009.0,
+    "ast_hash": "675899342e765a4d16acd75a53389101",
+    "semantic_hash": "675899342e765a4d16acd75a53389101"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\tsconfig.json": {
+    "mtime": 1779462381.675741,
+    "ast_hash": "7831df54b0184c9a88a681bd02b3e9e4",
+    "semantic_hash": "7831df54b0184c9a88a681bd02b3e9e4"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\assistant.tsx": {
+    "mtime": 1779464613.1204455,
+    "ast_hash": "125b979231d1fdf587f0178ae5e84ba7",
+    "semantic_hash": "125b979231d1fdf587f0178ae5e84ba7"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\layout.tsx": {
+    "mtime": 1779404009.0,
+    "ast_hash": "80581c29d722772ff98d066e61e88b59",
+    "semantic_hash": "80581c29d722772ff98d066e61e88b59"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\page.tsx": {
+    "mtime": 1779404009.0,
+    "ast_hash": "5f437cf3bc09f82f103a11f11c4e4a2a",
+    "semantic_hash": "5f437cf3bc09f82f103a11f11c4e4a2a"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\api\\chat\\route.ts": {
+    "mtime": 1779464463.74551,
+    "ast_hash": "e62802518e0d15a6ff8621591a5c8c46",
+    "semantic_hash": "e62802518e0d15a6ff8621591a5c8c46"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\attachment.tsx": {
+    "mtime": 1779462544.121226,
+    "ast_hash": "a9d2c9d8ba7a04ddc0379247e961f746",
+    "semantic_hash": "a9d2c9d8ba7a04ddc0379247e961f746"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\github.tsx": {
+    "mtime": 1779462543.5167315,
+    "ast_hash": "907a890ae31046bfa30cc6825803d71c",
+    "semantic_hash": "907a890ae31046bfa30cc6825803d71c"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\markdown-text.tsx": {
+    "mtime": 1779462544.1292465,
+    "ast_hash": "db6473c0a84865d833940b3030f8929c",
+    "semantic_hash": "db6473c0a84865d833940b3030f8929c"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\reasoning.tsx": {
+    "mtime": 1779462544.1511002,
+    "ast_hash": "e193c1ae39441bb6a38c3c98a60ced19",
+    "semantic_hash": "e193c1ae39441bb6a38c3c98a60ced19"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\thread-list.tsx": {
+    "mtime": 1779462541.7712595,
+    "ast_hash": "64968807b97427740debf2c961154921",
+    "semantic_hash": "64968807b97427740debf2c961154921"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\thread.tsx": {
+    "mtime": 1779462544.2663014,
+    "ast_hash": "40a88e156995f88e4e2303ed091de8d7",
+    "semantic_hash": "40a88e156995f88e4e2303ed091de8d7"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\threadlist-sidebar.tsx": {
+    "mtime": 1779463371.2592497,
+    "ast_hash": "7309666b67ba3219e5be06067418dc51",
+    "semantic_hash": "7309666b67ba3219e5be06067418dc51"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\tool-fallback.tsx": {
+    "mtime": 1779462538.3398125,
+    "ast_hash": "a7b5bc959ea0eacb96eada273c92e4dd",
+    "semantic_hash": "a7b5bc959ea0eacb96eada273c92e4dd"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\tool-group.tsx": {
+    "mtime": 1779462538.9022987,
+    "ast_hash": "beca979c4253a1d4f87690bbf492e667",
+    "semantic_hash": "beca979c4253a1d4f87690bbf492e667"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\tooltip-icon-button.tsx": {
+    "mtime": 1779462537.7601302,
+    "ast_hash": "5d34d08412152e7dd5810f4844f11aa8",
+    "semantic_hash": "5d34d08412152e7dd5810f4844f11aa8"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\ui\\avatar.tsx": {
+    "mtime": 1779462533.3417602,
+    "ast_hash": "c0136d9a1c07129863348811dcc037e0",
+    "semantic_hash": "c0136d9a1c07129863348811dcc037e0"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\ui\\breadcrumb.tsx": {
+    "mtime": 1779462509.0840433,
+    "ast_hash": "f745d4c268d7b95d591932f9ba6c87e2",
+    "semantic_hash": "f745d4c268d7b95d591932f9ba6c87e2"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\ui\\button.tsx": {
+    "mtime": 1779462509.7962043,
+    "ast_hash": "5eb5c23dfc552fe75b9beeffacede350",
+    "semantic_hash": "5eb5c23dfc552fe75b9beeffacede350"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\ui\\collapsible.tsx": {
+    "mtime": 1779462534.0691652,
+    "ast_hash": "d3bc158594b1f19fd28d9868792d17f1",
+    "semantic_hash": "d3bc158594b1f19fd28d9868792d17f1"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\ui\\dialog.tsx": {
+    "mtime": 1779462532.0208142,
+    "ast_hash": "716542a167fb7bda2fea4df346c54075",
+    "semantic_hash": "716542a167fb7bda2fea4df346c54075"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\ui\\input.tsx": {
+    "mtime": 1779462510.5045204,
+    "ast_hash": "186052fef4d6a678824a3ac70ec3bdec",
+    "semantic_hash": "186052fef4d6a678824a3ac70ec3bdec"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\ui\\separator.tsx": {
+    "mtime": 1779462508.5045083,
+    "ast_hash": "31309c8fad1e9a91db2a4bdfb4988b45",
+    "semantic_hash": "31309c8fad1e9a91db2a4bdfb4988b45"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\ui\\sheet.tsx": {
+    "mtime": 1779462510.1410158,
+    "ast_hash": "70f191fcbd262095ddd6afbcc8bbf99d",
+    "semantic_hash": "70f191fcbd262095ddd6afbcc8bbf99d"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\ui\\sidebar.tsx": {
+    "mtime": 1779462511.8374171,
+    "ast_hash": "4f422cd4673ac309f213d19e18a60c53",
+    "semantic_hash": "4f422cd4673ac309f213d19e18a60c53"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\ui\\skeleton.tsx": {
+    "mtime": 1779462511.2785618,
+    "ast_hash": "64033a08d89d382ad050d80cbb0cc98d",
+    "semantic_hash": "64033a08d89d382ad050d80cbb0cc98d"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\ui\\tooltip.tsx": {
+    "mtime": 1779462507.9064112,
+    "ast_hash": "c5acc9dbc05002c04a86b807f72f9817",
+    "semantic_hash": "c5acc9dbc05002c04a86b807f72f9817"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\hooks\\use-mobile.ts": {
+    "mtime": 1779462510.8935075,
+    "ast_hash": "209b5193af16624cdd89d3591480dd48",
+    "semantic_hash": "209b5193af16624cdd89d3591480dd48"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\utils.ts": {
+    "mtime": 1779462509.4685166,
+    "ast_hash": "5a6fd53fdcf2be529e9cc0b718fde352",
+    "semantic_hash": "5a6fd53fdcf2be529e9cc0b718fde352"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\README.md": {
+    "mtime": 1779465698.5834703,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\.agents\\rules\\graphify.md": {
+    "mtime": 1779465546.0504386,
+    "ast_hash": "a0e4d192b9e2e17256124dbfc8e24e6a",
+    "semantic_hash": "a0e4d192b9e2e17256124dbfc8e24e6a"
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\.agents\\workflows\\graphify.md": {
+    "mtime": 1779465546.0542636,
+    "ast_hash": "84de69efd46ab0b8430393bd4188f8f2",
+    "semantic_hash": "84de69efd46ab0b8430393bd4188f8f2"
+  }
+}
