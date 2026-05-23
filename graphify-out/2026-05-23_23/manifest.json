@@ -30,8 +30,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\assistant.tsx": {
-    "mtime": 1779529543.3853712,
-    "ast_hash": "25e0fe21334b4bf05c30b1df711b2b86",
+    "mtime": 1779527151.2242792,
+    "ast_hash": "bfad308957627fb709ed11ea6e952229",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\layout.tsx": {
@@ -75,13 +75,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\thread.tsx": {
-    "mtime": 1779529529.406038,
-    "ast_hash": "5c7171e2f8ead46a48202368fde9dcf1",
+    "mtime": 1779527197.5337236,
+    "ast_hash": "7b19f6842ceb036b547a592279b2f392",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\threadlist-sidebar.tsx": {
-    "mtime": 1779529983.5914993,
-    "ast_hash": "5506e0c001e7adfbc7cf7a787062182c",
+    "mtime": 1779528248.3459501,
+    "ast_hash": "f0db29bf9f37242781ce1857625f13fe",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\tool-fallback.tsx": {
@@ -180,8 +180,8 @@
     "semantic_hash": "84de69efd46ab0b8430393bd4188f8f2"
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\server.ts": {
-    "mtime": 1779528661.8485694,
-    "ast_hash": "0731fcd546d3f03ab2460d8cd5b80b61",
+    "mtime": 1779528211.722232,
+    "ast_hash": "aa72f165adcb1a1702a5931520e91eef",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\api\\ingest\\route.ts": {
@@ -225,8 +225,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\db\\queries.ts": {
-    "mtime": 1779529423.5536168,
-    "ast_hash": "34d03c76fad25730a64180aa1f993696",
+    "mtime": 1779526953.0998104,
+    "ast_hash": "3a6e3d9fb5561449331c5da15df95bba",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\db\\schema.ts": {
@@ -260,8 +260,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\api\\conversations\\[id]\\route.ts": {
-    "mtime": 1779529449.5172367,
-    "ast_hash": "2a409d0c35500f2043812a7fa389d1e1",
+    "mtime": 1779504430.621745,
+    "ast_hash": "1e96b0432204d68563e54ad92bdc8867",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\ai\\context.ts": {
@@ -280,8 +280,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\store\\conversation-store.ts": {
-    "mtime": 1779529462.156163,
-    "ast_hash": "81e07758b3488024b568d58af8338af0",
+    "mtime": 1779527065.508492,
+    "ast_hash": "6bf5421440c40b0b8f51ccb136cc6384",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\typing-indicator.tsx": {

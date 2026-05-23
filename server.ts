@@ -11,6 +11,7 @@ import {
 	updateConversationTitle,
 } from "./lib/db/queries";
 import { classifyAIError } from "./lib/errors/ai-errors";
+import { wsConnectionsActive } from "./lib/metrics/prometheus";
 import { withLogger } from "./lib/sdk/logger";
 
 const openrouter = createOpenAI({
@@ -354,6 +355,7 @@ Bun.serve({
 	websocket: {
 		async open(ws) {
 			console.log("[ws] client connected");
+			wsConnectionsActive.inc();
 
 			const model = (ws.data as { model: string })?.model || resolveModel(null);
 
@@ -553,6 +555,7 @@ Bun.serve({
 
 		close(ws) {
 			console.log("[ws] client disconnected");
+			wsConnectionsActive.dec();
 			const session = sessions.get(ws);
 			if (!session) return;
 

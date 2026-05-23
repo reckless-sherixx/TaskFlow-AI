@@ -1,16 +1,16 @@
 # Graph Report - tf_ai  (2026-05-23)
 
 ## Corpus Check
-- 60 files · ~15,950 words
+- 60 files · ~15,955 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 732 nodes · 1054 edges · 69 communities (63 shown, 6 thin omitted)
+- 731 nodes · 1051 edges · 66 communities (60 shown, 6 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3dc0eb54`
+- Built from commit: `a3abe02d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -75,15 +75,12 @@
 - [[_COMMUNITY_Community 63|Community 63]]
 - [[_COMMUNITY_Community 64|Community 64]]
 - [[_COMMUNITY_Community 65|Community 65]]
-- [[_COMMUNITY_Community 66|Community 66]]
-- [[_COMMUNITY_Community 67|Community 67]]
-- [[_COMMUNITY_Community 68|Community 68]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `cn()` - 90 edges
 2. `compilerOptions` - 16 edges
-3. `columns` - 14 edges
-4. `streamAIResponse()` - 14 edges
+3. `streamAIResponse()` - 14 edges
+4. `columns` - 14 edges
 5. `columns` - 14 edges
 6. `public.conversations` - 11 edges
 7. `public.inference_logs` - 11 edges
@@ -94,20 +91,20 @@
 ## Surprising Connections (you probably didn't know these)
 - `cn()` --calls--> `clsx`  [INFERRED]
   lib/utils.ts → package.json
-- `AssistantMessage()` --calls--> `cn()`  [EXTRACTED]
-  components/thread.tsx → lib/utils.ts
-- `BranchPicker()` --calls--> `cn()`  [EXTRACTED]
-  components/thread.tsx → lib/utils.ts
 - `AttachmentPreview()` --calls--> `cn()`  [EXTRACTED]
   components/attachment.tsx → lib/utils.ts
 - `AttachmentUI()` --calls--> `cn()`  [EXTRACTED]
   components/attachment.tsx → lib/utils.ts
+- `ReasoningFade()` --calls--> `cn()`  [EXTRACTED]
+  components/reasoning.tsx → lib/utils.ts
+- `AssistantMessage()` --calls--> `cn()`  [EXTRACTED]
+  components/thread.tsx → lib/utils.ts
 
-## Communities (69 total, 6 thin omitted)
+## Communities (66 total, 6 thin omitted)
 
 ### Community 0 - "UI Components (Sidebar)"
-Cohesion: 0.10
-Nodes (32): useIsMobile(), cn(), Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage() (+24 more)
+Cohesion: 0.11
+Nodes (31): useIsMobile(), cn(), Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage() (+23 more)
 
 ### Community 1 - "UI Components (Dialog)"
 Cohesion: 0.11
@@ -126,16 +123,16 @@ Cohesion: 0.07
 Nodes (28): dependencies, ai, @ai-sdk/google, @ai-sdk/openai, @assistant-ui/react, @assistant-ui/react-ai-sdk, @assistant-ui/react-markdown, bullmq (+20 more)
 
 ### Community 5 - "TypeScript Config"
-Cohesion: 0.08
-Nodes (42): buildContextWindow(), buildInterruptionContext(), CoreMessage, estimateTokens(), warnIfOverBudget(), resolveModel(), createConversation(), insertMessage() (+34 more)
+Cohesion: 0.07
+Nodes (46): buildContextWindow(), buildInterruptionContext(), CoreMessage, estimateTokens(), warnIfOverBudget(), isValidModel(), resolveModel(), createConversation() (+38 more)
 
 ### Community 6 - "Thread Components"
 Cohesion: 0.10
 Nodes (19): aliases, components, hooks, lib, ui, utils, iconLibrary, registries (+11 more)
 
 ### Community 7 - "App Navigation"
-Cohesion: 0.18
-Nodes (11): devDependencies, @biomejs/biome, concurrently, drizzle-kit, tailwindcss, @tailwindcss/postcss, @types/node, @types/pg (+3 more)
+Cohesion: 0.08
+Nodes (23): devDependencies, @biomejs/biome, concurrently, drizzle-kit, tailwindcss, @tailwindcss/postcss, @types/node, @types/pg (+15 more)
 
 ### Community 8 - "Tool Group"
 Cohesion: 0.10
@@ -162,8 +159,8 @@ Cohesion: 0.18
 Nodes (9): Reasoning, ReasoningContent(), ReasoningFade(), ReasoningGroup, ReasoningRoot(), ReasoningRootProps, ReasoningText(), ReasoningTrigger() (+1 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.06
-Nodes (34): dialect, enums, id, _meta, columns, schemas, tables, policies (+26 more)
+Cohesion: 0.05
+Nodes (43): dialect, enums, messages_conversation_id_conversations_id_fk, id, columnsFrom, columnsTo, name, onDelete (+35 more)
 
 ### Community 25 - "Community 25"
 Cohesion: 0.33
@@ -182,8 +179,8 @@ Cohesion: 0.12
 Nodes (17): inference_logs_conversation_id_conversations_id_fk, inference_logs_message_id_messages_id_fk, columnsFrom, columnsTo, name, onDelete, onUpdate, tableFrom (+9 more)
 
 ### Community 29 - "Community 29"
-Cohesion: 0.09
-Nodes (24): GET(), db, queryClient, cancelConversation(), deleteConversation(), getConversationsWithStats(), getConversationWithMessages(), insertInferenceLog() (+16 more)
+Cohesion: 0.10
+Nodes (20): GET(), db, queryClient, cancelConversation(), getConversationsWithStats(), getConversationWithMessages(), insertInferenceLog(), conversations (+12 more)
 
 ### Community 30 - "Community 30"
 Cohesion: 0.50
@@ -238,24 +235,24 @@ Cohesion: 0.40
 Nodes (5): conversation_id, name, notNull, primaryKey, type
 
 ### Community 44 - "Community 44"
-Cohesion: 0.16
-Nodes (14): Assistant(), useWebSocketChat(), Thread(), ConversationMeta, ConversationStore, useConversationStore, Breadcrumb(), BreadcrumbEllipsis() (+6 more)
+Cohesion: 0.12
+Nodes (19): MODEL_LABELS, ModelEntry, MODELS, VALID_MODELS, Assistant(), TokenStats, useWebSocketChat(), Thread() (+11 more)
 
 ### Community 45 - "Community 45"
-Cohesion: 0.12
-Nodes (17): inference_logs_conversation_id_conversations_id_fk, inference_logs_message_id_messages_id_fk, columnsFrom, columnsTo, name, onDelete, onUpdate, tableFrom (+9 more)
+Cohesion: 0.08
+Nodes (26): inference_logs_conversation_id_conversations_id_fk, inference_logs_message_id_messages_id_fk, columnsFrom, columnsTo, name, onDelete, onUpdate, tableFrom (+18 more)
 
 ### Community 46 - "Community 46"
-Cohesion: 0.12
-Nodes (19): getModelsByProvider(), isValidModel(), MODEL_LABELS, ModelEntry, MODELS, VALID_MODELS, GEMINI_MODELS, GeminiModelId (+11 more)
+Cohesion: 0.16
+Nodes (13): getModelsByProvider(), GEMINI_MODELS, GeminiModelId, GitHubIcon(), ConversationGroup, groupConversationsByDate(), Props, ThreadListSidebar() (+5 more)
 
 ### Community 47 - "Community 47"
 Cohesion: 0.33
 Nodes (7): TooltipIconButtonProps, Button(), buttonVariants, Tooltip(), TooltipContent(), TooltipProvider(), TooltipTrigger()
 
 ### Community 48 - "Community 48"
-Cohesion: 0.11
-Nodes (18): messages_conversation_id_conversations_id_fk, columnsFrom, columnsTo, name, onDelete, onUpdate, tableFrom, tableTo (+10 more)
+Cohesion: 0.18
+Nodes (7): Sheet(), SheetContent(), SheetDescription(), SheetFooter(), SheetHeader(), SheetOverlay(), SheetTitle()
 
 ### Community 49 - "Community 49"
 Cohesion: 0.18
@@ -321,36 +318,24 @@ Nodes (5): output_tokens, name, notNull, primaryKey, type
 Cohesion: 0.40
 Nodes (5): provider, name, notNull, primaryKey, type
 
-### Community 66 - "Community 66"
-Cohesion: 0.22
-Nodes (9): scripts, build, dev, format, format:fix, lint, lint:fix, start (+1 more)
-
-### Community 67 - "Community 67"
-Cohesion: 0.33
-Nodes (6): Sidebar(), SidebarMenuButton(), sidebarMenuButtonVariants, SidebarRail(), SidebarTrigger(), useSidebar()
-
-### Community 68 - "Community 68"
-Cohesion: 0.50
-Nodes (3): name, private, version
-
 ## Knowledge Gaps
-- **396 isolated node(s):** `redis`, `ThreadProps`, `Props`, `ConversationGroup`, `TypingIndicatorProps` (+391 more)
+- **396 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+391 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `UI Components (Sidebar)` to `UI Components (Dialog)`, `Package Dependencies`, `Community 67`, `Package Scripts`, `Community 44`, `Community 46`, `Community 47`, `Community 51`, `Community 22`, `Community 23`, `Community 25`?**
+- **Why does `cn()` connect `UI Components (Sidebar)` to `UI Components (Dialog)`, `Package Dependencies`, `Package Scripts`, `Community 44`, `Community 46`, `Community 47`, `Community 48`, `Community 51`, `Community 22`, `Community 23`, `Community 25`?**
   _High betweenness centrality (0.096) - this node is a cross-community bridge._
-- **Why does `dependencies` connect `Package Scripts` to `Community 68`?**
+- **Why does `dependencies` connect `Package Scripts` to `App Navigation`?**
   _High betweenness centrality (0.057) - this node is a cross-community bridge._
 - **Why does `clsx` connect `Package Scripts` to `UI Components (Sidebar)`?**
   _High betweenness centrality (0.054) - this node is a cross-community bridge._
-- **What connects `redis`, `ThreadProps`, `Props` to the rest of the system?**
+- **What connects `$schema`, `style`, `rsc` to the rest of the system?**
   _396 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `UI Components (Sidebar)` be split into smaller, more focused modules?**
-  _Cohesion score 0.09634146341463415 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1126984126984127 - nodes in this community are weakly interconnected._
 - **Should `UI Components (Dialog)` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
 - **Should `Package Dependencies` be split into smaller, more focused modules?**

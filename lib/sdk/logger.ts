@@ -23,6 +23,8 @@ export interface LoggerOptions {
     inputPreview?: string;
 }
 
+import { llmRequestsTotal, llmLatencyMs } from "../metrics/prometheus";
+
 const getIngestUrl = () => {
     if (typeof window !== "undefined") return "/api/ingest";
     const base =
@@ -50,10 +52,16 @@ export async function withLogger<T>(
     const start = Date.now();
 
     const report = (status: "success" | "error", extra?: Partial<LogPayload>) => {
+        const latency = Date.now() - start;
+        
+        // Prometheus metrics
+        llmRequestsTotal.inc({ model: options.model, provider: options.provider, status });
+        llmLatencyMs.observe({ model: options.model }, latency);
+
         sendLog({
             ...options,
             status,
-            latencyMs: Date.now() - start,
+            latencyMs: latency,
             ...extra,
         });
     };
