@@ -365,12 +365,13 @@ async function streamAIResponse(
 Bun.serve({
 	port: PORT,
 
-	fetch(req, server) {
+	async fetch(req, server) {
 		const url = new URL(req.url);
 		if (url.pathname === "/metrics" || url.pathname === "/api/metrics") {
 			try {
 				const { registry } = require("./lib/metrics/prometheus");
-				return new Response(registry.metrics(), {
+				const metricsText = await registry.metrics();
+				return new Response(metricsText, {
 					headers: {
 						"Content-Type": registry.contentType,
 					},
