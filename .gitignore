@@ -24,6 +24,7 @@
 .DS_Store
 *.pem
 .graphifyignore
+/graphify-out
 
 # debug
 npm-debug.log*

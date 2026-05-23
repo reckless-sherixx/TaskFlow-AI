@@ -46,7 +46,7 @@ function generateId() {
 
 // ── WebSocket Chat Hook ───────────────────────────────
 
-function useWebSocketChat(conversationModel: string) {
+function useWebSocketChat(conversationModel: string, activeId: string | null) {
   const [messages, setMessages] = useState<ThreadMessage[]>([]);
   const [isRunning, setIsRunning] = useState(false);
   const [isAiTyping, setIsAiTyping] = useState(false);
@@ -54,6 +54,7 @@ function useWebSocketChat(conversationModel: string) {
   const [tokenStats, setTokenStats] = useState<TokenStats>({ used: 0, total: 1_000_000 });
   const wsRef = useRef<WebSocket | null>(null);
   const conversationIdRef = useRef<string | null>(null);
+  const connectedConversationIdRef = useRef<string | null>(null);
   const currentAssistantIdRef = useRef<string | null>(null);
   const assistantTextRef = useRef("");
 
@@ -72,6 +73,7 @@ function useWebSocketChat(conversationModel: string) {
     setIsAiTyping(false);
     setIsAiStreaming(false);
     conversationIdRef.current = null;
+    connectedConversationIdRef.current = null;
     setWsKey(generateId());
   }, []);
 
@@ -116,10 +118,17 @@ function useWebSocketChat(conversationModel: string) {
   }, []);
 
   useEffect(() => {
-    // Model is sent via URL param — eliminates race condition
-    const wsUrl = `ws://${window.location.hostname}:8080?model=${encodeURIComponent(conversationModel)}`;
+    if (activeId && activeId === connectedConversationIdRef.current) {
+      return;
+    }
+
+    const idParam = activeId ? `&conversationId=${encodeURIComponent(activeId)}` : "";
+    const wsUrl = `ws://${window.location.hostname}:8080?model=${encodeURIComponent(conversationModel)}${idParam}`;
+    console.log(`Connecting to WebSocket: ${wsUrl}`);
     const ws = new WebSocket(wsUrl);
     wsRef.current = ws;
+    connectedConversationIdRef.current = activeId;
+    conversationIdRef.current = activeId;
 
     ws.onopen = () => {
       console.log("connected");
@@ -151,6 +160,7 @@ function useWebSocketChat(conversationModel: string) {
         case "conversation_created": {
           if (data.conversationId) {
             conversationIdRef.current = data.conversationId;
+            connectedConversationIdRef.current = data.conversationId;
 
             // Add to the sidebar store
             store.upsertConversation({
@@ -372,7 +382,7 @@ function useWebSocketChat(conversationModel: string) {
     return () => {
       ws.close();
     };
-  }, [wsKey]);
+  }, [wsKey, activeId, conversationModel]);
 
   const onNew = useCallback(async (message: AppendMessage) => {
     const textPart = message.content.find((c) => c.type === "text");
@@ -510,7 +520,7 @@ export const Assistant = () => {
     isAiTyping,
     isAiStreaming,
     notifyTyping,
-  } = useWebSocketChat(conversationModel);
+  } = useWebSocketChat(conversationModel, store.activeId);
 
   // Start a brand new conversation with the currently selected model
   const startNewThread = useCallback(() => {

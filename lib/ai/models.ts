@@ -5,6 +5,8 @@ export type ModelEntry = {
 };
 
 export const MODELS: ModelEntry[] = [
+	// OpenAI
+	{ id: "openai/gpt-4o-mini", label: "GPT-4o Mini", provider: "OpenAI" },
 	// Google
 	{ id: "google/gemma-4-31b-it:free", label: "Gemma 4 31B", provider: "Google" },
 	// DeepSeek
@@ -12,8 +14,6 @@ export const MODELS: ModelEntry[] = [
 	// Meta
 	{ id: "meta-llama/llama-4-maverick:free", label: "Llama 4 Maverick", provider: "Meta" },
 	{ id: "meta-llama/llama-3.3-70b-instruct:free", label: "Llama 3.3 70B", provider: "Meta" },
-	// OpenAI
-	{ id: "openai/gpt-4o-mini", label: "GPT-4o Mini", provider: "OpenAI" },
 ];
 
 export const VALID_MODELS = new Set(MODELS.map((m) => m.id));

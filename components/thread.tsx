@@ -264,6 +264,13 @@ const MessageError: FC = () => {
 };
 
 const AssistantMessage: FC = () => {
+	const createdAt = useAuiState((s) => s.message.createdAt);
+	const metadata = useAuiState((s) => s.message.metadata);
+	const isInterrupted = (metadata as any)?.interrupted;
+	const timeString = createdAt
+		? new Date(createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+		: "";
+
 	const ACTION_BAR_PT = "pt-1.5";
 	const ACTION_BAR_HEIGHT = `-mb-7.5 min-h-7.5 ${ACTION_BAR_PT}`;
 
@@ -329,10 +336,20 @@ const AssistantMessage: FC = () => {
 
 			<div
 				data-slot="aui_assistant-message-footer"
-				className={cn("ms-2 flex items-center", ACTION_BAR_HEIGHT)}
+				className={cn("ms-2 flex items-center gap-2", ACTION_BAR_HEIGHT)}
 			>
 				<BranchPicker />
 				<AssistantActionBar />
+				{isInterrupted && (
+					<span className="text-[10px] text-destructive/80 font-medium bg-destructive/10 px-1.5 py-0.5 rounded-full select-none">
+						Interrupted
+					</span>
+				)}
+				{timeString && (
+					<span className="text-[10px] text-muted-foreground/60 selection:bg-transparent select-none">
+						{timeString}
+					</span>
+				)}
 			</div>
 		</MessagePrimitive.Root>
 	);
@@ -387,6 +404,11 @@ const AssistantActionBar: FC = () => {
 };
 
 const UserMessage: FC = () => {
+	const createdAt = useAuiState((s) => s.message.createdAt);
+	const timeString = createdAt
+		? new Date(createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+		: "";
+
 	return (
 		<MessagePrimitive.Root
 			data-slot="aui_user-message-root"
@@ -395,10 +417,15 @@ const UserMessage: FC = () => {
 		>
 			<UserMessageAttachments />
 
-			<div className="aui-user-message-content-wrapper relative col-start-2 min-w-0">
+			<div className="aui-user-message-content-wrapper relative col-start-2 min-w-0 flex flex-col items-end">
 				<div className="aui-user-message-content wrap-break-word peer rounded-2xl bg-muted px-4 py-2.5 text-foreground empty:hidden">
 					<MessagePrimitive.Parts />
 				</div>
+				{timeString && (
+					<span className="text-[10px] text-muted-foreground/60 mt-1 mr-1 selection:bg-transparent select-none">
+						{timeString}
+					</span>
+				)}
 				<div className="aui-user-action-bar-wrapper absolute start-0 top-1/2 -translate-x-full -translate-y-1/2 pe-2 peer-empty:hidden rtl:translate-x-full">
 					<UserActionBar />
 				</div>

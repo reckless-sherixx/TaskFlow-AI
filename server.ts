@@ -347,8 +347,9 @@ Bun.serve({
 	fetch(req, server) {
 		const url = new URL(req.url);
 		const model = resolveModel(url.searchParams.get("model"));
+		const conversationId = url.searchParams.get("conversationId") || undefined;
 
-		if (server.upgrade(req, { data: { model } })) return;
+		if (server.upgrade(req, { data: { model, conversationId } })) return;
 		return new Response("WebSocket upgrade failed", { status: 500 });
 	},
 
@@ -358,6 +359,7 @@ Bun.serve({
 			wsConnectionsActive.inc();
 
 			const model = (ws.data as { model: string })?.model || resolveModel(null);
+			const conversationId = (ws.data as { conversationId?: string })?.conversationId;
 
 			const session: Session = {
 				history: [],
@@ -366,7 +368,7 @@ Bun.serve({
 				isStreaming: false,
 				partialResponse: "",
 				idlePhase: 0,
-				hasReceivedUserMessage: false,
+				hasReceivedUserMessage: !!conversationId,
 				model,
 				generationId: 0,
 				tokenCount: 0,
@@ -378,21 +380,38 @@ Bun.serve({
 			};
 			sessions.set(ws, session);
 
-			try {
-				const conv = await createConversation({
-					title: "New Conversation",
-					status: "active",
-					model,
-					provider: "openrouter",
-				});
-				session.conversationId = conv.id;
-				send(ws, { type: "conversation_created", conversationId: conv.id, model });
-				console.log(`[ws] Created conversation ${conv.id} with model ${model}`);
-			} catch (err) {
-				console.error("[ws] Failed to create conversation:", err);
-			}
+			if (conversationId) {
+				session.conversationId = conversationId;
+				console.log(`[ws] Resuming conversation ${conversationId}`);
+				try {
+					const { getMessages } = await import("./lib/db/queries");
+					const dbMsgs = await getMessages(conversationId);
+					session.history = dbMsgs.map((m) => ({
+						role: m.role,
+						content: m.content,
+					}));
+					console.log(`[ws] Loaded ${session.history.length} messages from history`);
+				} catch (err) {
+					console.error("[ws] Failed to load messages for conversation:", err);
+				}
+				resetIdleTimer(session, ws);
+			} else {
+				try {
+					const conv = await createConversation({
+						title: "New Conversation",
+						status: "active",
+						model,
+						provider: "openrouter",
+					});
+					session.conversationId = conv.id;
+					send(ws, { type: "conversation_created", conversationId: conv.id, model });
+					console.log(`[ws] Created conversation ${conv.id} with model ${model}`);
+				} catch (err) {
+					console.error("[ws] Failed to create conversation:", err);
+				}
 
-			await streamAIResponse(session, ws, { isGreeting: true });
+				await streamAIResponse(session, ws, { isGreeting: true });
+			}
 		},
 
 		async message(ws, raw) {

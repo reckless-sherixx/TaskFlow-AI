@@ -45,19 +45,61 @@ export function warnIfOverBudget(
 	}
 }
 
+export function analyzeInterruption(partialResponse: string) {
+	const trimmed = partialResponse.trim();
+	if (!trimmed) {
+		return { completedSentences: "", interruptedSentence: "" };
+	}
+
+	const sentenceEndings = /[.!?]+(\s+|$)/g;
+	let lastIndex = 0;
+	let match;
+	const sentences: string[] = [];
+
+	while ((match = sentenceEndings.exec(trimmed)) !== null) {
+		sentences.push(trimmed.substring(lastIndex, match.index + match[0].length));
+		lastIndex = match.index + match[0].length;
+	}
+
+	const remaining = trimmed.substring(lastIndex);
+
+	if (remaining.trim()) {
+		return {
+			completedSentences: sentences.join(" ").trim(),
+			interruptedSentence: remaining.trim(),
+		};
+	} else if (sentences.length > 0) {
+		const last = sentences[sentences.length - 1];
+		return {
+			completedSentences: sentences.slice(0, -1).join(" ").trim(),
+			interruptedSentence: last.trim(),
+		};
+	}
+
+	return {
+		completedSentences: "",
+		interruptedSentence: trimmed,
+	};
+}
+
 export function buildInterruptionContext(
 	partialResponse: string,
 	userMessage: string,
 ): CoreMessage {
-	const truncated =
-		partialResponse.length > 200
-			? `...${partialResponse.slice(-200)}`
-			: partialResponse;
+	const { completedSentences, interruptedSentence } = analyzeInterruption(partialResponse);
+
+	let content = `[INTERRUPTION CONTEXT] You were speaking but the user interrupted you. `;
+	if (completedSentences) {
+		content += `You had fully said: "${completedSentences}". `;
+	}
+	if (interruptedSentence) {
+		content += `You were in the middle of saying: "${interruptedSentence}" when you were cut off. `;
+	}
+	content += `The user interrupted with: "${userMessage}". ` +
+		`Please respond to the user's interruption, continuing or adjusting your thoughts naturally from where you were cut off, but do not repeat what you already fully said.`;
+
 	return {
 		role: "system",
-		content:
-			`[INTERRUPTION CONTEXT] Your previous response was interrupted after saying: "${truncated}". ` +
-			`The user interrupted with: "${userMessage}". ` +
-			`Continue the conversation naturally from where you left off. Do not repeat what was already said.`,
+		content,
 	};
 }

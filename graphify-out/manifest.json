@@ -5,7 +5,7 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\next-env.d.ts": {
-    "mtime": 1779501825.5631247,
+    "mtime": 1779537065.6966429,
     "ast_hash": "d0f8375ae1199dc7acd3977fc33b78b8",
     "semantic_hash": ""
   },
@@ -15,8 +15,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\package.json": {
-    "mtime": 1779505054.4754596,
-    "ast_hash": "fd0d2dc2ab0f7a1c06cb05c3df01546c",
+    "mtime": 1779534078.8099804,
+    "ast_hash": "58509335293ae11208c6e12a3ee33e6f",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\postcss.config.mjs": {
@@ -30,8 +30,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\assistant.tsx": {
-    "mtime": 1779529543.3853712,
-    "ast_hash": "25e0fe21334b4bf05c30b1df711b2b86",
+    "mtime": 1779536872.549224,
+    "ast_hash": "26c399cb4efe5e45cb1f249d7425c918",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\layout.tsx": {
@@ -75,8 +75,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\thread.tsx": {
-    "mtime": 1779529529.406038,
-    "ast_hash": "5c7171e2f8ead46a48202368fde9dcf1",
+    "mtime": 1779536966.3683572,
+    "ast_hash": "0ef97f9affc2a7159d6e7474941b77c1",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\threadlist-sidebar.tsx": {
@@ -165,9 +165,9 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\README.md": {
-    "mtime": 1779465698.5834703,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
-    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+    "mtime": 1779533260.6729069,
+    "ast_hash": "de9cbbf7ba291b3286fa6df616b2f4f8",
+    "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\.agents\\rules\\graphify.md": {
     "mtime": 1779465546.0504386,
@@ -180,8 +180,8 @@
     "semantic_hash": "84de69efd46ab0b8430393bd4188f8f2"
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\server.ts": {
-    "mtime": 1779528661.8485694,
-    "ast_hash": "0731fcd546d3f03ab2460d8cd5b80b61",
+    "mtime": 1779537580.9083092,
+    "ast_hash": "6a451d3c7db9bfee365f84b92cf13861",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\api\\ingest\\route.ts": {
@@ -190,13 +190,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\api\\metrics\\route.ts": {
-    "mtime": 1779504607.149432,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "mtime": 1779531664.0651827,
+    "ast_hash": "354948555d59354b3238dee80a11e38d",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\sdk\\logger.ts": {
-    "mtime": 1779517210.0701413,
-    "ast_hash": "4149d27abb4e036ba80af1c7de1c95d0",
+    "mtime": 1779531601.3677742,
+    "ast_hash": "e2ab73a9206e50522a2d1b67a58b11b7",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\drizzle.config.ts": {
@@ -265,13 +265,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\ai\\context.ts": {
-    "mtime": 1779526968.351668,
-    "ast_hash": "2a4b3b5caf026793955939a6d3680d1b",
+    "mtime": 1779536826.5086997,
+    "ast_hash": "6419683eafe0be08589462ab3896d9bd",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\ai\\models.ts": {
-    "mtime": 1779525583.4876506,
-    "ast_hash": "0256fadd77138b3885da5d196126109d",
+    "mtime": 1779537375.9997618,
+    "ast_hash": "d09c54e0b6874a25ee4e0a72a99ff1ae",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\errors\\ai-errors.ts": {
@@ -297,6 +297,36 @@
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\drizzle\\migrations\\meta\\0001_snapshot.json": {
     "mtime": 1779527239.2432508,
     "ast_hash": "26e5754156afc66341740563be5c28ca",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\docker\\grafana\\dashboard.json": {
+    "mtime": 1779532294.2058606,
+    "ast_hash": "dea70991b54bb58aedf9b59fd55f2aae",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\metrics\\prometheus.ts": {
+    "mtime": 1779531589.4551716,
+    "ast_hash": "6aeac0e09e34e1114286ace4bbdcdc0b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\docker-compose.yml": {
+    "mtime": 1779532449.9849303,
+    "ast_hash": "ce1b043d913d4b7d83d02b44d088ecc4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\docker\\prometheus.yml": {
+    "mtime": 1779532247.95373,
+    "ast_hash": "5d73ee99d72a2140f9564b4155fbd8bc",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\docker\\grafana\\dashboard.yml": {
+    "mtime": 1779532265.805816,
+    "ast_hash": "1a5c76ccf167d34d60e938876635f267",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\docker\\grafana\\datasource.yml": {
+    "mtime": 1779532256.5556903,
+    "ast_hash": "f86700bb8a24faceb366a05da70d445a",
     "semantic_hash": ""
   }
 }
