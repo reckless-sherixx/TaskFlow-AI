@@ -117,18 +117,22 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
     };
   }, []);
 
+  // Sync activeId changes from outside (sidebar clicks)
   useEffect(() => {
-    if (activeId && activeId === connectedConversationIdRef.current) {
-      return;
+    if (activeId !== connectedConversationIdRef.current) {
+      connectedConversationIdRef.current = activeId;
+      conversationIdRef.current = activeId;
+      setWsKey(generateId());
     }
+  }, [activeId]);
 
-    const idParam = activeId ? `&conversationId=${encodeURIComponent(activeId)}` : "";
+  useEffect(() => {
+    const targetId = connectedConversationIdRef.current;
+    const idParam = targetId ? `&conversationId=${encodeURIComponent(targetId)}` : "";
     const wsUrl = `ws://${window.location.hostname}:8080?model=${encodeURIComponent(conversationModel)}${idParam}`;
     console.log(`Connecting to WebSocket: ${wsUrl}`);
     const ws = new WebSocket(wsUrl);
     wsRef.current = ws;
-    connectedConversationIdRef.current = activeId;
-    conversationIdRef.current = activeId;
 
     ws.onopen = () => {
       console.log("connected");
@@ -382,7 +386,7 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
     return () => {
       ws.close();
     };
-  }, [wsKey, activeId, conversationModel]);
+  }, [wsKey, conversationModel]);
 
   const onNew = useCallback(async (message: AppendMessage) => {
     const textPart = message.content.find((c) => c.type === "text");
@@ -524,10 +528,11 @@ export const Assistant = () => {
 
   // Start a brand new conversation with the currently selected model
   const startNewThread = useCallback(() => {
+    store.setActive(null);
     connect(selectedModel);
-  }, [connect, selectedModel]);
+  }, [connect, selectedModel, store]);
 
-  // Switch to an existing conversation — load messages from DB
+  // Switch to an existing conversation 
   const switchToConversation = useCallback(
     async (convId: string) => {
       store.setActive(convId);
@@ -561,7 +566,7 @@ export const Assistant = () => {
         setIsChatLoading(false);
       }
     },
-    [setMessages, conversationIdRef],
+    [setMessages],
   );
 
   return (

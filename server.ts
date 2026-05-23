@@ -100,14 +100,14 @@ const TYPING_NUDGE_MS = 30_000;
 
 
 function computeTokenDelay(chunk: string): number {
-	const base = 30;
-	const jitter = Math.random() * 20;
+	const base = 10;
+	const jitter = Math.random() * 10;
 	// Longer pause at sentence-ending punctuation
-	if (/[.!?]\s*$/.test(chunk)) return base + jitter + 80;
+	if (/[.!?]\s*$/.test(chunk)) return base + jitter + 30;
 	// Medium pause at clause boundaries
-	if (/[,;:]\s*$/.test(chunk)) return base + jitter + 40;
+	if (/[,;:]\s*$/.test(chunk)) return base + jitter + 20;
 	// Pause at paragraph breaks
-	if (/\n/.test(chunk)) return base + jitter + 60;
+	if (/\n/.test(chunk)) return base + jitter + 40;
 	return base + jitter;
 }
 
@@ -214,13 +214,15 @@ async function streamAIResponse(
 
 	const contextMessages: CoreMessage[] = buildContextWindow(session.history);
 
-	if (session.lastInterruption && !isGreeting && !isIdleProbe) {
-		contextMessages.push(
-			buildInterruptionContext(
-				session.lastInterruption.partialContent,
-				session.lastInterruption.userMessage,
-			),
-		);
+	if (session.lastInterruption) {
+		if (!isGreeting && !isIdleProbe && session.lastInterruption.userMessage) {
+			contextMessages.push(
+				buildInterruptionContext(
+					session.lastInterruption.partialContent,
+					session.lastInterruption.userMessage,
+				),
+			);
+		}
 		session.lastInterruption = null;
 	}
 
@@ -265,10 +267,18 @@ async function streamAIResponse(
 			if (session.generationId !== thisGenerationId) break;
 			if (session.abortController.signal.aborted) break;
 
-			session.partialResponse += chunk;
 			session.tokenCount++;
-			send(ws, { type: "ai_token", token: chunk });
-			await sleep(computeTokenDelay(chunk));
+
+			// Yield character by character to ensure smooth human-like pacing
+			const chars = chunk.split('');
+			for (const char of chars) {
+				if (session.generationId !== thisGenerationId) break;
+				if (session.abortController.signal.aborted) break;
+
+				session.partialResponse += char;
+				send(ws, { type: "ai_token", token: char });
+				await sleep(computeTokenDelay(char));
+			}
 		}
 
 		if (
@@ -460,6 +470,48 @@ Bun.serve({
 				// Reset idle timer while user is typing
 				resetIdleTimer(session, ws);
 
+				// IMMEDIATELY INTERRUPT if AI is streaming
+				if (session.isStreaming && session.abortController) {
+					console.log(`[ws] User started typing. Interrupting AI generation for ${session.conversationId}`);
+					session.abortController.abort();
+					
+					session.lastInterruption = {
+						partialContent: session.partialResponse,
+						interruptedAtToken: session.tokenCount,
+						userMessage: "", // Will be filled when they send the message
+					};
+
+					if (session.partialResponse) {
+						session.history.push({
+							role: "assistant",
+							content: session.partialResponse,
+						});
+
+						if (session.conversationId) {
+							insertMessage({
+								conversationId: session.conversationId,
+								role: "assistant",
+								content: session.partialResponse,
+								status: "interrupted",
+							}).catch((err) =>
+								console.error("[ws] Failed to persist interrupted message:", err),
+							);
+						}
+					}
+
+					// Send the interrupted event to immediately clear the typing/streaming state on the frontend
+					send(ws, {
+						type: "ai_interrupted",
+						partialContent: session.partialResponse?.slice(-200) || "",
+						interruptedAtToken: session.tokenCount,
+					});
+
+					redisPub.publish("typing-events", JSON.stringify({
+						type: "ai_interrupted",
+						conversationId: session.conversationId,
+					})).catch(() => { });
+				}
+
 				return;
 			}
 
@@ -515,7 +567,10 @@ Bun.serve({
 
 			resetIdleTimer(session, ws);
 
-			if (session.isStreaming && session.abortController) {
+			// Check if we have a pending typing-based interruption that needs the user message attached
+			if (session.lastInterruption && session.lastInterruption.userMessage === "") {
+				session.lastInterruption.userMessage = data.text;
+			} else if (session.isStreaming && session.abortController) {
 				session.abortController.abort();
 
 				session.lastInterruption = {
