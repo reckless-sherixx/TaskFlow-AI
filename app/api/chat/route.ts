@@ -5,12 +5,12 @@ import { convertToModelMessages, streamText } from "ai";
 export const maxDuration = 30;
 
 export async function POST(req: Request) {
-  const { messages, system, tools } = await req.json();
-  const result = streamText({
-    model: google("gemini-3.5-flash"),
-    system,
-    messages: await convertToModelMessages(messages),
-    tools: frontendTools(tools),
-  });
-  return result.toUIMessageStreamResponse();
+	const { messages, system, tools } = await req.json();
+	const result = streamText({
+		model: google("gemini-3.5-flash"),
+		system,
+		messages: await convertToModelMessages(messages),
+		tools: frontendTools(tools),
+	});
+	return result.toUIMessageStreamResponse();
 }

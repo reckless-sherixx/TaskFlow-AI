@@ -1,15 +1,13 @@
-export interface TokenUsage {
-    promptTokens?: number;
-    completionTokens?: number;
-    totalTokens?: number;
-}
-
 export interface LogPayload {
     model: string;
     provider: string;
-    status: 'success' | 'error';
+    status: "success" | "error";
     latencyMs: number;
-    tokens?: TokenUsage;
+    tokens?: {
+        promptTokens?: number;
+        completionTokens?: number;
+        totalTokens?: number;
+    };
     sessionId?: string;
     conversationId?: string;
     inputPreview?: string;
@@ -25,149 +23,140 @@ export interface LoggerOptions {
     inputPreview?: string;
 }
 
-function fireLog(payload: LogPayload) {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
-    const url = typeof window === 'undefined' ? new URL('/api/ingest', baseUrl).toString() : '/api/ingest';
+const getIngestUrl = () => {
+    if (typeof window !== "undefined") return "/api/ingest";
+    const base =
+        process.env.NEXT_PUBLIC_APP_URL ||
+        (process.env.VERCEL_URL
+            ? `https://${process.env.VERCEL_URL}`
+            : "http://localhost:3000");
+    return new URL("/api/ingest", base).toString();
+};
 
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
+function sendLog(payload: LogPayload) {
+    fetch(getIngestUrl(), {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
-    }).catch((error) => {
-        console.error('[Logger] Failed to send log to ingestion endpoint:', error);
+    }).catch((err) => {
+        console.error("Logging failed:", err);
     });
 }
 
-
 export async function withLogger<T>(
-    providerCall: () => Promise<T>,
+    fn: () => Promise<T>,
     options: LoggerOptions,
-    extractMetrics?: (response: T) => { tokens?: TokenUsage; outputPreview?: string }
 ): Promise<T> {
-    const startTime = Date.now();
+    const start = Date.now();
+
+    const report = (status: "success" | "error", extra?: Partial<LogPayload>) => {
+        sendLog({
+            ...options,
+            status,
+            latencyMs: Date.now() - start,
+            ...extra,
+        });
+    };
 
     try {
-        const response = await providerCall();
+        const res = await fn();
 
-        // Determine if the response is a stream 
-        const isObject = response !== null && typeof response === 'object';
-        const isReadableStream = isObject && response instanceof ReadableStream;
-        const isAsyncIterable = isObject && Symbol.asyncIterator in response;
+        if (res && typeof res === "object") {
+            if ("textStream" in res && res.textStream) {
+                const streamContainer = res as { textStream: AsyncIterable<string> };
+                const originalStream = streamContainer.textStream;
+                let fullText = "";
 
-        // Helper to log success
-        const logSuccess = (outputPreview?: string, tokens?: TokenUsage) => {
-            const latencyMs = Date.now() - startTime;
-            fireLog({
-                ...options,
-                status: 'success',
-                latencyMs,
-                outputPreview,
-                tokens,
-            });
-        };
+                streamContainer.textStream = {
+                    async *[Symbol.asyncIterator]() {
+                        try {
+                            for await (const chunk of originalStream) {
+                                fullText += chunk;
+                                yield chunk;
+                            }
+                            report("success", { outputPreview: fullText });
+                        } catch (err) {
+                            report("error", {
+                                error: err instanceof Error ? err.message : String(err),
+                            });
+                            throw err;
+                        }
+                    },
+                };
+                return res;
+            }
+        }
 
-        if (isReadableStream) {
-            // Intercept ReadableStream
-            const reader = (response as ReadableStream).getReader();
-            let fullText = '';
+        // Standard web ReadableStream
+        if (res instanceof ReadableStream) {
+            const reader = res.getReader();
+            let fullText = "";
+            const decoder = new TextDecoder();
 
-            const stream = new ReadableStream({
+            return new ReadableStream({
                 async start(controller) {
                     try {
                         while (true) {
                             const { done, value } = await reader.read();
                             if (done) {
-                                logSuccess(fullText.substring(0, 1000));
+                                report("success", { outputPreview: fullText });
                                 controller.close();
                                 break;
                             }
 
-                            // Try to accumulate text for preview
-                            if (value instanceof Uint8Array) {
-                                fullText += new TextDecoder().decode(value);
-                            } else if (typeof value === 'string') {
-                                fullText += value;
-                            } else if (value && typeof (value as any).text === 'string') {
-                                fullText += (value as any).text;
-                            }
-
+                            const chunk =
+                                typeof value === "string"
+                                    ? value
+                                    : decoder.decode(value, { stream: true });
+                            fullText += chunk;
                             controller.enqueue(value);
                         }
-                    } catch (error: any) {
-                        const latencyMs = Date.now() - startTime;
-                        fireLog({
-                            ...options,
-                            status: 'error',
-                            latencyMs,
-                            error: error.message || String(error),
+                    } catch (err) {
+                        report("error", {
+                            error: err instanceof Error ? err.message : String(err),
                         });
-                        controller.error(error);
+                        controller.error(err);
                     }
-                }
-            });
-            return stream as any as T;
-
-        } else if (isAsyncIterable) {
-            const asyncIterable = response as any as AsyncIterable<any>;
-            const originalIterator = asyncIterable[Symbol.asyncIterator]();
-
-            const wrappedIterable = {
-                [Symbol.asyncIterator]() {
-                    let fullText = '';
-                    return {
-                        async next() {
-                            try {
-                                const result = await originalIterator.next();
-                                if (result.done) {
-                                    logSuccess(fullText.substring(0, 1000));
-                                    return result;
-                                }
-                                if (typeof result.value === 'string') {
-                                    fullText += result.value;
-                                } else if (result.value && typeof result.value.text === 'string') {
-                                    fullText += result.value.text;
-                                }
-
-                                return result;
-                            } catch (error: any) {
-                                const latencyMs = Date.now() - startTime;
-                                fireLog({
-                                    ...options,
-                                    status: 'error',
-                                    latencyMs,
-                                    error: error.message || String(error),
-                                });
-                                throw error;
-                            }
-                        }
-                    };
-                }
-            };
-            return wrappedIterable as any as T;
-
-        } else {
-            let metrics = {};
-            if (extractMetrics) {
-                metrics = extractMetrics(response);
-            } else if (isObject && typeof (response as any).text === 'string') {
-                metrics = { outputPreview: (response as any).text.substring(0, 1000) };
-            }
-
-            logSuccess((metrics as any).outputPreview, (metrics as any).tokens);
+                },
+            }) as unknown as T;
         }
 
-        return response;
-    } catch (error: any) {
-        const latencyMs = Date.now() - startTime;
-        fireLog({
-            ...options,
-            status: 'error',
-            latencyMs,
-            error: error.message || String(error),
-        });
+        // Standard response (non-stream)
+        let outputPreview: string | undefined;
+        let tokens: LogPayload["tokens"];
 
-        throw error;
+        if (res && typeof res === "object") {
+            const obj = res as Record<string, unknown>;
+
+            if (typeof obj.text === "string") {
+                outputPreview = obj.text;
+            }
+
+            const usage = obj.usage as Record<string, unknown> | undefined;
+            if (usage && typeof usage === "object") {
+                tokens = {
+                    promptTokens:
+                        typeof usage.promptTokens === "number"
+                            ? usage.promptTokens
+                            : undefined,
+                    completionTokens:
+                        typeof usage.completionTokens === "number"
+                            ? usage.completionTokens
+                            : undefined,
+                    totalTokens:
+                        typeof usage.totalTokens === "number"
+                            ? usage.totalTokens
+                            : undefined,
+                };
+            }
+        }
+
+        report("success", { outputPreview, tokens });
+        return res;
+    } catch (err) {
+        report("error", {
+            error: err instanceof Error ? err.message : String(err),
+        });
+        throw err;
     }
 }
