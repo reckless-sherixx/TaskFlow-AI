@@ -1,16 +1,16 @@
 # Graph Report - tf_ai  (2026-05-23)
 
 ## Corpus Check
-- 60 files · ~15,955 words
+- 57 files · ~14,265 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 731 nodes · 1051 edges · 66 communities (60 shown, 6 thin omitted)
+- 556 nodes · 858 edges · 45 communities (40 shown, 5 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a3abe02d`
+- Built from commit: `bcd6d913`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -54,39 +54,18 @@
 - [[_COMMUNITY_Community 42|Community 42]]
 - [[_COMMUNITY_Community 43|Community 43]]
 - [[_COMMUNITY_Community 44|Community 44]]
-- [[_COMMUNITY_Community 45|Community 45]]
-- [[_COMMUNITY_Community 46|Community 46]]
-- [[_COMMUNITY_Community 47|Community 47]]
-- [[_COMMUNITY_Community 48|Community 48]]
-- [[_COMMUNITY_Community 49|Community 49]]
-- [[_COMMUNITY_Community 50|Community 50]]
-- [[_COMMUNITY_Community 51|Community 51]]
-- [[_COMMUNITY_Community 52|Community 52]]
-- [[_COMMUNITY_Community 53|Community 53]]
-- [[_COMMUNITY_Community 54|Community 54]]
-- [[_COMMUNITY_Community 55|Community 55]]
-- [[_COMMUNITY_Community 56|Community 56]]
-- [[_COMMUNITY_Community 57|Community 57]]
-- [[_COMMUNITY_Community 58|Community 58]]
-- [[_COMMUNITY_Community 59|Community 59]]
-- [[_COMMUNITY_Community 60|Community 60]]
-- [[_COMMUNITY_Community 61|Community 61]]
-- [[_COMMUNITY_Community 62|Community 62]]
-- [[_COMMUNITY_Community 63|Community 63]]
-- [[_COMMUNITY_Community 64|Community 64]]
-- [[_COMMUNITY_Community 65|Community 65]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `cn()` - 90 edges
 2. `compilerOptions` - 16 edges
-3. `streamAIResponse()` - 14 edges
-4. `columns` - 14 edges
-5. `columns` - 14 edges
-6. `public.conversations` - 11 edges
-7. `public.inference_logs` - 11 edges
-8. `public.messages` - 11 edges
-9. `public.conversations` - 11 edges
-10. `public.inference_logs` - 11 edges
+3. `columns` - 14 edges
+4. `streamAIResponse()` - 12 edges
+5. `public.conversations` - 11 edges
+6. `public.inference_logs` - 11 edges
+7. `public.messages` - 11 edges
+8. `scripts` - 9 edges
+9. `Button()` - 9 edges
+10. `columns` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `cn()` --calls--> `clsx`  [INFERRED]
@@ -100,39 +79,39 @@
 - `AssistantMessage()` --calls--> `cn()`  [EXTRACTED]
   components/thread.tsx → lib/utils.ts
 
-## Communities (66 total, 6 thin omitted)
+## Communities (45 total, 5 thin omitted)
 
 ### Community 0 - "UI Components (Sidebar)"
-Cohesion: 0.11
-Nodes (31): useIsMobile(), cn(), Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage() (+23 more)
+Cohesion: 0.06
+Nodes (50): GitHubIcon(), ThreadList(), Props, useIsMobile(), cn(), Avatar(), AvatarBadge(), AvatarFallback() (+42 more)
 
 ### Community 1 - "UI Components (Dialog)"
-Cohesion: 0.11
-Nodes (5): AssistantMessage(), BranchPicker(), ThreadProps, TypingIndicator(), TypingIndicatorProps
+Cohesion: 0.12
+Nodes (3): AssistantMessage(), BranchPicker(), Thread()
 
 ### Community 2 - "Package Dependencies"
-Cohesion: 0.11
-Nodes (18): AttachmentPreview(), AttachmentPreviewDialog(), AttachmentPreviewProps, AttachmentThumb(), AttachmentUI(), ComposerAddAttachment(), ComposerAttachments(), useAttachmentSrc() (+10 more)
+Cohesion: 0.08
+Nodes (26): geistMono, geistSans, metadata, AttachmentPreview(), AttachmentPreviewDialog(), AttachmentPreviewProps, AttachmentThumb(), AttachmentUI() (+18 more)
 
 ### Community 3 - "Tailwind & Aliases"
 Cohesion: 0.18
 Nodes (11): content, role, name, notNull, primaryKey, type, columns, name (+3 more)
 
 ### Community 4 - "Package Scripts"
-Cohesion: 0.07
-Nodes (28): dependencies, ai, @ai-sdk/google, @ai-sdk/openai, @assistant-ui/react, @assistant-ui/react-ai-sdk, @assistant-ui/react-markdown, bullmq (+20 more)
+Cohesion: 0.05
+Nodes (40): dependencies, ai, @ai-sdk/google, @ai-sdk/openai, @assistant-ui/react, @assistant-ui/react-ai-sdk, @assistant-ui/react-markdown, bullmq (+32 more)
 
 ### Community 5 - "TypeScript Config"
-Cohesion: 0.07
-Nodes (46): buildContextWindow(), buildInterruptionContext(), CoreMessage, estimateTokens(), warnIfOverBudget(), isValidModel(), resolveModel(), createConversation() (+38 more)
+Cohesion: 0.10
+Nodes (35): buildContextWindow(), CoreMessage, estimateTokens(), warnIfOverBudget(), createConversation(), insertMessage(), updateConversationStatus(), updateConversationTitle() (+27 more)
 
 ### Community 6 - "Thread Components"
 Cohesion: 0.10
 Nodes (19): aliases, components, hooks, lib, ui, utils, iconLibrary, registries (+11 more)
 
 ### Community 7 - "App Navigation"
-Cohesion: 0.08
-Nodes (23): devDependencies, @biomejs/biome, concurrently, drizzle-kit, tailwindcss, @tailwindcss/postcss, @types/node, @types/pg (+15 more)
+Cohesion: 0.18
+Nodes (11): devDependencies, @biomejs/biome, concurrently, drizzle-kit, tailwindcss, @tailwindcss/postcss, @types/node, @types/pg (+3 more)
 
 ### Community 8 - "Tool Group"
 Cohesion: 0.10
@@ -151,16 +130,16 @@ Cohesion: 0.11
 Nodes (18): messages_conversation_id_conversations_id_fk, columnsFrom, columnsTo, name, onDelete, onUpdate, tableFrom, tableTo (+10 more)
 
 ### Community 22 - "Community 22"
-Cohesion: 0.10
-Nodes (21): statusIconMap, ToolFallback, ToolFallbackArgs(), ToolFallbackContent(), ToolFallbackError(), ToolFallbackImpl(), ToolFallbackResult(), ToolFallbackRoot() (+13 more)
+Cohesion: 0.21
+Nodes (10): ToolGroup, ToolGroupComponent, ToolGroupContent(), ToolGroupRoot(), ToolGroupRootProps, ToolGroupTrigger(), toolGroupVariants, Collapsible() (+2 more)
 
 ### Community 23 - "Community 23"
 Cohesion: 0.18
 Nodes (9): Reasoning, ReasoningContent(), ReasoningFade(), ReasoningGroup, ReasoningRoot(), ReasoningRootProps, ReasoningText(), ReasoningTrigger() (+1 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.05
-Nodes (43): dialect, enums, messages_conversation_id_conversations_id_fk, id, columnsFrom, columnsTo, name, onDelete (+35 more)
+Cohesion: 0.17
+Nodes (11): statusIconMap, ToolFallback, ToolFallbackArgs(), ToolFallbackContent(), ToolFallbackError(), ToolFallbackImpl(), ToolFallbackResult(), ToolFallbackRoot() (+3 more)
 
 ### Community 25 - "Community 25"
 Cohesion: 0.33
@@ -179,8 +158,8 @@ Cohesion: 0.12
 Nodes (17): inference_logs_conversation_id_conversations_id_fk, inference_logs_message_id_messages_id_fk, columnsFrom, columnsTo, name, onDelete, onUpdate, tableFrom (+9 more)
 
 ### Community 29 - "Community 29"
-Cohesion: 0.10
-Nodes (20): GET(), db, queryClient, cancelConversation(), getConversationsWithStats(), getConversationWithMessages(), insertInferenceLog(), conversations (+12 more)
+Cohesion: 0.09
+Nodes (23): GET(), db, queryClient, cancelConversation(), getConversationsWithStats(), getConversationWithMessages(), insertInferenceLog(), conversations (+15 more)
 
 ### Community 30 - "Community 30"
 Cohesion: 0.50
@@ -235,108 +214,28 @@ Cohesion: 0.40
 Nodes (5): conversation_id, name, notNull, primaryKey, type
 
 ### Community 44 - "Community 44"
-Cohesion: 0.12
-Nodes (19): MODEL_LABELS, ModelEntry, MODELS, VALID_MODELS, Assistant(), TokenStats, useWebSocketChat(), Thread() (+11 more)
-
-### Community 45 - "Community 45"
-Cohesion: 0.08
-Nodes (26): inference_logs_conversation_id_conversations_id_fk, inference_logs_message_id_messages_id_fk, columnsFrom, columnsTo, name, onDelete, onUpdate, tableFrom (+18 more)
-
-### Community 46 - "Community 46"
-Cohesion: 0.16
-Nodes (13): getModelsByProvider(), GEMINI_MODELS, GeminiModelId, GitHubIcon(), ConversationGroup, groupConversationsByDate(), Props, ThreadListSidebar() (+5 more)
-
-### Community 47 - "Community 47"
-Cohesion: 0.33
-Nodes (7): TooltipIconButtonProps, Button(), buttonVariants, Tooltip(), TooltipContent(), TooltipProvider(), TooltipTrigger()
-
-### Community 48 - "Community 48"
-Cohesion: 0.18
-Nodes (7): Sheet(), SheetContent(), SheetDescription(), SheetFooter(), SheetHeader(), SheetOverlay(), SheetTitle()
-
-### Community 49 - "Community 49"
-Cohesion: 0.18
-Nodes (11): content, role, name, notNull, primaryKey, type, columns, name (+3 more)
-
-### Community 50 - "Community 50"
-Cohesion: 0.18
-Nodes (11): model, title, name, notNull, primaryKey, type, columns, name (+3 more)
-
-### Community 52 - "Community 52"
-Cohesion: 0.33
-Nodes (6): created_at, default, name, notNull, primaryKey, type
-
-### Community 53 - "Community 53"
-Cohesion: 0.33
-Nodes (6): id, default, name, notNull, primaryKey, type
-
-### Community 54 - "Community 54"
-Cohesion: 0.33
-Nodes (6): message_id, name, notNull, primaryKey, type, columns
-
-### Community 55 - "Community 55"
-Cohesion: 0.33
-Nodes (6): status, default, name, notNull, primaryKey, type
-
-### Community 56 - "Community 56"
-Cohesion: 0.33
-Nodes (6): updated_at, default, name, notNull, primaryKey, type
-
-### Community 57 - "Community 57"
-Cohesion: 0.40
-Nodes (3): geistMono, geistSans, metadata
-
-### Community 58 - "Community 58"
-Cohesion: 0.40
-Nodes (5): conversation_id, name, notNull, primaryKey, type
-
-### Community 59 - "Community 59"
-Cohesion: 0.40
-Nodes (5): error_message, name, notNull, primaryKey, type
-
-### Community 60 - "Community 60"
-Cohesion: 0.40
-Nodes (5): input_preview, name, notNull, primaryKey, type
-
-### Community 61 - "Community 61"
-Cohesion: 0.40
-Nodes (5): input_tokens, name, notNull, primaryKey, type
-
-### Community 62 - "Community 62"
-Cohesion: 0.40
-Nodes (5): latency_ms, name, notNull, primaryKey, type
-
-### Community 63 - "Community 63"
-Cohesion: 0.40
-Nodes (5): output_preview, name, notNull, primaryKey, type
-
-### Community 64 - "Community 64"
-Cohesion: 0.40
-Nodes (5): output_tokens, name, notNull, primaryKey, type
-
-### Community 65 - "Community 65"
-Cohesion: 0.40
-Nodes (5): provider, name, notNull, primaryKey, type
+Cohesion: 0.11
+Nodes (23): getModelsByProvider(), isValidModel(), MODEL_LABELS, ModelEntry, MODELS, resolveModel(), VALID_MODELS, Assistant() (+15 more)
 
 ## Knowledge Gaps
-- **396 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+391 more)
+- **260 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+255 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `UI Components (Sidebar)` to `UI Components (Dialog)`, `Package Dependencies`, `Package Scripts`, `Community 44`, `Community 46`, `Community 47`, `Community 48`, `Community 51`, `Community 22`, `Community 23`, `Community 25`?**
-  _High betweenness centrality (0.096) - this node is a cross-community bridge._
-- **Why does `dependencies` connect `Package Scripts` to `App Navigation`?**
-  _High betweenness centrality (0.057) - this node is a cross-community bridge._
+- **Why does `cn()` connect `UI Components (Sidebar)` to `UI Components (Dialog)`, `Package Dependencies`, `Package Scripts`, `Community 44`, `Community 22`, `Community 23`, `Community 24`, `Community 25`?**
+  _High betweenness centrality (0.159) - this node is a cross-community bridge._
 - **Why does `clsx` connect `Package Scripts` to `UI Components (Sidebar)`?**
-  _High betweenness centrality (0.054) - this node is a cross-community bridge._
+  _High betweenness centrality (0.089) - this node is a cross-community bridge._
 - **What connects `$schema`, `style`, `rsc` to the rest of the system?**
-  _396 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _260 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `UI Components (Sidebar)` be split into smaller, more focused modules?**
-  _Cohesion score 0.1126984126984127 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06479113384484228 - nodes in this community are weakly interconnected._
 - **Should `UI Components (Dialog)` be split into smaller, more focused modules?**
-  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.125 - nodes in this community are weakly interconnected._
 - **Should `Package Dependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.11462450592885376 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08403361344537816 - nodes in this community are weakly interconnected._
+- **Should `Package Scripts` be split into smaller, more focused modules?**
+  _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._

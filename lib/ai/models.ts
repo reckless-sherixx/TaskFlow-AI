@@ -1,11 +1,3 @@
-/**
- * Single source of truth for available AI models via OpenRouter.
- * Shared by both server.ts and the frontend.
- *
- * Model IDs use OpenRouter's `provider/model` format.
- * All models listed here are free-tier on OpenRouter.
- */
-
 export type ModelEntry = {
 	id: string;
 	label: string;
@@ -13,16 +5,13 @@ export type ModelEntry = {
 };
 
 export const MODELS: ModelEntry[] = [
-	/*
 	// Google
 	{ id: "google/gemma-4-31b-it:free", label: "Gemma 4 31B", provider: "Google" },
 	// DeepSeek
 	{ id: "deepseek/deepseek-v4-flash:free", label: "DeepSeek V4 Flash", provider: "DeepSeek" },
-	{ id: "deepseek/deepseek-r1:free", label: "DeepSeek R1", provider: "DeepSeek" },
 	// Meta
 	{ id: "meta-llama/llama-4-maverick:free", label: "Llama 4 Maverick", provider: "Meta" },
 	{ id: "meta-llama/llama-3.3-70b-instruct:free", label: "Llama 3.3 70B", provider: "Meta" },
-	*/
 	// OpenAI
 	{ id: "openai/gpt-4o-mini", label: "GPT-4o Mini", provider: "OpenAI" },
 ];
@@ -35,7 +24,7 @@ export const MODEL_LABELS: Record<string, string> = Object.fromEntries(
 	MODELS.map((m) => [m.id, m.label]),
 );
 
-/** Group models by provider for dropdown rendering */
+
 export function getModelsByProvider(): Record<string, ModelEntry[]> {
 	const groups: Record<string, ModelEntry[]> = {};
 	for (const m of MODELS) {

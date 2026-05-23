@@ -18,11 +18,16 @@ type ConversationStore = {
 	conversations: ConversationMeta[];
 	activeId: string | null;
 	hydrated: boolean;
+	isAiTyping: boolean;
+	isUserTyping: boolean;
 	setConversations: (convs: ConversationMeta[]) => void;
 	upsertConversation: (conv: ConversationMeta) => void;
+	removeConversation: (id: string) => void;
 	setActive: (id: string | null) => void;
 	updateTitle: (id: string, title: string) => void;
 	updatePreview: (id: string, preview: string) => void;
+	setAiTyping: (typing: boolean) => void;
+	setUserTyping: (typing: boolean) => void;
 	markHydrated: () => void;
 };
 
@@ -30,6 +35,8 @@ export const useConversationStore = create<ConversationStore>((set) => ({
 	conversations: [],
 	activeId: null,
 	hydrated: false,
+	isAiTyping: false,
+	isUserTyping: false,
 
 	setConversations: (convs) =>
 		set({ conversations: convs, hydrated: true }),
@@ -45,6 +52,12 @@ export const useConversationStore = create<ConversationStore>((set) => ({
 
 			return { conversations: [conv, ...state.conversations] };
 		}),
+
+	removeConversation: (id) =>
+		set((state) => ({
+			conversations: state.conversations.filter((c) => c.id !== id),
+			activeId: state.activeId === id ? null : state.activeId,
+		})),
 
 	setActive: (id) => set({ activeId: id }),
 
@@ -63,6 +76,9 @@ export const useConversationStore = create<ConversationStore>((set) => ({
 					: c,
 			),
 		})),
+
+	setAiTyping: (typing) => set({ isAiTyping: typing }),
+	setUserTyping: (typing) => set({ isUserTyping: typing }),
 
 	markHydrated: () => set({ hydrated: true }),
 }));

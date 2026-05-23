@@ -1,6 +1,6 @@
 "use client";
 
-import { MessagesSquare, Moon, PlusIcon, Sun, Zap } from "lucide-react";
+import { MessagesSquare, Moon, PlusIcon, Sun, Zap, Trash2 } from "lucide-react";
 import type * as React from "react";
 import {
 	Sidebar,
@@ -15,7 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import type { GeminiModelId, TokenStats } from "@/app/assistant";
 import { getModelsByProvider } from "@/lib/ai/models";
-import { useConversationStore } from "@/lib/store/conversation-store";
+import { useConversationStore, type ConversationMeta } from "@/lib/store/conversation-store";
 
 type Props = React.ComponentProps<typeof Sidebar> & {
 	tokenStats: TokenStats;
@@ -27,6 +27,49 @@ type Props = React.ComponentProps<typeof Sidebar> & {
 	onSwitchConversation: (id: string) => void;
 };
 
+type ConversationGroup = {
+	label: string;
+	conversations: ConversationMeta[];
+};
+
+function groupConversationsByDate(conversations: ConversationMeta[]): ConversationGroup[] {
+	const now = new Date();
+	const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+	const yesterdayStart = new Date(todayStart);
+	yesterdayStart.setDate(yesterdayStart.getDate() - 1);
+	const weekStart = new Date(todayStart);
+	weekStart.setDate(weekStart.getDate() - 7);
+	const monthStart = new Date(todayStart);
+	monthStart.setDate(monthStart.getDate() - 30);
+
+	const groups: Record<string, ConversationMeta[]> = {
+		Today: [],
+		Yesterday: [],
+		"Previous 7 Days": [],
+		"Previous 30 Days": [],
+		Older: [],
+	};
+
+	for (const conv of conversations) {
+		const date = new Date(conv.updatedAt || conv.createdAt);
+		if (date >= todayStart) {
+			groups.Today.push(conv);
+		} else if (date >= yesterdayStart) {
+			groups.Yesterday.push(conv);
+		} else if (date >= weekStart) {
+			groups["Previous 7 Days"].push(conv);
+		} else if (date >= monthStart) {
+			groups["Previous 30 Days"].push(conv);
+		} else {
+			groups.Older.push(conv);
+		}
+	}
+
+	return Object.entries(groups)
+		.filter(([, convs]) => convs.length > 0)
+		.map(([label, convs]) => ({ label, conversations: convs }));
+}
+
 export function ThreadListSidebar({
 	tokenStats,
 	selectedModel,
@@ -37,7 +80,22 @@ export function ThreadListSidebar({
 	onSwitchConversation,
 	...props
 }: Props) {
-	const { conversations, activeId } = useConversationStore();
+	const { conversations, activeId, removeConversation } = useConversationStore();
+
+	const handleDelete = async (e: React.MouseEvent, id: string) => {
+		e.stopPropagation();
+		removeConversation(id);
+		if (activeId === id) {
+			onNewThread();
+		}
+		try {
+			await fetch(`/api/conversations/${id}`, { method: "DELETE" });
+		} catch (error) {
+			console.error("Failed to delete conversation", error);
+		}
+	};
+
+	const groups = groupConversationsByDate(conversations);
 
 	const pct = Math.min((tokenStats.used / tokenStats.total) * 100, 100);
 	const tokensLeft = Math.max(tokenStats.total - tokenStats.used, 0);
@@ -51,7 +109,6 @@ export function ThreadListSidebar({
 
 	return (
 		<Sidebar {...props}>
-			{/* ── Header ─────────────────────────────────── */}
 			<SidebarHeader className="aui-sidebar-header mb-2 border-b">
 				<SidebarMenu>
 					<SidebarMenuItem>
@@ -67,7 +124,6 @@ export function ThreadListSidebar({
 				</SidebarMenu>
 			</SidebarHeader>
 
-			{/* ── New Thread Button ─────────────────────── */}
 			<div className="px-3 pb-2">
 				<Button
 					variant="outline"
@@ -79,44 +135,52 @@ export function ThreadListSidebar({
 				</Button>
 			</div>
 
-			{/* ── Conversation History ────────────────────── */}
-			<SidebarContent className="aui-sidebar-content px-2 overflow-y-auto">
-				<div className="flex flex-col gap-0.5">
-					{conversations.length === 0 && (
-						<p className="px-3 py-4 text-xs text-muted-foreground text-center">
-							No conversations yet
+			<div className="aui-sidebar-content px-2 overflow-y-auto flex-1 min-h-0 flex flex-col gap-2">
+				{conversations.length === 0 ? (
+					<p className="px-3 py-4 text-xs text-muted-foreground text-center">
+						No conversations yet
+					</p>
+				) : null}
+
+				{groups.map((group) => (
+					<div key={group.label} className="mb-3">
+						<p className="px-3 pt-2 pb-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground/70">
+							{group.label}
 						</p>
-					)}
-					{conversations.map((conv) => (
-						<button
-							key={conv.id}
-							type="button"
-							onClick={() => onSwitchConversation(conv.id)}
-							className={`group flex w-full flex-col items-start gap-0.5 rounded-lg px-3 py-2 text-left text-sm transition-colors hover:bg-muted ${
-								activeId === conv.id
-									? "bg-muted font-medium"
-									: ""
-							}`}
-						>
-							<span className="w-full truncate text-foreground">
-								{conv.title || "New Conversation"}
-							</span>
-							{conv.lastMessagePreview && (
-								<span className="w-full truncate text-xs text-muted-foreground">
-									{conv.lastMessagePreview}
-								</span>
-							)}
-						</button>
-					))}
-				</div>
-			</SidebarContent>
+						<div className="flex flex-col gap-0.5">
+							{group.conversations.map((conv) => (
+								<button
+									key={conv.id}
+									type="button"
+									onClick={() => onSwitchConversation(conv.id)}
+									className={`group/item flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm transition-colors hover:bg-muted ${
+										activeId === conv.id
+											? "bg-muted font-medium"
+											: ""
+									}`}
+								>
+									<span className="truncate text-foreground overflow-hidden whitespace-nowrap">
+										{conv.title || "New Conversation"}
+									</span>
+									<div
+										role="button"
+										tabIndex={0}
+										onClick={(e) => handleDelete(e, conv.id)}
+										onKeyDown={(e) => e.key === 'Enter' && handleDelete(e as any, conv.id)}
+										className="opacity-0 group-hover/item:opacity-100 p-1 hover:bg-background rounded transition-opacity"
+									>
+										<Trash2 className="size-3.5 text-muted-foreground hover:text-red-500" />
+									</div>
+								</button>
+							))}
+						</div>
+					</div>
+				))}
+			</div>
 
 			<SidebarRail />
 
-			{/* ── Footer ─────────────────────────────────── */}
 			<SidebarFooter className="border-t px-3 py-3 space-y-3">
-
-				{/* Token meter */}
 				<div className="space-y-1.5">
 					<div className="flex items-center justify-between text-xs text-muted-foreground">
 						<span className="flex items-center gap-1 font-medium">
@@ -139,7 +203,6 @@ export function ThreadListSidebar({
 					</div>
 				</div>
 
-				{/* Model selector */}
 				<div className="space-y-1">
 					<p className="text-xs font-medium text-muted-foreground">
 						Model for new chats
@@ -161,7 +224,6 @@ export function ThreadListSidebar({
 					</select>
 				</div>
 
-				{/* Dark mode toggle */}
 				<button
 					type="button"
 					onClick={onToggleDark}

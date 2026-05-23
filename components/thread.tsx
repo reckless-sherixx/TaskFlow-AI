@@ -45,10 +45,29 @@ import {
 	ToolGroupTrigger,
 } from "@/components/tool-group";
 import { TooltipIconButton } from "@/components/tooltip-icon-button";
+import { TypingIndicator } from "@/components/typing-indicator";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-export const Thread: FC = () => {
+type ThreadProps = {
+	isAiTyping?: boolean;
+	isAiStreaming?: boolean;
+	isLoadingChat?: boolean;
+	onComposerInput?: () => void;
+};
+
+export const Thread: FC<ThreadProps> = ({
+	isAiTyping = false,
+	isAiStreaming = false,
+	isLoadingChat = false,
+	onComposerInput,
+}) => {
+	const typingLabel = isAiTyping
+		? "AI is thinking..."
+		: isAiStreaming
+			? "AI is typing..."
+			: undefined;
+
 	return (
 		<ThreadPrimitive.Root
 			className="aui-root aui-thread-root @container flex h-full flex-col bg-background"
@@ -69,14 +88,37 @@ export const Thread: FC = () => {
 						data-slot="aui_message-group"
 						className="mb-10 flex flex-col gap-y-8 empty:hidden"
 					>
-						<ThreadPrimitive.Messages>
-							{() => <ThreadMessage />}
-						</ThreadPrimitive.Messages>
+						{isLoadingChat ? (
+							<div className="flex flex-col gap-6 w-full animate-pulse">
+								<div className="flex w-full justify-end">
+									<div className="h-10 w-48 bg-muted rounded-2xl" />
+								</div>
+								<div className="flex w-full justify-start gap-3">
+									<div className="size-8 rounded-full bg-muted shrink-0" />
+									<div className="h-20 w-3/4 max-w-xl bg-muted rounded-2xl" />
+								</div>
+								<div className="flex w-full justify-end">
+									<div className="h-10 w-64 bg-muted rounded-2xl" />
+								</div>
+								<div className="flex w-full justify-start gap-3">
+									<div className="size-8 rounded-full bg-muted shrink-0" />
+									<div className="h-32 w-2/3 max-w-xl bg-muted rounded-2xl" />
+								</div>
+							</div>
+						) : (
+							<ThreadPrimitive.Messages>
+								{() => <ThreadMessage />}
+							</ThreadPrimitive.Messages>
+						)}
+
+						{(isAiTyping || isAiStreaming) && typingLabel && (
+							<TypingIndicator label={typingLabel} />
+						)}
 					</div>
 
 					<ThreadPrimitive.ViewportFooter className="aui-thread-viewport-footer sticky bottom-0 mt-auto flex flex-col gap-4 overflow-visible rounded-t-(--composer-radius) bg-background pb-4 md:pb-6">
 						<ThreadScrollToBottom />
-						<Composer />
+						<Composer onComposerInput={onComposerInput} />
 					</ThreadPrimitive.ViewportFooter>
 				</div>
 			</ThreadPrimitive.Viewport>
@@ -151,7 +193,7 @@ const ThreadSuggestionItem: FC = () => {
 	);
 };
 
-const Composer: FC = () => {
+const Composer: FC<{ onComposerInput?: () => void }> = ({ onComposerInput }) => {
 	return (
 		<ComposerPrimitive.Root className="aui-composer-root relative flex w-full flex-col">
 			<ComposerPrimitive.AttachmentDropzone asChild>
@@ -166,6 +208,7 @@ const Composer: FC = () => {
 						rows={1}
 						autoFocus
 						aria-label="Message input"
+						onChange={onComposerInput}
 					/>
 					<ComposerAction />
 				</div>
@@ -221,9 +264,6 @@ const MessageError: FC = () => {
 };
 
 const AssistantMessage: FC = () => {
-	// reserves space for action bar and compensates with `-mb` for consistent msg spacing
-	// keeps hovered action bar from shifting layout (autohide doesn't support absolute positioning well)
-	// for pt-[n] use -mb-[n + 6] & min-h-[n + 6] to preserve compensation
 	const ACTION_BAR_PT = "pt-1.5";
 	const ACTION_BAR_HEIGHT = `-mb-7.5 min-h-7.5 ${ACTION_BAR_PT}`;
 

@@ -225,7 +225,7 @@
       "source_file": "package.json",
       "source_location": "L1",
       "id": "package_json",
-      "community": 4,
+      "community": 7,
       "norm_label": "package.json"
     },
     {
@@ -234,7 +234,7 @@
       "source_file": "package.json",
       "source_location": "L2",
       "id": "tf_ai_package_name",
-      "community": 4,
+      "community": 7,
       "norm_label": "name"
     },
     {
@@ -243,7 +243,7 @@
       "source_file": "package.json",
       "source_location": "L3",
       "id": "tf_ai_package_version",
-      "community": 4,
+      "community": 7,
       "norm_label": "version"
     },
     {
@@ -252,7 +252,7 @@
       "source_file": "package.json",
       "source_location": "L4",
       "id": "tf_ai_package_private",
-      "community": 4,
+      "community": 7,
       "norm_label": "private"
     },
     {
@@ -261,7 +261,7 @@
       "source_file": "package.json",
       "source_location": "L5",
       "id": "tf_ai_package_scripts",
-      "community": 4,
+      "community": 7,
       "norm_label": "scripts"
     },
     {
@@ -270,7 +270,7 @@
       "source_file": "package.json",
       "source_location": "L6",
       "id": "tf_ai_package_scripts_dev",
-      "community": 4,
+      "community": 7,
       "norm_label": "dev"
     },
     {
@@ -279,7 +279,7 @@
       "source_file": "package.json",
       "source_location": "L7",
       "id": "tf_ai_package_scripts_worker",
-      "community": 4,
+      "community": 7,
       "norm_label": "worker"
     },
     {
@@ -288,7 +288,7 @@
       "source_file": "package.json",
       "source_location": "L8",
       "id": "tf_ai_package_scripts_build",
-      "community": 4,
+      "community": 7,
       "norm_label": "build"
     },
     {
@@ -297,7 +297,7 @@
       "source_file": "package.json",
       "source_location": "L9",
       "id": "tf_ai_package_scripts_start",
-      "community": 4,
+      "community": 7,
       "norm_label": "start"
     },
     {
@@ -306,7 +306,7 @@
       "source_file": "package.json",
       "source_location": "L10",
       "id": "tf_ai_package_scripts_lint",
-      "community": 4,
+      "community": 7,
       "norm_label": "lint"
     },
     {
@@ -315,7 +315,7 @@
       "source_file": "package.json",
       "source_location": "L11",
       "id": "tf_ai_package_scripts_lint_fix",
-      "community": 4,
+      "community": 7,
       "norm_label": "lint:fix"
     },
     {
@@ -324,7 +324,7 @@
       "source_file": "package.json",
       "source_location": "L12",
       "id": "tf_ai_package_scripts_format",
-      "community": 4,
+      "community": 7,
       "norm_label": "format"
     },
     {
@@ -333,7 +333,7 @@
       "source_file": "package.json",
       "source_location": "L13",
       "id": "tf_ai_package_scripts_format_fix",
-      "community": 4,
+      "community": 7,
       "norm_label": "format:fix"
     },
     {
@@ -745,7 +745,7 @@
       "label": "sessions",
       "file_type": "code",
       "source_file": "server.ts",
-      "source_location": "L37",
+      "source_location": "L49",
       "id": "tf_ai_server_sessions",
       "community": 5,
       "norm_label": "sessions"
@@ -754,25 +754,52 @@
       "label": "redisSub",
       "file_type": "code",
       "source_file": "server.ts",
-      "source_location": "L39",
+      "source_location": "L53",
       "id": "tf_ai_server_redissub",
       "community": 5,
       "norm_label": "redissub"
     },
     {
+      "label": "redisPub",
+      "file_type": "code",
+      "source_file": "server.ts",
+      "source_location": "L54",
+      "id": "tf_ai_server_redispub",
+      "community": 5,
+      "norm_label": "redispub"
+    },
+    {
       "label": "{ conversationId }",
       "file_type": "code",
       "source_file": "server.ts",
-      "source_location": "L45",
+      "source_location": "L61",
       "id": "tf_ai_server_conversationid",
       "community": 5,
       "norm_label": "{ conversationid }"
     },
     {
+      "label": "TYPING_NUDGE_MESSAGES",
+      "file_type": "code",
+      "source_file": "server.ts",
+      "source_location": "L93",
+      "id": "tf_ai_server_typing_nudge_messages",
+      "community": 5,
+      "norm_label": "typing_nudge_messages"
+    },
+    {
+      "label": "computeTokenDelay()",
+      "file_type": "code",
+      "source_file": "server.ts",
+      "source_location": "L104",
+      "id": "tf_ai_server_computetokendelay",
+      "community": 5,
+      "norm_label": "computetokendelay()"
+    },
+    {
       "label": "sleep()",
       "file_type": "code",
       "source_file": "server.ts",
-      "source_location": "L79",
+      "source_location": "L114",
       "id": "tf_ai_server_sleep",
       "community": 5,
       "norm_label": "sleep()"
@@ -781,16 +808,34 @@
       "label": "send()",
       "file_type": "code",
       "source_file": "server.ts",
-      "source_location": "L81",
+      "source_location": "L116",
       "id": "tf_ai_server_send",
       "community": 5,
       "norm_label": "send()"
     },
     {
+      "label": "clearTypingNudgeTimer()",
+      "file_type": "code",
+      "source_file": "server.ts",
+      "source_location": "L123",
+      "id": "tf_ai_server_cleartypingnudgetimer",
+      "community": 5,
+      "norm_label": "cleartypingnudgetimer()"
+    },
+    {
+      "label": "startTypingNudgeTimer()",
+      "file_type": "code",
+      "source_file": "server.ts",
+      "source_location": "L130",
+      "id": "tf_ai_server_starttypingnudgetimer",
+      "community": 5,
+      "norm_label": "starttypingnudgetimer()"
+    },
+    {
       "label": "clearIdleTimer()",
       "file_type": "code",
       "source_file": "server.ts",
-      "source_location": "L89",
+      "source_location": "L146",
       "id": "tf_ai_server_clearidletimer",
       "community": 5,
       "norm_label": "clearidletimer()"
@@ -799,7 +844,7 @@
       "label": "resetIdleTimer()",
       "file_type": "code",
       "source_file": "server.ts",
-      "source_location": "L96",
+      "source_location": "L153",
       "id": "tf_ai_server_resetidletimer",
       "community": 5,
       "norm_label": "resetidletimer()"
@@ -808,7 +853,7 @@
       "label": "handleIdlePhase1()",
       "file_type": "code",
       "source_file": "server.ts",
-      "source_location": "L106",
+      "source_location": "L163",
       "id": "tf_ai_server_handleidlephase1",
       "community": 5,
       "norm_label": "handleidlephase1()"
@@ -817,7 +862,7 @@
       "label": "handleIdlePhase2()",
       "file_type": "code",
       "source_file": "server.ts",
-      "source_location": "L120",
+      "source_location": "L177",
       "id": "tf_ai_server_handleidlephase2",
       "community": 5,
       "norm_label": "handleidlephase2()"
@@ -826,7 +871,7 @@
       "label": "streamAIResponse()",
       "file_type": "code",
       "source_file": "server.ts",
-      "source_location": "L141",
+      "source_location": "L197",
       "id": "tf_ai_server_streamairesponse",
       "community": 5,
       "norm_label": "streamairesponse()"
@@ -835,7 +880,7 @@
       "label": "fetch()",
       "file_type": "code",
       "source_file": "server.ts",
-      "source_location": "L256",
+      "source_location": "L354",
       "id": "tf_ai_server_fetch",
       "community": 5,
       "norm_label": "fetch()"
@@ -844,7 +889,7 @@
       "label": "open()",
       "file_type": "code",
       "source_file": "server.ts",
-      "source_location": "L265",
+      "source_location": "L363",
       "id": "tf_ai_server_open",
       "community": 5,
       "norm_label": "open()"
@@ -853,7 +898,7 @@
       "label": "message()",
       "file_type": "code",
       "source_file": "server.ts",
-      "source_location": "L302",
+      "source_location": "L408",
       "id": "tf_ai_server_message",
       "community": 5,
       "norm_label": "message()"
@@ -862,7 +907,7 @@
       "label": "close()",
       "file_type": "code",
       "source_file": "server.ts",
-      "source_location": "L382",
+      "source_location": "L577",
       "id": "tf_ai_server_close",
       "community": 5,
       "norm_label": "close()"
@@ -1062,7 +1107,7 @@
       "source_file": "app/assistant.tsx",
       "source_location": "L33",
       "id": "app_assistant_geminimodelid",
-      "community": 44,
+      "community": 46,
       "norm_label": "geminimodelid"
     },
     {
@@ -1096,7 +1141,7 @@
       "label": "Assistant()",
       "file_type": "code",
       "source_file": "app/assistant.tsx",
-      "source_location": "L333",
+      "source_location": "L447",
       "id": "app_assistant_assistant",
       "community": 44,
       "norm_label": "assistant()"
@@ -1107,7 +1152,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L1",
       "id": "app_layout_tsx",
-      "community": 2,
+      "community": 57,
       "norm_label": "layout.tsx"
     },
     {
@@ -1116,7 +1161,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L6",
       "id": "app_layout_geistsans",
-      "community": 2,
+      "community": 57,
       "norm_label": "geistsans"
     },
     {
@@ -1125,7 +1170,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L11",
       "id": "app_layout_geistmono",
-      "community": 2,
+      "community": 57,
       "norm_label": "geistmono"
     },
     {
@@ -1134,7 +1179,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L16",
       "id": "app_layout_metadata",
-      "community": 2,
+      "community": 57,
       "norm_label": "metadata"
     },
     {
@@ -1143,7 +1188,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L21",
       "id": "app_layout_rootlayout",
-      "community": 2,
+      "community": 57,
       "norm_label": "rootlayout()"
     },
     {
@@ -1377,7 +1422,7 @@
       "source_file": "components/github.tsx",
       "source_location": "L1",
       "id": "components_github_tsx",
-      "community": 0,
+      "community": 46,
       "norm_label": "github.tsx"
     },
     {
@@ -1386,7 +1431,7 @@
       "source_file": "components/github.tsx",
       "source_location": "L1",
       "id": "components_github_githubicon",
-      "community": 0,
+      "community": 46,
       "norm_label": "githubicon()"
     },
     {
@@ -1557,7 +1602,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L1",
       "id": "components_thread_list_tsx",
-      "community": 0,
+      "community": 51,
       "norm_label": "thread-list.tsx"
     },
     {
@@ -1566,7 +1611,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L17",
       "id": "components_thread_list_threadlist",
-      "community": 0,
+      "community": 51,
       "norm_label": "threadlist()"
     },
     {
@@ -1575,7 +1620,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L33",
       "id": "components_thread_list_threadlistnew",
-      "community": 0,
+      "community": 51,
       "norm_label": "threadlistnew()"
     },
     {
@@ -1584,7 +1629,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L47",
       "id": "components_thread_list_threadlistskeleton",
-      "community": 0,
+      "community": 51,
       "norm_label": "threadlistskeleton()"
     },
     {
@@ -1593,7 +1638,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L64",
       "id": "components_thread_list_threadlistitem",
-      "community": 0,
+      "community": 51,
       "norm_label": "threadlistitem()"
     },
     {
@@ -1602,7 +1647,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L77",
       "id": "components_thread_list_threadlistitemmore",
-      "community": 0,
+      "community": 51,
       "norm_label": "threadlistitemmore()"
     },
     {
@@ -1615,19 +1660,28 @@
       "norm_label": "thread.tsx"
     },
     {
+      "label": "ThreadProps",
+      "file_type": "code",
+      "source_file": "components/thread.tsx",
+      "source_location": "L52",
+      "id": "components_thread_threadprops",
+      "community": 1,
+      "norm_label": "threadprops"
+    },
+    {
       "label": "Thread()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L51",
+      "source_location": "L58",
       "id": "components_thread_thread",
-      "community": 1,
+      "community": 44,
       "norm_label": "thread()"
     },
     {
       "label": "ThreadMessage()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L87",
+      "source_location": "L108",
       "id": "components_thread_threadmessage",
       "community": 1,
       "norm_label": "threadmessage()"
@@ -1636,7 +1690,7 @@
       "label": "ThreadScrollToBottom()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L96",
+      "source_location": "L117",
       "id": "components_thread_threadscrolltobottom",
       "community": 1,
       "norm_label": "threadscrolltobottom()"
@@ -1645,7 +1699,7 @@
       "label": "ThreadWelcome()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L110",
+      "source_location": "L131",
       "id": "components_thread_threadwelcome",
       "community": 1,
       "norm_label": "threadwelcome()"
@@ -1654,7 +1708,7 @@
       "label": "ThreadSuggestions()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L128",
+      "source_location": "L149",
       "id": "components_thread_threadsuggestions",
       "community": 1,
       "norm_label": "threadsuggestions()"
@@ -1663,7 +1717,7 @@
       "label": "ThreadSuggestionItem()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L138",
+      "source_location": "L159",
       "id": "components_thread_threadsuggestionitem",
       "community": 1,
       "norm_label": "threadsuggestionitem()"
@@ -1672,7 +1726,7 @@
       "label": "Composer()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L154",
+      "source_location": "L175",
       "id": "components_thread_composer",
       "community": 1,
       "norm_label": "composer()"
@@ -1681,7 +1735,7 @@
       "label": "ComposerAction()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L177",
+      "source_location": "L199",
       "id": "components_thread_composeraction",
       "community": 1,
       "norm_label": "composeraction()"
@@ -1690,7 +1744,7 @@
       "label": "MessageError()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L213",
+      "source_location": "L235",
       "id": "components_thread_messageerror",
       "community": 1,
       "norm_label": "messageerror()"
@@ -1699,7 +1753,7 @@
       "label": "AssistantMessage()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L223",
+      "source_location": "L245",
       "id": "components_thread_assistantmessage",
       "community": 1,
       "norm_label": "assistantmessage()"
@@ -1708,7 +1762,7 @@
       "label": "AssistantActionBar()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L301",
+      "source_location": "L323",
       "id": "components_thread_assistantactionbar",
       "community": 1,
       "norm_label": "assistantactionbar()"
@@ -1717,7 +1771,7 @@
       "label": "UserMessage()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L349",
+      "source_location": "L371",
       "id": "components_thread_usermessage",
       "community": 1,
       "norm_label": "usermessage()"
@@ -1726,7 +1780,7 @@
       "label": "UserActionBar()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L375",
+      "source_location": "L397",
       "id": "components_thread_useractionbar",
       "community": 1,
       "norm_label": "useractionbar()"
@@ -1735,7 +1789,7 @@
       "label": "EditComposer()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L379",
+      "source_location": "L401",
       "id": "components_thread_editcomposer",
       "community": 1,
       "norm_label": "editcomposer()"
@@ -1744,7 +1798,7 @@
       "label": "BranchPicker()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L405",
+      "source_location": "L427",
       "id": "components_thread_branchpicker",
       "community": 1,
       "norm_label": "branchpicker()"
@@ -1755,7 +1809,7 @@
       "source_file": "components/threadlist-sidebar.tsx",
       "source_location": "L1",
       "id": "components_threadlist_sidebar_tsx",
-      "community": 0,
+      "community": 46,
       "norm_label": "threadlist-sidebar.tsx"
     },
     {
@@ -1764,16 +1818,34 @@
       "source_file": "components/threadlist-sidebar.tsx",
       "source_location": "L20",
       "id": "components_threadlist_sidebar_props",
-      "community": 0,
+      "community": 46,
       "norm_label": "props"
+    },
+    {
+      "label": "ConversationGroup",
+      "file_type": "code",
+      "source_file": "components/threadlist-sidebar.tsx",
+      "source_location": "L30",
+      "id": "components_threadlist_sidebar_conversationgroup",
+      "community": 46,
+      "norm_label": "conversationgroup"
+    },
+    {
+      "label": "groupConversationsByDate()",
+      "file_type": "code",
+      "source_file": "components/threadlist-sidebar.tsx",
+      "source_location": "L35",
+      "id": "components_threadlist_sidebar_groupconversationsbydate",
+      "community": 46,
+      "norm_label": "groupconversationsbydate()"
     },
     {
       "label": "ThreadListSidebar()",
       "file_type": "code",
       "source_file": "components/threadlist-sidebar.tsx",
-      "source_location": "L30",
+      "source_location": "L73",
       "id": "components_threadlist_sidebar_threadlistsidebar",
-      "community": 44,
+      "community": 46,
       "norm_label": "threadlistsidebar()"
     },
     {
@@ -1782,7 +1854,7 @@
       "source_file": "components/tool-fallback.tsx",
       "source_location": "L1",
       "id": "components_tool_fallback_tsx",
-      "community": 24,
+      "community": 22,
       "norm_label": "tool-fallback.tsx"
     },
     {
@@ -1791,7 +1863,7 @@
       "source_file": "components/tool-fallback.tsx",
       "source_location": "L25",
       "id": "components_tool_fallback_toolfallbackrootprops",
-      "community": 24,
+      "community": 22,
       "norm_label": "toolfallbackrootprops"
     },
     {
@@ -1800,7 +1872,7 @@
       "source_file": "components/tool-fallback.tsx",
       "source_location": "L34",
       "id": "components_tool_fallback_toolfallbackroot",
-      "community": 24,
+      "community": 22,
       "norm_label": "toolfallbackroot()"
     },
     {
@@ -1809,7 +1881,7 @@
       "source_file": "components/tool-fallback.tsx",
       "source_location": "L84",
       "id": "components_tool_fallback_toolstatus",
-      "community": 24,
+      "community": 22,
       "norm_label": "toolstatus"
     },
     {
@@ -1818,7 +1890,7 @@
       "source_file": "components/tool-fallback.tsx",
       "source_location": "L86",
       "id": "components_tool_fallback_statusiconmap",
-      "community": 24,
+      "community": 22,
       "norm_label": "statusiconmap"
     },
     {
@@ -1827,7 +1899,7 @@
       "source_file": "components/tool-fallback.tsx",
       "source_location": "L93",
       "id": "components_tool_fallback_toolfallbacktrigger",
-      "community": 24,
+      "community": 22,
       "norm_label": "toolfallbacktrigger()"
     },
     {
@@ -1836,7 +1908,7 @@
       "source_file": "components/tool-fallback.tsx",
       "source_location": "L160",
       "id": "components_tool_fallback_toolfallbackcontent",
-      "community": 24,
+      "community": 22,
       "norm_label": "toolfallbackcontent()"
     },
     {
@@ -1845,7 +1917,7 @@
       "source_file": "components/tool-fallback.tsx",
       "source_location": "L186",
       "id": "components_tool_fallback_toolfallbackargs",
-      "community": 24,
+      "community": 22,
       "norm_label": "toolfallbackargs()"
     },
     {
@@ -1854,7 +1926,7 @@
       "source_file": "components/tool-fallback.tsx",
       "source_location": "L208",
       "id": "components_tool_fallback_toolfallbackresult",
-      "community": 24,
+      "community": 22,
       "norm_label": "toolfallbackresult()"
     },
     {
@@ -1863,7 +1935,7 @@
       "source_file": "components/tool-fallback.tsx",
       "source_location": "L234",
       "id": "components_tool_fallback_toolfallbackerror",
-      "community": 24,
+      "community": 22,
       "norm_label": "toolfallbackerror()"
     },
     {
@@ -1872,7 +1944,7 @@
       "source_file": "components/tool-fallback.tsx",
       "source_location": "L271",
       "id": "components_tool_fallback_toolfallbackimpl",
-      "community": 24,
+      "community": 22,
       "norm_label": "toolfallbackimpl()"
     },
     {
@@ -1881,7 +1953,7 @@
       "source_file": "components/tool-fallback.tsx",
       "source_location": "L297",
       "id": "components_tool_fallback_toolfallback",
-      "community": 24,
+      "community": 22,
       "norm_label": "toolfallback"
     },
     {
@@ -1971,7 +2043,7 @@
       "source_file": "components/tooltip-icon-button.tsx",
       "source_location": "L1",
       "id": "components_tooltip_icon_button_tsx",
-      "community": 2,
+      "community": 47,
       "norm_label": "tooltip-icon-button.tsx"
     },
     {
@@ -1980,7 +2052,7 @@
       "source_file": "components/tooltip-icon-button.tsx",
       "source_location": "L14",
       "id": "components_tooltip_icon_button_tooltipiconbuttonprops",
-      "community": 2,
+      "community": 47,
       "norm_label": "tooltipiconbuttonprops"
     },
     {
@@ -1991,6 +2063,33 @@
       "id": "components_tooltip_icon_button_tooltipiconbutton",
       "community": 25,
       "norm_label": "tooltipiconbutton"
+    },
+    {
+      "label": "typing-indicator.tsx",
+      "file_type": "code",
+      "source_file": "components/typing-indicator.tsx",
+      "source_location": "L1",
+      "id": "components_typing_indicator_tsx",
+      "community": 1,
+      "norm_label": "typing-indicator.tsx"
+    },
+    {
+      "label": "TypingIndicatorProps",
+      "file_type": "code",
+      "source_file": "components/typing-indicator.tsx",
+      "source_location": "L5",
+      "id": "components_typing_indicator_typingindicatorprops",
+      "community": 1,
+      "norm_label": "typingindicatorprops"
+    },
+    {
+      "label": "TypingIndicator()",
+      "file_type": "code",
+      "source_file": "components/typing-indicator.tsx",
+      "source_location": "L9",
+      "id": "components_typing_indicator_typingindicator",
+      "community": 1,
+      "norm_label": "typingindicator()"
     },
     {
       "label": "avatar.tsx",
@@ -2133,7 +2232,7 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L1",
       "id": "components_ui_button_tsx",
-      "community": 0,
+      "community": 47,
       "norm_label": "button.tsx"
     },
     {
@@ -2142,7 +2241,7 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L7",
       "id": "ui_button_buttonvariants",
-      "community": 0,
+      "community": 47,
       "norm_label": "buttonvariants"
     },
     {
@@ -2151,7 +2250,7 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L41",
       "id": "ui_button_button",
-      "community": 0,
+      "community": 47,
       "norm_label": "button()"
     },
     {
@@ -2331,7 +2430,7 @@
       "source_file": "components/ui/sheet.tsx",
       "source_location": "L1",
       "id": "components_ui_sheet_tsx",
-      "community": 0,
+      "community": 48,
       "norm_label": "sheet.tsx"
     },
     {
@@ -2340,7 +2439,7 @@
       "source_file": "components/ui/sheet.tsx",
       "source_location": "L9",
       "id": "ui_sheet_sheet",
-      "community": 0,
+      "community": 48,
       "norm_label": "sheet()"
     },
     {
@@ -2349,7 +2448,7 @@
       "source_file": "components/ui/sheet.tsx",
       "source_location": "L13",
       "id": "ui_sheet_sheettrigger",
-      "community": 0,
+      "community": 48,
       "norm_label": "sheettrigger()"
     },
     {
@@ -2358,7 +2457,7 @@
       "source_file": "components/ui/sheet.tsx",
       "source_location": "L19",
       "id": "ui_sheet_sheetclose",
-      "community": 0,
+      "community": 48,
       "norm_label": "sheetclose()"
     },
     {
@@ -2367,7 +2466,7 @@
       "source_file": "components/ui/sheet.tsx",
       "source_location": "L25",
       "id": "ui_sheet_sheetportal",
-      "community": 0,
+      "community": 48,
       "norm_label": "sheetportal()"
     },
     {
@@ -2376,7 +2475,7 @@
       "source_file": "components/ui/sheet.tsx",
       "source_location": "L31",
       "id": "ui_sheet_sheetoverlay",
-      "community": 0,
+      "community": 48,
       "norm_label": "sheetoverlay()"
     },
     {
@@ -2385,7 +2484,7 @@
       "source_file": "components/ui/sheet.tsx",
       "source_location": "L47",
       "id": "ui_sheet_sheetcontent",
-      "community": 0,
+      "community": 48,
       "norm_label": "sheetcontent()"
     },
     {
@@ -2394,7 +2493,7 @@
       "source_file": "components/ui/sheet.tsx",
       "source_location": "L88",
       "id": "ui_sheet_sheetheader",
-      "community": 0,
+      "community": 48,
       "norm_label": "sheetheader()"
     },
     {
@@ -2403,7 +2502,7 @@
       "source_file": "components/ui/sheet.tsx",
       "source_location": "L98",
       "id": "ui_sheet_sheetfooter",
-      "community": 0,
+      "community": 48,
       "norm_label": "sheetfooter()"
     },
     {
@@ -2412,7 +2511,7 @@
       "source_file": "components/ui/sheet.tsx",
       "source_location": "L108",
       "id": "ui_sheet_sheettitle",
-      "community": 0,
+      "community": 48,
       "norm_label": "sheettitle()"
     },
     {
@@ -2421,7 +2520,7 @@
       "source_file": "components/ui/sheet.tsx",
       "source_location": "L121",
       "id": "ui_sheet_sheetdescription",
-      "community": 0,
+      "community": 48,
       "norm_label": "sheetdescription()"
     },
     {
@@ -2502,7 +2601,7 @@
       "source_file": "components/ui/sidebar.tsx",
       "source_location": "L306",
       "id": "ui_sidebar_sidebarinset",
-      "community": 0,
+      "community": 44,
       "norm_label": "sidebarinset()"
     },
     {
@@ -2520,7 +2619,7 @@
       "source_file": "components/ui/sidebar.tsx",
       "source_location": "L334",
       "id": "ui_sidebar_sidebarheader",
-      "community": 0,
+      "community": 46,
       "norm_label": "sidebarheader()"
     },
     {
@@ -2529,7 +2628,7 @@
       "source_file": "components/ui/sidebar.tsx",
       "source_location": "L345",
       "id": "ui_sidebar_sidebarfooter",
-      "community": 0,
+      "community": 46,
       "norm_label": "sidebarfooter()"
     },
     {
@@ -2547,7 +2646,7 @@
       "source_file": "components/ui/sidebar.tsx",
       "source_location": "L370",
       "id": "ui_sidebar_sidebarcontent",
-      "community": 0,
+      "community": 46,
       "norm_label": "sidebarcontent()"
     },
     {
@@ -2592,7 +2691,7 @@
       "source_file": "components/ui/sidebar.tsx",
       "source_location": "L453",
       "id": "ui_sidebar_sidebarmenu",
-      "community": 0,
+      "community": 46,
       "norm_label": "sidebarmenu()"
     },
     {
@@ -2601,7 +2700,7 @@
       "source_file": "components/ui/sidebar.tsx",
       "source_location": "L464",
       "id": "ui_sidebar_sidebarmenuitem",
-      "community": 0,
+      "community": 46,
       "norm_label": "sidebarmenuitem()"
     },
     {
@@ -2682,7 +2781,7 @@
       "source_file": "components/ui/skeleton.tsx",
       "source_location": "L1",
       "id": "components_ui_skeleton_tsx",
-      "community": 0,
+      "community": 51,
       "norm_label": "skeleton.tsx"
     },
     {
@@ -2691,7 +2790,7 @@
       "source_file": "components/ui/skeleton.tsx",
       "source_location": "L3",
       "id": "ui_skeleton_skeleton",
-      "community": 0,
+      "community": 51,
       "norm_label": "skeleton()"
     },
     {
@@ -2700,7 +2799,7 @@
       "source_file": "components/ui/tooltip.tsx",
       "source_location": "L1",
       "id": "components_ui_tooltip_tsx",
-      "community": 2,
+      "community": 47,
       "norm_label": "tooltip.tsx"
     },
     {
@@ -2709,7 +2808,7 @@
       "source_file": "components/ui/tooltip.tsx",
       "source_location": "L8",
       "id": "ui_tooltip_tooltipprovider",
-      "community": 2,
+      "community": 47,
       "norm_label": "tooltipprovider()"
     },
     {
@@ -2718,7 +2817,7 @@
       "source_file": "components/ui/tooltip.tsx",
       "source_location": "L21",
       "id": "ui_tooltip_tooltip",
-      "community": 2,
+      "community": 47,
       "norm_label": "tooltip()"
     },
     {
@@ -2727,7 +2826,7 @@
       "source_file": "components/ui/tooltip.tsx",
       "source_location": "L27",
       "id": "ui_tooltip_tooltiptrigger",
-      "community": 2,
+      "community": 47,
       "norm_label": "tooltiptrigger()"
     },
     {
@@ -2736,7 +2835,7 @@
       "source_file": "components/ui/tooltip.tsx",
       "source_location": "L33",
       "id": "ui_tooltip_tooltipcontent",
-      "community": 2,
+      "community": 47,
       "norm_label": "tooltipcontent()"
     },
     {
@@ -4189,6 +4288,1464 @@
       "norm_label": "tables"
     },
     {
+      "label": "0001_snapshot.json",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L1",
+      "id": "drizzle_migrations_meta_0001_snapshot_json",
+      "community": 24,
+      "norm_label": "0001_snapshot.json"
+    },
+    {
+      "label": "id",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L2",
+      "id": "meta_0001_snapshot_id",
+      "community": 24,
+      "norm_label": "id"
+    },
+    {
+      "label": "prevId",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L3",
+      "id": "meta_0001_snapshot_previd",
+      "community": 24,
+      "norm_label": "previd"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L4",
+      "id": "meta_0001_snapshot_version",
+      "community": 24,
+      "norm_label": "version"
+    },
+    {
+      "label": "dialect",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L5",
+      "id": "meta_0001_snapshot_dialect",
+      "community": 24,
+      "norm_label": "dialect"
+    },
+    {
+      "label": "tables",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L6",
+      "id": "meta_0001_snapshot_tables",
+      "community": 24,
+      "norm_label": "tables"
+    },
+    {
+      "label": "public.conversations",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L7",
+      "id": "meta_0001_snapshot_tables_public_conversations",
+      "community": 24,
+      "norm_label": "public.conversations"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L8",
+      "id": "meta_0001_snapshot_public_conversations_name",
+      "community": 24,
+      "norm_label": "name"
+    },
+    {
+      "label": "schema",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L9",
+      "id": "meta_0001_snapshot_public_conversations_schema",
+      "community": 24,
+      "norm_label": "schema"
+    },
+    {
+      "label": "columns",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L10",
+      "id": "meta_0001_snapshot_public_conversations_columns",
+      "community": 50,
+      "norm_label": "columns"
+    },
+    {
+      "label": "id",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L11",
+      "id": "meta_0001_snapshot_columns_id",
+      "community": 53,
+      "norm_label": "id"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L12",
+      "id": "meta_0001_snapshot_id_name",
+      "community": 53,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L13",
+      "id": "meta_0001_snapshot_id_type",
+      "community": 53,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L14",
+      "id": "meta_0001_snapshot_id_primarykey",
+      "community": 53,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L15",
+      "id": "meta_0001_snapshot_id_notnull",
+      "community": 53,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "default",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L16",
+      "id": "meta_0001_snapshot_id_default",
+      "community": 53,
+      "norm_label": "default"
+    },
+    {
+      "label": "title",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L18",
+      "id": "meta_0001_snapshot_columns_title",
+      "community": 50,
+      "norm_label": "title"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L19",
+      "id": "meta_0001_snapshot_title_name",
+      "community": 50,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L20",
+      "id": "meta_0001_snapshot_title_type",
+      "community": 50,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L21",
+      "id": "meta_0001_snapshot_title_primarykey",
+      "community": 50,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L22",
+      "id": "meta_0001_snapshot_title_notnull",
+      "community": 50,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "status",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L24",
+      "id": "meta_0001_snapshot_columns_status",
+      "community": 55,
+      "norm_label": "status"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L25",
+      "id": "meta_0001_snapshot_status_name",
+      "community": 55,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L26",
+      "id": "meta_0001_snapshot_status_type",
+      "community": 55,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L27",
+      "id": "meta_0001_snapshot_status_primarykey",
+      "community": 55,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L28",
+      "id": "meta_0001_snapshot_status_notnull",
+      "community": 55,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "model",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L30",
+      "id": "meta_0001_snapshot_columns_model",
+      "community": 50,
+      "norm_label": "model"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L31",
+      "id": "meta_0001_snapshot_model_name",
+      "community": 50,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L32",
+      "id": "meta_0001_snapshot_model_type",
+      "community": 50,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L33",
+      "id": "meta_0001_snapshot_model_primarykey",
+      "community": 50,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L34",
+      "id": "meta_0001_snapshot_model_notnull",
+      "community": 50,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "provider",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L36",
+      "id": "meta_0001_snapshot_columns_provider",
+      "community": 65,
+      "norm_label": "provider"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L37",
+      "id": "meta_0001_snapshot_provider_name",
+      "community": 65,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L38",
+      "id": "meta_0001_snapshot_provider_type",
+      "community": 65,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L39",
+      "id": "meta_0001_snapshot_provider_primarykey",
+      "community": 65,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L40",
+      "id": "meta_0001_snapshot_provider_notnull",
+      "community": 65,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "created_at",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L42",
+      "id": "meta_0001_snapshot_columns_created_at",
+      "community": 52,
+      "norm_label": "created_at"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L43",
+      "id": "meta_0001_snapshot_created_at_name",
+      "community": 52,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L44",
+      "id": "meta_0001_snapshot_created_at_type",
+      "community": 52,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L45",
+      "id": "meta_0001_snapshot_created_at_primarykey",
+      "community": 52,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L46",
+      "id": "meta_0001_snapshot_created_at_notnull",
+      "community": 52,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "default",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L47",
+      "id": "meta_0001_snapshot_created_at_default",
+      "community": 52,
+      "norm_label": "default"
+    },
+    {
+      "label": "updated_at",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L49",
+      "id": "meta_0001_snapshot_columns_updated_at",
+      "community": 56,
+      "norm_label": "updated_at"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L50",
+      "id": "meta_0001_snapshot_updated_at_name",
+      "community": 56,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L51",
+      "id": "meta_0001_snapshot_updated_at_type",
+      "community": 56,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L52",
+      "id": "meta_0001_snapshot_updated_at_primarykey",
+      "community": 56,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L53",
+      "id": "meta_0001_snapshot_updated_at_notnull",
+      "community": 56,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "default",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L54",
+      "id": "meta_0001_snapshot_updated_at_default",
+      "community": 56,
+      "norm_label": "default"
+    },
+    {
+      "label": "indexes",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L57",
+      "id": "meta_0001_snapshot_public_conversations_indexes",
+      "community": 24,
+      "norm_label": "indexes"
+    },
+    {
+      "label": "foreignKeys",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L58",
+      "id": "meta_0001_snapshot_public_conversations_foreignkeys",
+      "community": 24,
+      "norm_label": "foreignkeys"
+    },
+    {
+      "label": "compositePrimaryKeys",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L59",
+      "id": "meta_0001_snapshot_public_conversations_compositeprimarykeys",
+      "community": 24,
+      "norm_label": "compositeprimarykeys"
+    },
+    {
+      "label": "uniqueConstraints",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L60",
+      "id": "meta_0001_snapshot_public_conversations_uniqueconstraints",
+      "community": 24,
+      "norm_label": "uniqueconstraints"
+    },
+    {
+      "label": "policies",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L61",
+      "id": "meta_0001_snapshot_public_conversations_policies",
+      "community": 24,
+      "norm_label": "policies"
+    },
+    {
+      "label": "checkConstraints",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L62",
+      "id": "meta_0001_snapshot_public_conversations_checkconstraints",
+      "community": 24,
+      "norm_label": "checkconstraints"
+    },
+    {
+      "label": "isRLSEnabled",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L63",
+      "id": "meta_0001_snapshot_public_conversations_isrlsenabled",
+      "community": 24,
+      "norm_label": "isrlsenabled"
+    },
+    {
+      "label": "public.inference_logs",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L65",
+      "id": "meta_0001_snapshot_tables_public_inference_logs",
+      "community": 45,
+      "norm_label": "public.inference_logs"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L66",
+      "id": "meta_0001_snapshot_public_inference_logs_name",
+      "community": 45,
+      "norm_label": "name"
+    },
+    {
+      "label": "schema",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L67",
+      "id": "meta_0001_snapshot_public_inference_logs_schema",
+      "community": 45,
+      "norm_label": "schema"
+    },
+    {
+      "label": "columns",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L68",
+      "id": "meta_0001_snapshot_public_inference_logs_columns",
+      "community": 54,
+      "norm_label": "columns"
+    },
+    {
+      "label": "conversation_id",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L76",
+      "id": "meta_0001_snapshot_columns_conversation_id",
+      "community": 58,
+      "norm_label": "conversation_id"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L77",
+      "id": "meta_0001_snapshot_conversation_id_name",
+      "community": 58,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L78",
+      "id": "meta_0001_snapshot_conversation_id_type",
+      "community": 58,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L79",
+      "id": "meta_0001_snapshot_conversation_id_primarykey",
+      "community": 58,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L80",
+      "id": "meta_0001_snapshot_conversation_id_notnull",
+      "community": 58,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "message_id",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L82",
+      "id": "meta_0001_snapshot_columns_message_id",
+      "community": 54,
+      "norm_label": "message_id"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L83",
+      "id": "meta_0001_snapshot_message_id_name",
+      "community": 54,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L84",
+      "id": "meta_0001_snapshot_message_id_type",
+      "community": 54,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L85",
+      "id": "meta_0001_snapshot_message_id_primarykey",
+      "community": 54,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L86",
+      "id": "meta_0001_snapshot_message_id_notnull",
+      "community": 54,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "latency_ms",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L100",
+      "id": "meta_0001_snapshot_columns_latency_ms",
+      "community": 62,
+      "norm_label": "latency_ms"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L101",
+      "id": "meta_0001_snapshot_latency_ms_name",
+      "community": 62,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L102",
+      "id": "meta_0001_snapshot_latency_ms_type",
+      "community": 62,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L103",
+      "id": "meta_0001_snapshot_latency_ms_primarykey",
+      "community": 62,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L104",
+      "id": "meta_0001_snapshot_latency_ms_notnull",
+      "community": 62,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "input_tokens",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L106",
+      "id": "meta_0001_snapshot_columns_input_tokens",
+      "community": 61,
+      "norm_label": "input_tokens"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L107",
+      "id": "meta_0001_snapshot_input_tokens_name",
+      "community": 61,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L108",
+      "id": "meta_0001_snapshot_input_tokens_type",
+      "community": 61,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L109",
+      "id": "meta_0001_snapshot_input_tokens_primarykey",
+      "community": 61,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L110",
+      "id": "meta_0001_snapshot_input_tokens_notnull",
+      "community": 61,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "output_tokens",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L112",
+      "id": "meta_0001_snapshot_columns_output_tokens",
+      "community": 64,
+      "norm_label": "output_tokens"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L113",
+      "id": "meta_0001_snapshot_output_tokens_name",
+      "community": 64,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L114",
+      "id": "meta_0001_snapshot_output_tokens_type",
+      "community": 64,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L115",
+      "id": "meta_0001_snapshot_output_tokens_primarykey",
+      "community": 64,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L116",
+      "id": "meta_0001_snapshot_output_tokens_notnull",
+      "community": 64,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "error_message",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L124",
+      "id": "meta_0001_snapshot_columns_error_message",
+      "community": 59,
+      "norm_label": "error_message"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L125",
+      "id": "meta_0001_snapshot_error_message_name",
+      "community": 59,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L126",
+      "id": "meta_0001_snapshot_error_message_type",
+      "community": 59,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L127",
+      "id": "meta_0001_snapshot_error_message_primarykey",
+      "community": 59,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L128",
+      "id": "meta_0001_snapshot_error_message_notnull",
+      "community": 59,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "input_preview",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L130",
+      "id": "meta_0001_snapshot_columns_input_preview",
+      "community": 60,
+      "norm_label": "input_preview"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L131",
+      "id": "meta_0001_snapshot_input_preview_name",
+      "community": 60,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L132",
+      "id": "meta_0001_snapshot_input_preview_type",
+      "community": 60,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L133",
+      "id": "meta_0001_snapshot_input_preview_primarykey",
+      "community": 60,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L134",
+      "id": "meta_0001_snapshot_input_preview_notnull",
+      "community": 60,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "output_preview",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L136",
+      "id": "meta_0001_snapshot_columns_output_preview",
+      "community": 63,
+      "norm_label": "output_preview"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L137",
+      "id": "meta_0001_snapshot_output_preview_name",
+      "community": 63,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L138",
+      "id": "meta_0001_snapshot_output_preview_type",
+      "community": 63,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L139",
+      "id": "meta_0001_snapshot_output_preview_primarykey",
+      "community": 63,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L140",
+      "id": "meta_0001_snapshot_output_preview_notnull",
+      "community": 63,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "indexes",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L150",
+      "id": "meta_0001_snapshot_public_inference_logs_indexes",
+      "community": 45,
+      "norm_label": "indexes"
+    },
+    {
+      "label": "foreignKeys",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L151",
+      "id": "meta_0001_snapshot_public_inference_logs_foreignkeys",
+      "community": 45,
+      "norm_label": "foreignkeys"
+    },
+    {
+      "label": "inference_logs_conversation_id_conversations_id_fk",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L152",
+      "id": "meta_0001_snapshot_foreignkeys_inference_logs_conversation_id_conversations_id_fk",
+      "community": 45,
+      "norm_label": "inference_logs_conversation_id_conversations_id_fk"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L153",
+      "id": "meta_0001_snapshot_inference_logs_conversation_id_conversations_id_fk_name",
+      "community": 45,
+      "norm_label": "name"
+    },
+    {
+      "label": "tableFrom",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L154",
+      "id": "meta_0001_snapshot_inference_logs_conversation_id_conversations_id_fk_tablefrom",
+      "community": 45,
+      "norm_label": "tablefrom"
+    },
+    {
+      "label": "tableTo",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L155",
+      "id": "meta_0001_snapshot_inference_logs_conversation_id_conversations_id_fk_tableto",
+      "community": 45,
+      "norm_label": "tableto"
+    },
+    {
+      "label": "columnsFrom",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L156",
+      "id": "meta_0001_snapshot_inference_logs_conversation_id_conversations_id_fk_columnsfrom",
+      "community": 45,
+      "norm_label": "columnsfrom"
+    },
+    {
+      "label": "columnsTo",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L159",
+      "id": "meta_0001_snapshot_inference_logs_conversation_id_conversations_id_fk_columnsto",
+      "community": 45,
+      "norm_label": "columnsto"
+    },
+    {
+      "label": "onDelete",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L162",
+      "id": "meta_0001_snapshot_inference_logs_conversation_id_conversations_id_fk_ondelete",
+      "community": 45,
+      "norm_label": "ondelete"
+    },
+    {
+      "label": "onUpdate",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L163",
+      "id": "meta_0001_snapshot_inference_logs_conversation_id_conversations_id_fk_onupdate",
+      "community": 45,
+      "norm_label": "onupdate"
+    },
+    {
+      "label": "inference_logs_message_id_messages_id_fk",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L165",
+      "id": "meta_0001_snapshot_foreignkeys_inference_logs_message_id_messages_id_fk",
+      "community": 45,
+      "norm_label": "inference_logs_message_id_messages_id_fk"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L166",
+      "id": "meta_0001_snapshot_inference_logs_message_id_messages_id_fk_name",
+      "community": 45,
+      "norm_label": "name"
+    },
+    {
+      "label": "tableFrom",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L167",
+      "id": "meta_0001_snapshot_inference_logs_message_id_messages_id_fk_tablefrom",
+      "community": 45,
+      "norm_label": "tablefrom"
+    },
+    {
+      "label": "tableTo",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L168",
+      "id": "meta_0001_snapshot_inference_logs_message_id_messages_id_fk_tableto",
+      "community": 45,
+      "norm_label": "tableto"
+    },
+    {
+      "label": "columnsFrom",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L169",
+      "id": "meta_0001_snapshot_inference_logs_message_id_messages_id_fk_columnsfrom",
+      "community": 45,
+      "norm_label": "columnsfrom"
+    },
+    {
+      "label": "columnsTo",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L172",
+      "id": "meta_0001_snapshot_inference_logs_message_id_messages_id_fk_columnsto",
+      "community": 45,
+      "norm_label": "columnsto"
+    },
+    {
+      "label": "onDelete",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L175",
+      "id": "meta_0001_snapshot_inference_logs_message_id_messages_id_fk_ondelete",
+      "community": 45,
+      "norm_label": "ondelete"
+    },
+    {
+      "label": "onUpdate",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L176",
+      "id": "meta_0001_snapshot_inference_logs_message_id_messages_id_fk_onupdate",
+      "community": 45,
+      "norm_label": "onupdate"
+    },
+    {
+      "label": "compositePrimaryKeys",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L179",
+      "id": "meta_0001_snapshot_public_inference_logs_compositeprimarykeys",
+      "community": 45,
+      "norm_label": "compositeprimarykeys"
+    },
+    {
+      "label": "uniqueConstraints",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L180",
+      "id": "meta_0001_snapshot_public_inference_logs_uniqueconstraints",
+      "community": 45,
+      "norm_label": "uniqueconstraints"
+    },
+    {
+      "label": "policies",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L181",
+      "id": "meta_0001_snapshot_public_inference_logs_policies",
+      "community": 45,
+      "norm_label": "policies"
+    },
+    {
+      "label": "checkConstraints",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L182",
+      "id": "meta_0001_snapshot_public_inference_logs_checkconstraints",
+      "community": 45,
+      "norm_label": "checkconstraints"
+    },
+    {
+      "label": "isRLSEnabled",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L183",
+      "id": "meta_0001_snapshot_public_inference_logs_isrlsenabled",
+      "community": 45,
+      "norm_label": "isrlsenabled"
+    },
+    {
+      "label": "public.messages",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L185",
+      "id": "meta_0001_snapshot_tables_public_messages",
+      "community": 24,
+      "norm_label": "public.messages"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L186",
+      "id": "meta_0001_snapshot_public_messages_name",
+      "community": 24,
+      "norm_label": "name"
+    },
+    {
+      "label": "schema",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L187",
+      "id": "meta_0001_snapshot_public_messages_schema",
+      "community": 24,
+      "norm_label": "schema"
+    },
+    {
+      "label": "columns",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L188",
+      "id": "meta_0001_snapshot_public_messages_columns",
+      "community": 49,
+      "norm_label": "columns"
+    },
+    {
+      "label": "role",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L202",
+      "id": "meta_0001_snapshot_columns_role",
+      "community": 49,
+      "norm_label": "role"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L203",
+      "id": "meta_0001_snapshot_role_name",
+      "community": 49,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L204",
+      "id": "meta_0001_snapshot_role_type",
+      "community": 49,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L205",
+      "id": "meta_0001_snapshot_role_primarykey",
+      "community": 49,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L206",
+      "id": "meta_0001_snapshot_role_notnull",
+      "community": 49,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "content",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L208",
+      "id": "meta_0001_snapshot_columns_content",
+      "community": 49,
+      "norm_label": "content"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L209",
+      "id": "meta_0001_snapshot_content_name",
+      "community": 49,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L210",
+      "id": "meta_0001_snapshot_content_type",
+      "community": 49,
+      "norm_label": "type"
+    },
+    {
+      "label": "primaryKey",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L211",
+      "id": "meta_0001_snapshot_content_primarykey",
+      "community": 49,
+      "norm_label": "primarykey"
+    },
+    {
+      "label": "notNull",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L212",
+      "id": "meta_0001_snapshot_content_notnull",
+      "community": 49,
+      "norm_label": "notnull"
+    },
+    {
+      "label": "default",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L219",
+      "id": "meta_0001_snapshot_status_default",
+      "community": 55,
+      "norm_label": "default"
+    },
+    {
+      "label": "indexes",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L229",
+      "id": "meta_0001_snapshot_public_messages_indexes",
+      "community": 24,
+      "norm_label": "indexes"
+    },
+    {
+      "label": "foreignKeys",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L230",
+      "id": "meta_0001_snapshot_public_messages_foreignkeys",
+      "community": 24,
+      "norm_label": "foreignkeys"
+    },
+    {
+      "label": "messages_conversation_id_conversations_id_fk",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L231",
+      "id": "meta_0001_snapshot_foreignkeys_messages_conversation_id_conversations_id_fk",
+      "community": 24,
+      "norm_label": "messages_conversation_id_conversations_id_fk"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L232",
+      "id": "meta_0001_snapshot_messages_conversation_id_conversations_id_fk_name",
+      "community": 24,
+      "norm_label": "name"
+    },
+    {
+      "label": "tableFrom",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L233",
+      "id": "meta_0001_snapshot_messages_conversation_id_conversations_id_fk_tablefrom",
+      "community": 24,
+      "norm_label": "tablefrom"
+    },
+    {
+      "label": "tableTo",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L234",
+      "id": "meta_0001_snapshot_messages_conversation_id_conversations_id_fk_tableto",
+      "community": 24,
+      "norm_label": "tableto"
+    },
+    {
+      "label": "columnsFrom",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L235",
+      "id": "meta_0001_snapshot_messages_conversation_id_conversations_id_fk_columnsfrom",
+      "community": 24,
+      "norm_label": "columnsfrom"
+    },
+    {
+      "label": "columnsTo",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L238",
+      "id": "meta_0001_snapshot_messages_conversation_id_conversations_id_fk_columnsto",
+      "community": 24,
+      "norm_label": "columnsto"
+    },
+    {
+      "label": "onDelete",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L241",
+      "id": "meta_0001_snapshot_messages_conversation_id_conversations_id_fk_ondelete",
+      "community": 24,
+      "norm_label": "ondelete"
+    },
+    {
+      "label": "onUpdate",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L242",
+      "id": "meta_0001_snapshot_messages_conversation_id_conversations_id_fk_onupdate",
+      "community": 24,
+      "norm_label": "onupdate"
+    },
+    {
+      "label": "compositePrimaryKeys",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L245",
+      "id": "meta_0001_snapshot_public_messages_compositeprimarykeys",
+      "community": 24,
+      "norm_label": "compositeprimarykeys"
+    },
+    {
+      "label": "uniqueConstraints",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L246",
+      "id": "meta_0001_snapshot_public_messages_uniqueconstraints",
+      "community": 24,
+      "norm_label": "uniqueconstraints"
+    },
+    {
+      "label": "policies",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L247",
+      "id": "meta_0001_snapshot_public_messages_policies",
+      "community": 24,
+      "norm_label": "policies"
+    },
+    {
+      "label": "checkConstraints",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L248",
+      "id": "meta_0001_snapshot_public_messages_checkconstraints",
+      "community": 24,
+      "norm_label": "checkconstraints"
+    },
+    {
+      "label": "isRLSEnabled",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L249",
+      "id": "meta_0001_snapshot_public_messages_isrlsenabled",
+      "community": 24,
+      "norm_label": "isrlsenabled"
+    },
+    {
+      "label": "enums",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L252",
+      "id": "meta_0001_snapshot_enums",
+      "community": 24,
+      "norm_label": "enums"
+    },
+    {
+      "label": "schemas",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L253",
+      "id": "meta_0001_snapshot_schemas",
+      "community": 24,
+      "norm_label": "schemas"
+    },
+    {
+      "label": "sequences",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L254",
+      "id": "meta_0001_snapshot_sequences",
+      "community": 24,
+      "norm_label": "sequences"
+    },
+    {
+      "label": "roles",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L255",
+      "id": "meta_0001_snapshot_roles",
+      "community": 24,
+      "norm_label": "roles"
+    },
+    {
+      "label": "policies",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L256",
+      "id": "meta_0001_snapshot_policies",
+      "community": 24,
+      "norm_label": "policies"
+    },
+    {
+      "label": "views",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L257",
+      "id": "meta_0001_snapshot_views",
+      "community": 24,
+      "norm_label": "views"
+    },
+    {
+      "label": "_meta",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L258",
+      "id": "meta_0001_snapshot_meta",
+      "community": 24,
+      "norm_label": "_meta"
+    },
+    {
+      "label": "columns",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L259",
+      "id": "meta_0001_snapshot_meta_columns",
+      "community": 24,
+      "norm_label": "columns"
+    },
+    {
+      "label": "schemas",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L260",
+      "id": "meta_0001_snapshot_meta_schemas",
+      "community": 24,
+      "norm_label": "schemas"
+    },
+    {
+      "label": "tables",
+      "file_type": "code",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L261",
+      "id": "meta_0001_snapshot_meta_tables",
+      "community": 24,
+      "norm_label": "tables"
+    },
+    {
       "label": "_journal.json",
       "file_type": "code",
       "source_file": "drizzle/migrations/meta/_journal.json",
@@ -4248,7 +5805,7 @@
       "source_file": "lib/utils.ts",
       "source_location": "L1",
       "id": "lib_utils_ts",
-      "community": 0,
+      "community": 47,
       "norm_label": "utils.ts"
     },
     {
@@ -4306,6 +5863,15 @@
       "norm_label": "warnifoverbudget()"
     },
     {
+      "label": "buildInterruptionContext()",
+      "file_type": "code",
+      "source_file": "lib/ai/context.ts",
+      "source_location": "L48",
+      "id": "ai_context_buildinterruptioncontext",
+      "community": 5,
+      "norm_label": "buildinterruptioncontext()"
+    },
+    {
       "label": "models.ts",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
@@ -4318,7 +5884,7 @@
       "label": "ModelEntry",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L9",
+      "source_location": "L1",
       "id": "ai_models_modelentry",
       "community": 44,
       "norm_label": "modelentry"
@@ -4327,7 +5893,7 @@
       "label": "MODELS",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L15",
+      "source_location": "L7",
       "id": "ai_models_models",
       "community": 44,
       "norm_label": "models"
@@ -4336,7 +5902,7 @@
       "label": "VALID_MODELS",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L30",
+      "source_location": "L19",
       "id": "ai_models_valid_models",
       "community": 44,
       "norm_label": "valid_models"
@@ -4345,7 +5911,7 @@
       "label": "MODEL_LABELS",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L34",
+      "source_location": "L23",
       "id": "ai_models_model_labels",
       "community": 44,
       "norm_label": "model_labels"
@@ -4354,27 +5920,27 @@
       "label": "getModelsByProvider()",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L39",
+      "source_location": "L28",
       "id": "ai_models_getmodelsbyprovider",
-      "community": 44,
+      "community": 46,
       "norm_label": "getmodelsbyprovider()"
     },
     {
       "label": "isValidModel()",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L48",
+      "source_location": "L37",
       "id": "ai_models_isvalidmodel",
-      "community": 44,
+      "community": 5,
       "norm_label": "isvalidmodel()"
     },
     {
       "label": "resolveModel()",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L52",
+      "source_location": "L41",
       "id": "ai_models_resolvemodel",
-      "community": 44,
+      "community": 5,
       "norm_label": "resolvemodel()"
     },
     {
@@ -4495,6 +6061,15 @@
       "norm_label": "updateconversationtitle()"
     },
     {
+      "label": "updateMessageStatus()",
+      "file_type": "code",
+      "source_file": "lib/db/queries.ts",
+      "source_location": "L113",
+      "id": "db_queries_updatemessagestatus",
+      "community": 29,
+      "norm_label": "updatemessagestatus()"
+    },
+    {
       "label": "schema.ts",
       "file_type": "code",
       "source_file": "lib/db/schema.ts",
@@ -4525,7 +6100,7 @@
       "label": "inferenceLogs",
       "file_type": "code",
       "source_file": "lib/db/schema.ts",
-      "source_location": "L23",
+      "source_location": "L24",
       "id": "db_schema_inferencelogs",
       "community": 29,
       "norm_label": "inferencelogs"
@@ -4572,7 +6147,7 @@
       "source_file": "lib/pii/redact.ts",
       "source_location": "L1",
       "id": "lib_pii_redact_ts",
-      "community": 29,
+      "community": 5,
       "norm_label": "redact.ts"
     },
     {
@@ -4581,7 +6156,7 @@
       "source_file": "lib/pii/redact.ts",
       "source_location": "L1",
       "id": "pii_redact_redact",
-      "community": 29,
+      "community": 5,
       "norm_label": "redact()"
     },
     {
@@ -4741,7 +6316,7 @@
       "label": "useConversationStore",
       "file_type": "code",
       "source_file": "lib/store/conversation-store.ts",
-      "source_location": "L29",
+      "source_location": "L33",
       "id": "store_conversation_store_useconversationstore",
       "community": 44,
       "norm_label": "useconversationstore"
@@ -4752,7 +6327,7 @@
       "source_file": "worker/index.ts",
       "source_location": "L1",
       "id": "worker_index_ts",
-      "community": 29,
+      "community": 5,
       "norm_label": "index.ts"
     },
     {
@@ -4761,7 +6336,7 @@
       "source_file": "worker/index.ts",
       "source_location": "L7",
       "id": "worker_index_connection",
-      "community": 29,
+      "community": 5,
       "norm_label": "connection"
     },
     {
@@ -4770,7 +6345,7 @@
       "source_file": "worker/index.ts",
       "source_location": "L11",
       "id": "worker_index_worker",
-      "community": 29,
+      "community": 5,
       "norm_label": "worker"
     },
     {
@@ -4823,7 +6398,7 @@
       "file_type": "code",
       "source_file": "app/assistant.tsx",
       "source_location": "L31",
-      "community": 44,
+      "community": 46,
       "norm_label": "gemini_models",
       "id": "app_assistant_gemini_models"
     },
@@ -4850,7 +6425,7 @@
       "file_type": "code",
       "source_file": "worker/index.ts",
       "source_location": "L13",
-      "community": 29,
+      "community": 5,
       "norm_label": "redactpii()",
       "id": "worker_index_redactpii"
     },
@@ -5777,6 +7352,17 @@
       "source_file": "server.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "source": "server_ts",
+      "target": "ai_context_buildinterruptioncontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server.ts",
+      "source_location": "L5",
+      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "server_ts",
       "target": "ai_context_warnifoverbudget"
@@ -5956,11 +7542,41 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "server.ts",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "server_ts",
+      "target": "tf_ai_server_redispub",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server.ts",
       "source_location": "L25",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "server_ts",
       "target": "tf_ai_server_conversationid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server.ts",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "server_ts",
+      "target": "tf_ai_server_typing_nudge_messages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server.ts",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "server_ts",
+      "target": "tf_ai_server_computetokendelay",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5981,6 +7597,26 @@
       "confidence_score": 1.0,
       "source": "server_ts",
       "target": "tf_ai_server_send"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server.ts",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "server_ts",
+      "target": "tf_ai_server_cleartypingnudgetimer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server.ts",
+      "source_location": "L130",
+      "weight": 1.0,
+      "source": "server_ts",
+      "target": "tf_ai_server_starttypingnudgetimer",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -6077,6 +7713,17 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "server.ts",
+      "source_location": "L274",
+      "weight": 1.0,
+      "source": "tf_ai_server_streamairesponse",
+      "target": "tf_ai_server_computetokendelay",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server.ts",
       "source_location": "L87",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -6148,6 +7795,50 @@
       "confidence_score": 1.0,
       "source": "tf_ai_server_message",
       "target": "tf_ai_server_send"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server.ts",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "tf_ai_server_starttypingnudgetimer",
+      "target": "tf_ai_server_cleartypingnudgetimer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server.ts",
+      "source_location": "L449",
+      "weight": 1.0,
+      "source": "tf_ai_server_message",
+      "target": "tf_ai_server_cleartypingnudgetimer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server.ts",
+      "source_location": "L583",
+      "weight": 1.0,
+      "source": "tf_ai_server_close",
+      "target": "tf_ai_server_cleartypingnudgetimer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server.ts",
+      "source_location": "L438",
+      "weight": 1.0,
+      "source": "tf_ai_server_message",
+      "target": "tf_ai_server_starttypingnudgetimer",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -6258,6 +7949,17 @@
       "confidence_score": 1.0,
       "source": "tf_ai_server_streamairesponse",
       "target": "ai_context_buildcontextwindow"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server.ts",
+      "source_location": "L221",
+      "weight": 1.0,
+      "source": "tf_ai_server_streamairesponse",
+      "target": "ai_context_buildinterruptioncontext",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -8351,6 +10053,28 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/thread.tsx",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "components_thread_tsx",
+      "target": "components_typing_indicator_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/thread.tsx",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "components_thread_tsx",
+      "target": "components_typing_indicator_typingindicator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/thread.tsx",
       "source_location": "L21",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -8389,6 +10113,16 @@
       "confidence_score": 1.0,
       "source": "components_thread_tsx",
       "target": "lib_utils_cn"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/thread.tsx",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "components_thread_tsx",
+      "target": "components_thread_threadprops",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -8728,6 +10462,17 @@
       "target": "store_conversation_store_useconversationstore"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/threadlist-sidebar.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "components_threadlist_sidebar_tsx",
+      "target": "store_conversation_store_conversationmeta",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/threadlist-sidebar.tsx",
@@ -8736,6 +10481,26 @@
       "confidence_score": 1.0,
       "source": "components_threadlist_sidebar_tsx",
       "target": "components_threadlist_sidebar_props"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/threadlist-sidebar.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "components_threadlist_sidebar_tsx",
+      "target": "components_threadlist_sidebar_conversationgroup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/threadlist-sidebar.tsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "components_threadlist_sidebar_tsx",
+      "target": "components_threadlist_sidebar_groupconversationsbydate",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -8779,6 +10544,17 @@
       "confidence_score": 1.0,
       "source": "components_threadlist_sidebar_tsx",
       "target": "app_assistant_gemini_models"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "components/threadlist-sidebar.tsx",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "components_threadlist_sidebar_threadlistsidebar",
+      "target": "components_threadlist_sidebar_groupconversationsbydate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -9363,6 +11139,26 @@
       "confidence_score": 1.0,
       "source": "components_tooltip_icon_button_tsx",
       "target": "components_tooltip_icon_button_tooltipiconbutton"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/typing-indicator.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_typing_indicator_tsx",
+      "target": "components_typing_indicator_typingindicatorprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/typing-indicator.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "components_typing_indicator_tsx",
+      "target": "components_typing_indicator_typingindicator",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -12889,6 +14685,1706 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "drizzle_migrations_meta_0001_snapshot_json",
+      "target": "meta_0001_snapshot_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "drizzle_migrations_meta_0001_snapshot_json",
+      "target": "meta_0001_snapshot_previd",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "drizzle_migrations_meta_0001_snapshot_json",
+      "target": "meta_0001_snapshot_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "drizzle_migrations_meta_0001_snapshot_json",
+      "target": "meta_0001_snapshot_dialect",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "drizzle_migrations_meta_0001_snapshot_json",
+      "target": "meta_0001_snapshot_tables",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L252",
+      "weight": 1.0,
+      "source": "drizzle_migrations_meta_0001_snapshot_json",
+      "target": "meta_0001_snapshot_enums",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L253",
+      "weight": 1.0,
+      "source": "drizzle_migrations_meta_0001_snapshot_json",
+      "target": "meta_0001_snapshot_schemas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L254",
+      "weight": 1.0,
+      "source": "drizzle_migrations_meta_0001_snapshot_json",
+      "target": "meta_0001_snapshot_sequences",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L255",
+      "weight": 1.0,
+      "source": "drizzle_migrations_meta_0001_snapshot_json",
+      "target": "meta_0001_snapshot_roles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L256",
+      "weight": 1.0,
+      "source": "drizzle_migrations_meta_0001_snapshot_json",
+      "target": "meta_0001_snapshot_policies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L257",
+      "weight": 1.0,
+      "source": "drizzle_migrations_meta_0001_snapshot_json",
+      "target": "meta_0001_snapshot_views",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L258",
+      "weight": 1.0,
+      "source": "drizzle_migrations_meta_0001_snapshot_json",
+      "target": "meta_0001_snapshot_meta",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables",
+      "target": "meta_0001_snapshot_tables_public_conversations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables",
+      "target": "meta_0001_snapshot_tables_public_inference_logs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L185",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables",
+      "target": "meta_0001_snapshot_tables_public_messages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_conversations",
+      "target": "meta_0001_snapshot_public_conversations_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_conversations",
+      "target": "meta_0001_snapshot_public_conversations_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_conversations",
+      "target": "meta_0001_snapshot_public_conversations_columns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_conversations",
+      "target": "meta_0001_snapshot_public_conversations_indexes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_conversations",
+      "target": "meta_0001_snapshot_public_conversations_foreignkeys",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_conversations",
+      "target": "meta_0001_snapshot_public_conversations_compositeprimarykeys",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_conversations",
+      "target": "meta_0001_snapshot_public_conversations_uniqueconstraints",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_conversations",
+      "target": "meta_0001_snapshot_public_conversations_policies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_conversations",
+      "target": "meta_0001_snapshot_public_conversations_checkconstraints",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_conversations",
+      "target": "meta_0001_snapshot_public_conversations_isrlsenabled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_conversations_columns",
+      "target": "meta_0001_snapshot_columns_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_conversations_columns",
+      "target": "meta_0001_snapshot_columns_title",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_conversations_columns",
+      "target": "meta_0001_snapshot_columns_status",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_conversations_columns",
+      "target": "meta_0001_snapshot_columns_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_conversations_columns",
+      "target": "meta_0001_snapshot_columns_provider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_conversations_columns",
+      "target": "meta_0001_snapshot_columns_created_at",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_conversations_columns",
+      "target": "meta_0001_snapshot_columns_updated_at",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L190",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_id",
+      "target": "meta_0001_snapshot_id_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L191",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_id",
+      "target": "meta_0001_snapshot_id_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L192",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_id",
+      "target": "meta_0001_snapshot_id_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L193",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_id",
+      "target": "meta_0001_snapshot_id_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L194",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_id",
+      "target": "meta_0001_snapshot_id_default",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_inference_logs_columns",
+      "target": "meta_0001_snapshot_columns_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L189",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_messages_columns",
+      "target": "meta_0001_snapshot_columns_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_title",
+      "target": "meta_0001_snapshot_title_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_title",
+      "target": "meta_0001_snapshot_title_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_title",
+      "target": "meta_0001_snapshot_title_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_title",
+      "target": "meta_0001_snapshot_title_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L215",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_status",
+      "target": "meta_0001_snapshot_status_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L216",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_status",
+      "target": "meta_0001_snapshot_status_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L217",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_status",
+      "target": "meta_0001_snapshot_status_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L218",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_status",
+      "target": "meta_0001_snapshot_status_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_inference_logs_columns",
+      "target": "meta_0001_snapshot_columns_status",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L214",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_messages_columns",
+      "target": "meta_0001_snapshot_columns_status",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L219",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_status",
+      "target": "meta_0001_snapshot_status_default",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_model",
+      "target": "meta_0001_snapshot_model_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_model",
+      "target": "meta_0001_snapshot_model_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_model",
+      "target": "meta_0001_snapshot_model_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_model",
+      "target": "meta_0001_snapshot_model_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_inference_logs_columns",
+      "target": "meta_0001_snapshot_columns_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_provider",
+      "target": "meta_0001_snapshot_provider_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_provider",
+      "target": "meta_0001_snapshot_provider_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_provider",
+      "target": "meta_0001_snapshot_provider_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_provider",
+      "target": "meta_0001_snapshot_provider_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_inference_logs_columns",
+      "target": "meta_0001_snapshot_columns_provider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L222",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_created_at",
+      "target": "meta_0001_snapshot_created_at_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L223",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_created_at",
+      "target": "meta_0001_snapshot_created_at_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L224",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_created_at",
+      "target": "meta_0001_snapshot_created_at_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L225",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_created_at",
+      "target": "meta_0001_snapshot_created_at_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L226",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_created_at",
+      "target": "meta_0001_snapshot_created_at_default",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L142",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_inference_logs_columns",
+      "target": "meta_0001_snapshot_columns_created_at",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L221",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_messages_columns",
+      "target": "meta_0001_snapshot_columns_created_at",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_updated_at",
+      "target": "meta_0001_snapshot_updated_at_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_updated_at",
+      "target": "meta_0001_snapshot_updated_at_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_updated_at",
+      "target": "meta_0001_snapshot_updated_at_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_updated_at",
+      "target": "meta_0001_snapshot_updated_at_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_updated_at",
+      "target": "meta_0001_snapshot_updated_at_default",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_inference_logs",
+      "target": "meta_0001_snapshot_public_inference_logs_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_inference_logs",
+      "target": "meta_0001_snapshot_public_inference_logs_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_inference_logs",
+      "target": "meta_0001_snapshot_public_inference_logs_columns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L150",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_inference_logs",
+      "target": "meta_0001_snapshot_public_inference_logs_indexes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L151",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_inference_logs",
+      "target": "meta_0001_snapshot_public_inference_logs_foreignkeys",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L179",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_inference_logs",
+      "target": "meta_0001_snapshot_public_inference_logs_compositeprimarykeys",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L180",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_inference_logs",
+      "target": "meta_0001_snapshot_public_inference_logs_uniqueconstraints",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L181",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_inference_logs",
+      "target": "meta_0001_snapshot_public_inference_logs_policies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L182",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_inference_logs",
+      "target": "meta_0001_snapshot_public_inference_logs_checkconstraints",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L183",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_inference_logs",
+      "target": "meta_0001_snapshot_public_inference_logs_isrlsenabled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_inference_logs_columns",
+      "target": "meta_0001_snapshot_columns_conversation_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_inference_logs_columns",
+      "target": "meta_0001_snapshot_columns_message_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_inference_logs_columns",
+      "target": "meta_0001_snapshot_columns_latency_ms",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L106",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_inference_logs_columns",
+      "target": "meta_0001_snapshot_columns_input_tokens",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_inference_logs_columns",
+      "target": "meta_0001_snapshot_columns_output_tokens",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L124",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_inference_logs_columns",
+      "target": "meta_0001_snapshot_columns_error_message",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L130",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_inference_logs_columns",
+      "target": "meta_0001_snapshot_columns_input_preview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L136",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_inference_logs_columns",
+      "target": "meta_0001_snapshot_columns_output_preview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L197",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_conversation_id",
+      "target": "meta_0001_snapshot_conversation_id_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L198",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_conversation_id",
+      "target": "meta_0001_snapshot_conversation_id_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L199",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_conversation_id",
+      "target": "meta_0001_snapshot_conversation_id_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L200",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_conversation_id",
+      "target": "meta_0001_snapshot_conversation_id_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L196",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_messages_columns",
+      "target": "meta_0001_snapshot_columns_conversation_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_message_id",
+      "target": "meta_0001_snapshot_message_id_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_message_id",
+      "target": "meta_0001_snapshot_message_id_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_message_id",
+      "target": "meta_0001_snapshot_message_id_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_message_id",
+      "target": "meta_0001_snapshot_message_id_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_latency_ms",
+      "target": "meta_0001_snapshot_latency_ms_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_latency_ms",
+      "target": "meta_0001_snapshot_latency_ms_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_latency_ms",
+      "target": "meta_0001_snapshot_latency_ms_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_latency_ms",
+      "target": "meta_0001_snapshot_latency_ms_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_input_tokens",
+      "target": "meta_0001_snapshot_input_tokens_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_input_tokens",
+      "target": "meta_0001_snapshot_input_tokens_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_input_tokens",
+      "target": "meta_0001_snapshot_input_tokens_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L110",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_input_tokens",
+      "target": "meta_0001_snapshot_input_tokens_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L113",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_output_tokens",
+      "target": "meta_0001_snapshot_output_tokens_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_output_tokens",
+      "target": "meta_0001_snapshot_output_tokens_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_output_tokens",
+      "target": "meta_0001_snapshot_output_tokens_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L116",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_output_tokens",
+      "target": "meta_0001_snapshot_output_tokens_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_error_message",
+      "target": "meta_0001_snapshot_error_message_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L126",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_error_message",
+      "target": "meta_0001_snapshot_error_message_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_error_message",
+      "target": "meta_0001_snapshot_error_message_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L128",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_error_message",
+      "target": "meta_0001_snapshot_error_message_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_input_preview",
+      "target": "meta_0001_snapshot_input_preview_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L132",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_input_preview",
+      "target": "meta_0001_snapshot_input_preview_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L133",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_input_preview",
+      "target": "meta_0001_snapshot_input_preview_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_input_preview",
+      "target": "meta_0001_snapshot_input_preview_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L137",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_output_preview",
+      "target": "meta_0001_snapshot_output_preview_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L138",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_output_preview",
+      "target": "meta_0001_snapshot_output_preview_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_output_preview",
+      "target": "meta_0001_snapshot_output_preview_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L140",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_output_preview",
+      "target": "meta_0001_snapshot_output_preview_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L152",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_inference_logs_foreignkeys",
+      "target": "meta_0001_snapshot_foreignkeys_inference_logs_conversation_id_conversations_id_fk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L165",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_inference_logs_foreignkeys",
+      "target": "meta_0001_snapshot_foreignkeys_inference_logs_message_id_messages_id_fk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L153",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_inference_logs_conversation_id_conversations_id_fk",
+      "target": "meta_0001_snapshot_inference_logs_conversation_id_conversations_id_fk_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_inference_logs_conversation_id_conversations_id_fk",
+      "target": "meta_0001_snapshot_inference_logs_conversation_id_conversations_id_fk_tablefrom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L155",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_inference_logs_conversation_id_conversations_id_fk",
+      "target": "meta_0001_snapshot_inference_logs_conversation_id_conversations_id_fk_tableto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L156",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_inference_logs_conversation_id_conversations_id_fk",
+      "target": "meta_0001_snapshot_inference_logs_conversation_id_conversations_id_fk_columnsfrom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L159",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_inference_logs_conversation_id_conversations_id_fk",
+      "target": "meta_0001_snapshot_inference_logs_conversation_id_conversations_id_fk_columnsto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L162",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_inference_logs_conversation_id_conversations_id_fk",
+      "target": "meta_0001_snapshot_inference_logs_conversation_id_conversations_id_fk_ondelete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L163",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_inference_logs_conversation_id_conversations_id_fk",
+      "target": "meta_0001_snapshot_inference_logs_conversation_id_conversations_id_fk_onupdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L166",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_inference_logs_message_id_messages_id_fk",
+      "target": "meta_0001_snapshot_inference_logs_message_id_messages_id_fk_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L167",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_inference_logs_message_id_messages_id_fk",
+      "target": "meta_0001_snapshot_inference_logs_message_id_messages_id_fk_tablefrom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L168",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_inference_logs_message_id_messages_id_fk",
+      "target": "meta_0001_snapshot_inference_logs_message_id_messages_id_fk_tableto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L169",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_inference_logs_message_id_messages_id_fk",
+      "target": "meta_0001_snapshot_inference_logs_message_id_messages_id_fk_columnsfrom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L172",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_inference_logs_message_id_messages_id_fk",
+      "target": "meta_0001_snapshot_inference_logs_message_id_messages_id_fk_columnsto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L175",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_inference_logs_message_id_messages_id_fk",
+      "target": "meta_0001_snapshot_inference_logs_message_id_messages_id_fk_ondelete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L176",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_inference_logs_message_id_messages_id_fk",
+      "target": "meta_0001_snapshot_inference_logs_message_id_messages_id_fk_onupdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L186",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_messages",
+      "target": "meta_0001_snapshot_public_messages_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L187",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_messages",
+      "target": "meta_0001_snapshot_public_messages_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L188",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_messages",
+      "target": "meta_0001_snapshot_public_messages_columns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L229",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_messages",
+      "target": "meta_0001_snapshot_public_messages_indexes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L230",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_messages",
+      "target": "meta_0001_snapshot_public_messages_foreignkeys",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L245",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_messages",
+      "target": "meta_0001_snapshot_public_messages_compositeprimarykeys",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L246",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_messages",
+      "target": "meta_0001_snapshot_public_messages_uniqueconstraints",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L247",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_messages",
+      "target": "meta_0001_snapshot_public_messages_policies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L248",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_messages",
+      "target": "meta_0001_snapshot_public_messages_checkconstraints",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L249",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_tables_public_messages",
+      "target": "meta_0001_snapshot_public_messages_isrlsenabled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L202",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_messages_columns",
+      "target": "meta_0001_snapshot_columns_role",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L208",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_messages_columns",
+      "target": "meta_0001_snapshot_columns_content",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L203",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_role",
+      "target": "meta_0001_snapshot_role_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L204",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_role",
+      "target": "meta_0001_snapshot_role_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L205",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_role",
+      "target": "meta_0001_snapshot_role_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L206",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_role",
+      "target": "meta_0001_snapshot_role_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L209",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_content",
+      "target": "meta_0001_snapshot_content_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L210",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_content",
+      "target": "meta_0001_snapshot_content_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L211",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_content",
+      "target": "meta_0001_snapshot_content_primarykey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L212",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_columns_content",
+      "target": "meta_0001_snapshot_content_notnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L231",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_public_messages_foreignkeys",
+      "target": "meta_0001_snapshot_foreignkeys_messages_conversation_id_conversations_id_fk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L232",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_messages_conversation_id_conversations_id_fk",
+      "target": "meta_0001_snapshot_messages_conversation_id_conversations_id_fk_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L233",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_messages_conversation_id_conversations_id_fk",
+      "target": "meta_0001_snapshot_messages_conversation_id_conversations_id_fk_tablefrom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L234",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_messages_conversation_id_conversations_id_fk",
+      "target": "meta_0001_snapshot_messages_conversation_id_conversations_id_fk_tableto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L235",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_messages_conversation_id_conversations_id_fk",
+      "target": "meta_0001_snapshot_messages_conversation_id_conversations_id_fk_columnsfrom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L238",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_messages_conversation_id_conversations_id_fk",
+      "target": "meta_0001_snapshot_messages_conversation_id_conversations_id_fk_columnsto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L241",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_messages_conversation_id_conversations_id_fk",
+      "target": "meta_0001_snapshot_messages_conversation_id_conversations_id_fk_ondelete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L242",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_foreignkeys_messages_conversation_id_conversations_id_fk",
+      "target": "meta_0001_snapshot_messages_conversation_id_conversations_id_fk_onupdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L259",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_meta",
+      "target": "meta_0001_snapshot_meta_columns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L260",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_meta",
+      "target": "meta_0001_snapshot_meta_schemas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "drizzle/migrations/meta/0001_snapshot.json",
+      "source_location": "L261",
+      "weight": 1.0,
+      "source": "meta_0001_snapshot_meta",
+      "target": "meta_0001_snapshot_meta_tables",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "drizzle/migrations/meta/_journal.json",
       "source_location": "L2",
       "weight": 1.0,
@@ -12975,6 +16471,16 @@
       "confidence_score": 1.0,
       "source": "lib_ai_context_ts",
       "target": "ai_context_warnifoverbudget"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/ai/context.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "lib_ai_context_ts",
+      "target": "ai_context_buildinterruptioncontext",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -13254,6 +16760,16 @@
       "confidence_score": 1.0,
       "source": "lib_db_queries_ts",
       "target": "db_queries_updateconversationtitle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/db/queries.ts",
+      "source_location": "L113",
+      "weight": 1.0,
+      "source": "lib_db_queries_ts",
+      "target": "db_queries_updatemessagestatus",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -13952,5 +17468,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "bcd6d913cd5704a9f57ceddaad829104ab470de0"
+  "built_at_commit": "a3abe02d986a2f2de1884d86887bb68303c22c0f"
 }

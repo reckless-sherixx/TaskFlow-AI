@@ -39,16 +39,12 @@ export async function DELETE(
 		const resolvedParams = await params;
 		const id = resolvedParams.id;
 
-		await cancelConversation(id);
-
-		await redis.publish(
-			"cancel-session",
-			JSON.stringify({ conversationId: id }),
-		);
+		const { deleteConversation } = await import("../../../../lib/db/queries");
+		await deleteConversation(id);
 
 		return NextResponse.json({ success: true }, { status: 200 });
 	} catch (error) {
-		console.error("Cancel failed:", error);
+		console.error("Delete failed:", error);
 		return NextResponse.json(
 			{ error: "Internal server error" },
 			{ status: 500 },

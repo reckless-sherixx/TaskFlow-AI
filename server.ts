@@ -2,7 +2,7 @@
 import { createOpenAI } from "@ai-sdk/openai";
 import { type CoreMessage, streamText } from "ai";
 import Redis from "ioredis";
-import { buildContextWindow, warnIfOverBudget } from "./lib/ai/context";
+import { buildContextWindow, buildInterruptionContext, warnIfOverBudget } from "./lib/ai/context";
 import { resolveModel } from "./lib/ai/models";
 import {
 	createConversation,
@@ -32,12 +32,26 @@ type Session = {
 	idlePhase: IdlePhase;
 	hasReceivedUserMessage: boolean;
 	model: string;
+	generationId: number;
+	tokenCount: number;
+	typingNudgeTimer: ReturnType<typeof setTimeout> | null;
+	typingNudgeSent: boolean;
+	isUserTyping: boolean;
+	lastTypingAt: number;
+	lastInterruption: {
+		partialContent: string;
+		interruptedAtToken: number;
+		userMessage: string;
+	} | null;
 };
 
 const sessions = new Map<any, Session>();
 
+
 const redisSub = new Redis(process.env.REDIS_URL || "redis://localhost:6379");
-redisSub.subscribe("cancel-session").catch(console.error);
+const redisPub = new Redis(process.env.REDIS_URL || "redis://localhost:6379");
+
+redisSub.subscribe("cancel-session", "typing-events").catch(console.error);
 
 redisSub.on("message", async (channel, message) => {
 	if (channel === "cancel-session") {
@@ -56,7 +70,7 @@ redisSub.on("message", async (channel, message) => {
 				}
 			}
 		} catch (err) {
-			console.error("[ws] Error processing Redis message:", err);
+			console.error("[ws] Error processing Redis cancel-session:", err);
 		}
 	}
 });
@@ -72,19 +86,61 @@ const IDLE_PROMPT =
 	"The user has been silent for a while. " +
 	"Gently check if they're still there with a short, natural message.";
 
+const TYPING_NUDGE_MESSAGES = [
+	"Take your time — I'm here.",
+	"Whenever you're ready.",
+	"No rush — I'll be here when you're ready.",
+	"Feel free to continue whenever you'd like.",
+];
+
 const IDLE_NUDGE_MS = 15_000;
 const IDLE_TERMINATE_MS = 15_000;
-const TOKEN_DELAY_MS = 35;
+const TYPING_NUDGE_MS = 30_000;
+
+
+function computeTokenDelay(chunk: string): number {
+	const base = 30;
+	const jitter = Math.random() * 20;
+	// Longer pause at sentence-ending punctuation
+	if (/[.!?]\s*$/.test(chunk)) return base + jitter + 80;
+	// Medium pause at clause boundaries
+	if (/[,;:]\s*$/.test(chunk)) return base + jitter + 40;
+	// Pause at paragraph breaks
+	if (/\n/.test(chunk)) return base + jitter + 60;
+	return base + jitter;
+}
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 function send(ws: any, payload: object) {
 	try {
 		ws.send(JSON.stringify(payload));
-	} catch {}
+	} catch { }
 }
 
-// ── Idle State Machine ──────────────────────────────────────────
+
+function clearTypingNudgeTimer(session: Session) {
+	if (session.typingNudgeTimer) {
+		clearTimeout(session.typingNudgeTimer);
+		session.typingNudgeTimer = null;
+	}
+}
+
+function startTypingNudgeTimer(session: Session, ws: any) {
+	clearTypingNudgeTimer(session);
+	if (session.typingNudgeSent) return;
+
+	session.typingNudgeTimer = setTimeout(() => {
+		if (!session.isUserTyping || session.typingNudgeSent) return;
+
+		session.typingNudgeSent = true;
+		const nudge = TYPING_NUDGE_MESSAGES[
+			Math.floor(Math.random() * TYPING_NUDGE_MESSAGES.length)
+		];
+		send(ws, { type: "typing_nudge", message: nudge });
+		console.log(`[ws] Sent typing nudge for ${session.conversationId}`);
+	}, TYPING_NUDGE_MS);
+}
 
 function clearIdleTimer(session: Session) {
 	if (session.idleTimer) {
@@ -136,7 +192,6 @@ async function handleIdlePhase2(session: Session, ws: any) {
 	send(ws, { type: "conversation_ended", reason: "idle_timeout" });
 }
 
-// ── AI Response Streaming ───────────────────────────────────────
 
 async function streamAIResponse(
 	session: Session,
@@ -148,11 +203,25 @@ async function streamAIResponse(
 ) {
 	const { isIdleProbe = false, isGreeting = false } = options;
 
+	session.generationId++;
+	const thisGenerationId = session.generationId;
+
 	session.isStreaming = true;
 	session.abortController = new AbortController();
 	session.partialResponse = "";
+	session.tokenCount = 0;
 
 	const contextMessages: CoreMessage[] = buildContextWindow(session.history);
+
+	if (session.lastInterruption && !isGreeting && !isIdleProbe) {
+		contextMessages.push(
+			buildInterruptionContext(
+				session.lastInterruption.partialContent,
+				session.lastInterruption.userMessage,
+			),
+		);
+		session.lastInterruption = null;
+	}
 
 	if (isGreeting) {
 		contextMessages.push({ role: "user", content: GREETING_BOOTSTRAP });
@@ -164,6 +233,12 @@ async function streamAIResponse(
 
 	send(ws, { type: "ai_start" });
 
+	// Publish AI typing event
+	redisPub.publish("typing-events", JSON.stringify({
+		type: "ai_started_typing",
+		conversationId: session.conversationId,
+	})).catch(() => { });
+
 	try {
 		const result = await withLogger(
 			async () =>
@@ -174,7 +249,7 @@ async function streamAIResponse(
 					abortSignal: session.abortController.signal,
 				}),
 			{
-			model: session.model,
+				model: session.model,
 				provider: "openrouter",
 				conversationId: session.conversationId,
 				inputPreview: isGreeting
@@ -186,19 +261,24 @@ async function streamAIResponse(
 		);
 
 		for await (const chunk of result.textStream) {
+			if (session.generationId !== thisGenerationId) break;
 			if (session.abortController.signal.aborted) break;
 
 			session.partialResponse += chunk;
+			session.tokenCount++;
 			send(ws, { type: "ai_token", token: chunk });
-			await sleep(TOKEN_DELAY_MS);
+			await sleep(computeTokenDelay(chunk));
 		}
 
-		if (!session.abortController.signal.aborted) {
+		if (
+			session.generationId === thisGenerationId &&
+			!session.abortController.signal.aborted
+		) {
 			let tokensUsed = 0;
 			try {
 				const usage = await result.usage;
 				tokensUsed = usage?.totalTokens ?? 0;
-			} catch {}
+			} catch { }
 
 			send(ws, { type: "ai_done", tokensUsed });
 
@@ -213,17 +293,25 @@ async function streamAIResponse(
 						conversationId: session.conversationId,
 						role: "assistant",
 						content: session.partialResponse,
+						status: "completed",
 					}).catch((err) =>
 						console.error("[ws] Failed to persist assistant message:", err),
 					);
 				}
 			}
+
+			redisPub.publish("typing-events", JSON.stringify({
+				type: "ai_completed",
+				conversationId: session.conversationId,
+			})).catch(() => { });
 		}
 	} catch (err: any) {
+
+		if (session.generationId !== thisGenerationId) return;
+
 		const classified = classifyAIError(err);
 
 		if (classified.code === "ABORT" || session.abortController?.signal.aborted) {
-			// User-initiated cancel — don't send error
 			return;
 		}
 
@@ -237,18 +325,20 @@ async function streamAIResponse(
 			code: classified.code,
 		});
 	} finally {
-		session.isStreaming = false;
-		session.abortController = null;
+		if (session.generationId === thisGenerationId) {
+			session.isStreaming = false;
+			session.abortController = null;
 
-		if (session.idlePhase !== 2) {
-			if (!isIdleProbe) {
-				resetIdleTimer(session, ws);
+			if (session.idlePhase !== 2) {
+				if (!isIdleProbe) {
+					resetIdleTimer(session, ws);
+				}
 			}
 		}
 	}
 }
 
-// ── WebSocket Server ────────────────────────────────────────────
+
 
 Bun.serve({
 	port: PORT,
@@ -265,7 +355,6 @@ Bun.serve({
 		async open(ws) {
 			console.log("[ws] client connected");
 
-			// Model is passed via URL query param — no race condition
 			const model = (ws.data as { model: string })?.model || resolveModel(null);
 
 			const session: Session = {
@@ -277,10 +366,16 @@ Bun.serve({
 				idlePhase: 0,
 				hasReceivedUserMessage: false,
 				model,
+				generationId: 0,
+				tokenCount: 0,
+				typingNudgeTimer: null,
+				typingNudgeSent: false,
+				isUserTyping: false,
+				lastTypingAt: 0,
+				lastInterruption: null,
 			};
 			sessions.set(ws, session);
 
-			// Create conversation in DB with the correct model
 			try {
 				const conv = await createConversation({
 					title: "New Conversation",
@@ -295,7 +390,6 @@ Bun.serve({
 				console.error("[ws] Failed to create conversation:", err);
 			}
 
-			// Generate greeting — no fake user message, no sleep needed
 			await streamAIResponse(session, ws, { isGreeting: true });
 		},
 
@@ -305,7 +399,11 @@ Bun.serve({
 
 			if (session.idlePhase === 2) return;
 
-			let data: { type: string; text?: string; conversationId?: string };
+			let data: {
+				type: string;
+				text?: string;
+				conversationId?: string;
+			};
 			try {
 				data = JSON.parse(typeof raw === "string" ? raw : raw.toString());
 			} catch {
@@ -316,6 +414,28 @@ Bun.serve({
 				session.conversationId = data.conversationId;
 			}
 
+			if (data.type === "user_typing") {
+				const now = Date.now();
+				if (now - session.lastTypingAt < 300) return;
+				session.lastTypingAt = now;
+				session.isUserTyping = true;
+
+				// Start the 30s typing nudge timer
+				startTypingNudgeTimer(session, ws);
+
+				// Reset idle timer while user is typing
+				resetIdleTimer(session, ws);
+
+				return;
+			}
+
+			if (data.type === "user_stopped_typing") {
+				session.isUserTyping = false;
+				session.typingNudgeSent = false;
+				clearTypingNudgeTimer(session);
+				return;
+			}
+
 			if (data.type === "cancel") {
 				if (session.isStreaming && session.abortController) {
 					session.abortController.abort();
@@ -324,29 +444,82 @@ Bun.serve({
 							role: "assistant",
 							content: session.partialResponse,
 						});
+
+						if (session.conversationId) {
+							insertMessage({
+								conversationId: session.conversationId,
+								role: "assistant",
+								content: session.partialResponse,
+								status: "interrupted",
+							}).catch((err) =>
+								console.error("[ws] Failed to persist interrupted message:", err),
+							);
+						}
 					}
+
 					await sleep(60);
-					send(ws, { type: "ai_done" });
+					send(ws, {
+						type: "ai_interrupted",
+						partialContent: session.partialResponse?.slice(-200) || "",
+						interruptedAtToken: session.tokenCount,
+					});
+
+					// Publish interruption event
+					redisPub.publish("typing-events", JSON.stringify({
+						type: "ai_interrupted",
+						conversationId: session.conversationId,
+					})).catch(() => { });
 				}
 				return;
 			}
 
 			if (data.type !== "user_message" || !data.text) return;
 
+			session.isUserTyping = false;
+			session.typingNudgeSent = false;
+			clearTypingNudgeTimer(session);
+
 			resetIdleTimer(session, ws);
 
 			if (session.isStreaming && session.abortController) {
 				session.abortController.abort();
+
+				session.lastInterruption = {
+					partialContent: session.partialResponse,
+					interruptedAtToken: session.tokenCount,
+					userMessage: data.text,
+				};
 
 				if (session.partialResponse) {
 					session.history.push({
 						role: "assistant",
 						content: session.partialResponse,
 					});
+
+					if (session.conversationId) {
+						insertMessage({
+							conversationId: session.conversationId,
+							role: "assistant",
+							content: session.partialResponse,
+							status: "interrupted",
+						}).catch((err) =>
+							console.error("[ws] Failed to persist interrupted message:", err),
+						);
+					}
 				}
 
 				await sleep(60);
-				send(ws, { type: "ai_interrupted" });
+				send(ws, {
+					type: "ai_interrupted",
+					partialContent: session.partialResponse?.slice(-200) || "",
+					interruptedAtToken: session.tokenCount,
+				});
+
+				// Publish interruption event
+				redisPub.publish("typing-events", JSON.stringify({
+					type: "ai_interrupted",
+					conversationId: session.conversationId,
+				})).catch(() => { });
 			}
 
 			session.history.push({ role: "user", content: data.text });
@@ -367,7 +540,6 @@ Bun.serve({
 						(err) => console.error("[ws] Failed to update title:", err),
 					);
 
-					// Notify client about the title update for sidebar
 					send(ws, {
 						type: "title_updated",
 						conversationId: session.conversationId,
@@ -385,6 +557,7 @@ Bun.serve({
 			if (!session) return;
 
 			clearIdleTimer(session);
+			clearTypingNudgeTimer(session);
 			if (session.abortController) session.abortController.abort();
 			sessions.delete(ws);
 		},

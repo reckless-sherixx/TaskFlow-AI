@@ -44,3 +44,20 @@ export function warnIfOverBudget(
 		);
 	}
 }
+
+export function buildInterruptionContext(
+	partialResponse: string,
+	userMessage: string,
+): CoreMessage {
+	const truncated =
+		partialResponse.length > 200
+			? `...${partialResponse.slice(-200)}`
+			: partialResponse;
+	return {
+		role: "system",
+		content:
+			`[INTERRUPTION CONTEXT] Your previous response was interrupted after saying: "${truncated}". ` +
+			`The user interrupted with: "${userMessage}". ` +
+			`Continue the conversation naturally from where you left off. Do not repeat what was already said.`,
+	};
+}

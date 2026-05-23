@@ -30,8 +30,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\assistant.tsx": {
-    "mtime": 1779527151.2242792,
-    "ast_hash": "bfad308957627fb709ed11ea6e952229",
+    "mtime": 1779522788.7980795,
+    "ast_hash": "41c8b061e1179deae0ea164b6494933b",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\layout.tsx": {
@@ -75,13 +75,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\thread.tsx": {
-    "mtime": 1779527197.5337236,
-    "ast_hash": "7b19f6842ceb036b547a592279b2f392",
+    "mtime": 1779507928.5684438,
+    "ast_hash": "a2c7c26d7a7de81f5176878a1e7855dd",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\threadlist-sidebar.tsx": {
-    "mtime": 1779528248.3459501,
-    "ast_hash": "f0db29bf9f37242781ce1857625f13fe",
+    "mtime": 1779514340.2996323,
+    "ast_hash": "d7007caa876ccafcdaa19183027763cb",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\tool-fallback.tsx": {
@@ -180,8 +180,8 @@
     "semantic_hash": "84de69efd46ab0b8430393bd4188f8f2"
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\server.ts": {
-    "mtime": 1779528211.722232,
-    "ast_hash": "aa72f165adcb1a1702a5931520e91eef",
+    "mtime": 1779514916.5603921,
+    "ast_hash": "810dee9bffe1a4da633cfa7dd13c5514",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\api\\ingest\\route.ts": {
@@ -215,8 +215,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\drizzle\\migrations\\meta\\_journal.json": {
-    "mtime": 1779527239.244369,
-    "ast_hash": "07eeb418a70e5ec6fa1430e6e4b6fe88",
+    "mtime": 1779502310.2947,
+    "ast_hash": "6fd7733975b10c85559ed08845c42a37",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\db\\index.ts": {
@@ -225,13 +225,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\db\\queries.ts": {
-    "mtime": 1779526953.0998104,
-    "ast_hash": "3a6e3d9fb5561449331c5da15df95bba",
+    "mtime": 1779506598.7243423,
+    "ast_hash": "ca73c278fd3e8a85e760da36a8608944",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\db\\schema.ts": {
-    "mtime": 1779526941.9625137,
-    "ast_hash": "197d9ca18645e8da41879a023e52b455",
+    "mtime": 1779502287.7460163,
+    "ast_hash": "69e4a60490514fde863e69ca392c1124",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\sdk\\types.ts": {
@@ -265,13 +265,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\ai\\context.ts": {
-    "mtime": 1779526968.351668,
-    "ast_hash": "2a4b3b5caf026793955939a6d3680d1b",
+    "mtime": 1779507405.4839475,
+    "ast_hash": "28c6a0b403d6526ec0336c1492e91f3f",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\ai\\models.ts": {
-    "mtime": 1779525583.4876506,
-    "ast_hash": "0256fadd77138b3885da5d196126109d",
+    "mtime": 1779516601.605289,
+    "ast_hash": "9cebf436f75f8c1c186da866e3ea3fdd",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\errors\\ai-errors.ts": {
@@ -280,23 +280,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\store\\conversation-store.ts": {
-    "mtime": 1779527065.508492,
-    "ast_hash": "6bf5421440c40b0b8f51ccb136cc6384",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\typing-indicator.tsx": {
-    "mtime": 1779527079.3819597,
-    "ast_hash": "ad78e1c6d7dc7ce0eb657c458767fe9f",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\drizzle\\migrations\\0001_fuzzy_carnage.sql": {
-    "mtime": 1779527239.2455175,
-    "ast_hash": "fc4c29419ed216e66f9101a40af404bd",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\drizzle\\migrations\\meta\\0001_snapshot.json": {
-    "mtime": 1779527239.2432508,
-    "ast_hash": "26e5754156afc66341740563be5c28ca",
+    "mtime": 1779512932.7824433,
+    "ast_hash": "11082235ced8e00a2c4f5ef409acaad6",
     "semantic_hash": ""
   }
 }

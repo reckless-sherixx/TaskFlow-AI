@@ -8,6 +8,13 @@
       "when": 1779502310293,
       "tag": "0000_brown_tarantula",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1779527239240,
+      "tag": "0001_fuzzy_carnage",
+      "breakpoints": true
     }
   ]
 }

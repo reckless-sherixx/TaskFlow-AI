@@ -109,3 +109,23 @@ export async function updateConversationTitle(
 		.returning();
 	return updated;
 }
+
+export async function updateMessageStatus(
+	id: string,
+	status: string,
+) {
+	const [updated] = await db
+		.update(messages)
+		.set({ status })
+		.where(eq(messages.id, id))
+		.returning();
+	return updated;
+}
+
+export async function deleteConversation(id: string) {
+	const [deleted] = await db
+		.delete(conversations)
+		.where(eq(conversations.id, id))
+		.returning();
+	return deleted;
+}

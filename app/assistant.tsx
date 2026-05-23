@@ -49,11 +49,17 @@ function generateId() {
 function useWebSocketChat(conversationModel: string) {
   const [messages, setMessages] = useState<ThreadMessage[]>([]);
   const [isRunning, setIsRunning] = useState(false);
+  const [isAiTyping, setIsAiTyping] = useState(false);
+  const [isAiStreaming, setIsAiStreaming] = useState(false);
   const [tokenStats, setTokenStats] = useState<TokenStats>({ used: 0, total: 1_000_000 });
   const wsRef = useRef<WebSocket | null>(null);
   const conversationIdRef = useRef<string | null>(null);
   const currentAssistantIdRef = useRef<string | null>(null);
   const assistantTextRef = useRef("");
+
+  // Typing event refs
+  const typingTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isTypingSentRef = useRef(false);
 
   const store = useConversationStore();
 
@@ -63,8 +69,50 @@ function useWebSocketChat(conversationModel: string) {
   const connect = useCallback((model: string) => {
     setMessages([]);
     setTokenStats({ used: 0, total: 1_000_000 });
+    setIsAiTyping(false);
+    setIsAiStreaming(false);
     conversationIdRef.current = null;
     setWsKey(generateId());
+  }, []);
+
+  // ── Debounced Typing Notifier ─────────────────────
+
+  const sendTypingEvent = useCallback((type: "user_typing" | "user_stopped_typing") => {
+    const ws = wsRef.current;
+    if (ws && ws.readyState === WebSocket.OPEN) {
+      ws.send(JSON.stringify({
+        type,
+        conversationId: conversationIdRef.current,
+      }));
+    }
+  }, []);
+
+  const notifyTyping = useCallback(() => {
+    // Send typing event (debounced — only if not already sent)
+    if (!isTypingSentRef.current) {
+      isTypingSentRef.current = true;
+      sendTypingEvent("user_typing");
+      store.setUserTyping(true);
+    }
+
+    // Reset the stop-typing timer
+    if (typingTimerRef.current) {
+      clearTimeout(typingTimerRef.current);
+    }
+    typingTimerRef.current = setTimeout(() => {
+      isTypingSentRef.current = false;
+      sendTypingEvent("user_stopped_typing");
+      store.setUserTyping(false);
+    }, 2000);
+  }, [sendTypingEvent, store]);
+
+  // Cleanup typing timer on unmount
+  useEffect(() => {
+    return () => {
+      if (typingTimerRef.current) {
+        clearTimeout(typingTimerRef.current);
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -89,6 +137,9 @@ function useWebSocketChat(conversationModel: string) {
         tokensUsed?: number;
         model?: string;
         title?: string;
+        message?: string;
+        partialContent?: string;
+        interruptedAtToken?: number;
       };
       try {
         data = JSON.parse(event.data);
@@ -126,6 +177,9 @@ function useWebSocketChat(conversationModel: string) {
 
         case "ai_start": {
           setIsRunning(true);
+          setIsAiTyping(true);
+          setIsAiStreaming(false);
+          store.setAiTyping(true);
           assistantTextRef.current = "";
           const newId = generateId();
           currentAssistantIdRef.current = newId;
@@ -146,6 +200,11 @@ function useWebSocketChat(conversationModel: string) {
 
         case "ai_token": {
           if (!data.token) break;
+          // Transition from "typing" to "streaming" on first token
+          if (isAiTyping) {
+            setIsAiTyping(false);
+            setIsAiStreaming(true);
+          }
           assistantTextRef.current += data.token;
           const targetId = currentAssistantIdRef.current;
           const incoming = data.token;
@@ -165,6 +224,9 @@ function useWebSocketChat(conversationModel: string) {
 
         case "ai_done": {
           setIsRunning(false);
+          setIsAiTyping(false);
+          setIsAiStreaming(false);
+          store.setAiTyping(false);
           const doneId = currentAssistantIdRef.current;
           currentAssistantIdRef.current = null;
 
@@ -194,6 +256,9 @@ function useWebSocketChat(conversationModel: string) {
 
         case "ai_interrupted": {
           setIsRunning(false);
+          setIsAiTyping(false);
+          setIsAiStreaming(false);
+          store.setAiTyping(false);
           const interruptedId = currentAssistantIdRef.current;
           currentAssistantIdRef.current = null;
 
@@ -207,6 +272,11 @@ function useWebSocketChat(conversationModel: string) {
                 ? ({
                   ...msg,
                   status: { type: "complete", reason: "stop" },
+                  metadata: {
+                    ...((msg as any).metadata || {}),
+                    interrupted: true,
+                    interruptedAtToken: data.interruptedAtToken,
+                  },
                 } as unknown as ThreadMessage)
                 : msg,
             ),
@@ -214,8 +284,30 @@ function useWebSocketChat(conversationModel: string) {
           break;
         }
 
+        case "typing_nudge": {
+          if (data.message) {
+            const nudgeId = generateId();
+            setMessages((prev) => [
+              ...prev,
+              {
+                id: nudgeId,
+                role: "assistant",
+                content: [{ type: "text", text: data.message }],
+                createdAt: new Date(),
+                status: { type: "complete", reason: "stop" },
+                attachments: [],
+                metadata: { isNudge: true },
+              } as unknown as ThreadMessage,
+            ]);
+          }
+          break;
+        }
+
         case "ai_error": {
           setIsRunning(false);
+          setIsAiTyping(false);
+          setIsAiStreaming(false);
+          store.setAiTyping(false);
           const errorId = currentAssistantIdRef.current;
           currentAssistantIdRef.current = null;
           const errMsg = data.error ?? "Something went wrong.";
@@ -243,6 +335,9 @@ function useWebSocketChat(conversationModel: string) {
 
         case "conversation_ended": {
           setIsRunning(false);
+          setIsAiTyping(false);
+          setIsAiStreaming(false);
+          store.setAiTyping(false);
           currentAssistantIdRef.current = null;
           setMessages((prev) => [
             ...prev,
@@ -269,6 +364,9 @@ function useWebSocketChat(conversationModel: string) {
     ws.onclose = () => {
       console.log("disconnected");
       setIsRunning(false);
+      setIsAiTyping(false);
+      setIsAiStreaming(false);
+      store.setAiTyping(false);
     };
 
     return () => {
@@ -280,6 +378,14 @@ function useWebSocketChat(conversationModel: string) {
     const textPart = message.content.find((c) => c.type === "text");
     const text = textPart && textPart.type === "text" ? textPart.text : "";
     if (!text.trim()) return;
+
+    // Clear typing state on send
+    if (typingTimerRef.current) {
+      clearTimeout(typingTimerRef.current);
+      typingTimerRef.current = null;
+    }
+    isTypingSentRef.current = false;
+    store.setUserTyping(false);
 
     const userMsg = {
       id: generateId(),
@@ -301,7 +407,7 @@ function useWebSocketChat(conversationModel: string) {
         }),
       );
     }
-  }, []);
+  }, [store]);
 
   const onCancel = useCallback(async () => {
     const ws = wsRef.current;
@@ -324,7 +430,16 @@ function useWebSocketChat(conversationModel: string) {
     },
   });
 
-  return { runtime, tokenStats, connect, setMessages, conversationIdRef };
+  return {
+    runtime,
+    tokenStats,
+    connect,
+    setMessages,
+    conversationIdRef,
+    isAiTyping,
+    isAiStreaming,
+    notifyTyping,
+  };
 }
 
 // ── Main Component ────────────────────────────────────
@@ -332,6 +447,7 @@ function useWebSocketChat(conversationModel: string) {
 export const Assistant = () => {
   const [selectedModel, setSelectedModel] = useState<GeminiModelId>(DEFAULT_MODEL);
   const [isDark, setIsDark] = useState(false);
+  const [isChatLoading, setIsChatLoading] = useState(false);
   const store = useConversationStore();
 
   // Apply dark mode to <html>
@@ -385,8 +501,16 @@ export const Assistant = () => {
   const activeConv = store.conversations.find((c) => c.id === store.activeId);
   const conversationModel = activeConv?.model || selectedModel;
 
-  const { runtime, tokenStats, connect, setMessages, conversationIdRef } =
-    useWebSocketChat(conversationModel);
+  const {
+    runtime,
+    tokenStats,
+    connect,
+    setMessages,
+    conversationIdRef,
+    isAiTyping,
+    isAiStreaming,
+    notifyTyping,
+  } = useWebSocketChat(conversationModel);
 
   // Start a brand new conversation with the currently selected model
   const startNewThread = useCallback(() => {
@@ -397,6 +521,7 @@ export const Assistant = () => {
   const switchToConversation = useCallback(
     async (convId: string) => {
       store.setActive(convId);
+      setIsChatLoading(true);
 
       try {
         const res = await fetch(`/api/conversations/${convId}`);
@@ -412,7 +537,9 @@ export const Assistant = () => {
               createdAt: new Date(m.createdAt),
               status: { type: "complete", reason: "stop" },
               attachments: [],
-              metadata: {},
+              metadata: {
+                ...(m.status === "interrupted" ? { interrupted: true } : {}),
+              },
             }),
           );
           setMessages(loadedMessages);
@@ -420,6 +547,8 @@ export const Assistant = () => {
         }
       } catch (err) {
         console.error("[switch] Failed to load conversation:", err);
+      } finally {
+        setIsChatLoading(false);
       }
     },
     [setMessages, conversationIdRef],
@@ -457,7 +586,12 @@ export const Assistant = () => {
               </Breadcrumb>
             </header>
             <div className="flex-1 overflow-hidden">
-              <Thread />
+              <Thread
+                isAiTyping={isAiTyping}
+                isAiStreaming={isAiStreaming}
+                isLoadingChat={isChatLoading}
+                onComposerInput={notifyTyping}
+              />
             </div>
           </SidebarInset>
         </div>
