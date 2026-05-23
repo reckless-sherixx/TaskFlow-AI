@@ -1,23 +1,4 @@
-version: "3.9"
-
 services:
-  postgres:
-    image: postgres:16-alpine
-    restart: unless-stopped
-    environment:
-      POSTGRES_USER: taskflow
-      POSTGRES_PASSWORD: taskflow_secret
-      POSTGRES_DB: taskflow
-    ports:
-      - "5432:5432"
-    volumes:
-      - pg_data:/var/lib/postgresql/data
-    healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U taskflow" ]
-      interval: 5s
-      timeout: 3s
-      retries: 5
-
   redis:
     image: redis:7-alpine
     restart: unless-stopped
@@ -30,6 +11,8 @@ services:
       interval: 5s
       timeout: 3s
       retries: 5
+    networks:
+      - taskflow
 
   app:
     build:
@@ -42,13 +25,13 @@ services:
     env_file:
       - .env.local
     environment:
-      DATABASE_URL: postgresql://taskflow:taskflow_secret@postgres:5432/taskflow
       REDIS_URL: redis://redis:6379
+      BUN_CONFIG_DNS_RESOLVER: system
     depends_on:
-      postgres:
-        condition: service_healthy
       redis:
         condition: service_healthy
+    networks:
+      - taskflow
 
   worker:
     build:
@@ -58,13 +41,13 @@ services:
     env_file:
       - .env.local
     environment:
-      DATABASE_URL: postgresql://taskflow:taskflow_secret@postgres:5432/taskflow
       REDIS_URL: redis://redis:6379
+      BUN_CONFIG_DNS_RESOLVER: system
     depends_on:
-      postgres:
-        condition: service_healthy
       redis:
         condition: service_healthy
+    networks:
+      - taskflow
 
   prometheus:
     image: prom/prometheus:v2.53.0
@@ -76,6 +59,8 @@ services:
       - prom_data:/prometheus
     depends_on:
       - app
+    networks:
+      - taskflow
 
   grafana:
     image: grafana/grafana:11.1.0
@@ -92,9 +77,14 @@ services:
       - grafana_data:/var/lib/grafana
     depends_on:
       - prometheus
+    networks:
+      - taskflow
+
+networks:
+  taskflow:
+    driver: bridge
 
 volumes:
-  pg_data:
   redis_data:
   prom_data:
   grafana_data:
