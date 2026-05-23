@@ -1,11 +1,11 @@
 # Graph Report - tf_ai  (2026-05-23)
 
 ## Corpus Check
-- 41 files · ~10,451 words
+- 41 files · ~10,359 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 312 nodes · 533 edges · 23 communities (18 shown, 5 thin omitted)
+- 311 nodes · 532 edges · 22 communities (17 shown, 5 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -31,7 +31,6 @@
 - [[_COMMUNITY_PostCSS Config|PostCSS Config]]
 - [[_COMMUNITY_Next Env Types|Next Env Types]]
 - [[_COMMUNITY_Community 17|Community 17]]
-- [[_COMMUNITY_Community 22|Community 22]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `cn()` - 90 edges
@@ -57,7 +56,7 @@
 - `AssistantMessage()` --calls--> `cn()`  [EXTRACTED]
   components/thread.tsx → lib/utils.ts
 
-## Communities (23 total, 5 thin omitted)
+## Communities (22 total, 5 thin omitted)
 
 ### Community 0 - "UI Components (Sidebar)"
 Cohesion: 0.09
@@ -68,12 +67,12 @@ Cohesion: 0.06
 Nodes (32): Reasoning, ReasoningContent(), ReasoningFade(), ReasoningGroup, ReasoningRoot(), ReasoningRootProps, ReasoningText(), ReasoningTrigger() (+24 more)
 
 ### Community 2 - "Package Dependencies"
-Cohesion: 0.09
-Nodes (24): AttachmentPreview(), AttachmentPreviewDialog(), AttachmentPreviewProps, AttachmentThumb(), AttachmentUI(), ComposerAddAttachment(), ComposerAttachments(), useAttachmentSrc() (+16 more)
+Cohesion: 0.12
+Nodes (11): ThreadList(), Button(), buttonVariants, Dialog(), DialogContent(), DialogDescription(), DialogFooter(), DialogHeader() (+3 more)
 
 ### Community 3 - "Tailwind & Aliases"
-Cohesion: 0.15
-Nodes (13): geistMono, geistSans, metadata, CodeHeader(), defaultComponents, MarkdownText, useCopyToClipboard(), TooltipIconButton (+5 more)
+Cohesion: 0.08
+Nodes (29): geistMono, geistSans, metadata, AttachmentPreview(), AttachmentPreviewDialog(), AttachmentPreviewProps, AttachmentThumb(), AttachmentUI() (+21 more)
 
 ### Community 4 - "Package Scripts"
 Cohesion: 0.08
@@ -103,10 +102,6 @@ Nodes (11): Assistant(), useWebSocketChat(), Thread(), ThreadListSidebar(), Brea
 Cohesion: 0.32
 Nodes (10): message(), open(), resetIdleTimer(), runAI(), send(), Session, sessions, sleep() (+2 more)
 
-### Community 22 - "Community 22"
-Cohesion: 0.28
-Nodes (3): ThreadList(), Button(), buttonVariants
-
 ## Knowledge Gaps
 - **103 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+98 more)
   These have ≤1 connection - possible missing edges or undocumented components.
@@ -115,12 +110,12 @@ Nodes (3): ThreadList(), Button(), buttonVariants
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `UI Components (Sidebar)` to `UI Components (Dialog)`, `Package Dependencies`, `Tailwind & Aliases`, `Package Scripts`, `Reasoning Components`, `Community 22`?**
-  _High betweenness centrality (0.342) - this node is a cross-community bridge._
+- **Why does `cn()` connect `UI Components (Sidebar)` to `UI Components (Dialog)`, `Package Dependencies`, `Tailwind & Aliases`, `Package Scripts`, `Reasoning Components`?**
+  _High betweenness centrality (0.344) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `Package Scripts` to `App Navigation`?**
-  _High betweenness centrality (0.179) - this node is a cross-community bridge._
+  _High betweenness centrality (0.180) - this node is a cross-community bridge._
 - **Why does `clsx` connect `Package Scripts` to `UI Components (Sidebar)`?**
-  _High betweenness centrality (0.166) - this node is a cross-community bridge._
+  _High betweenness centrality (0.167) - this node is a cross-community bridge._
 - **What connects `$schema`, `style`, `rsc` to the rest of the system?**
   _103 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `UI Components (Sidebar)` be split into smaller, more focused modules?**
@@ -128,4 +123,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `UI Components (Dialog)` be split into smaller, more focused modules?**
   _Cohesion score 0.05505279034690799 - nodes in this community are weakly interconnected._
 - **Should `Package Dependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.0896551724137931 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11578947368421053 - nodes in this community are weakly interconnected._

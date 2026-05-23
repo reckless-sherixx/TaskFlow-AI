@@ -1,0 +1,467 @@
+{
+  "communities": {
+    "0": [
+      "components_github_githubicon",
+      "components_github_tsx",
+      "components_threadlist_sidebar_tsx",
+      "components_ui_input_tsx",
+      "components_ui_separator_tsx",
+      "components_ui_sheet_tsx",
+      "components_ui_sidebar_tsx",
+      "components_ui_skeleton_tsx",
+      "hooks_use_mobile_ts",
+      "hooks_use_mobile_useismobile",
+      "lib_utils_cn",
+      "ui_input_input",
+      "ui_separator_separator",
+      "ui_sheet_sheet",
+      "ui_sheet_sheetclose",
+      "ui_sheet_sheetcontent",
+      "ui_sheet_sheetdescription",
+      "ui_sheet_sheetfooter",
+      "ui_sheet_sheetheader",
+      "ui_sheet_sheetoverlay",
+      "ui_sheet_sheetportal",
+      "ui_sheet_sheettitle",
+      "ui_sheet_sheettrigger",
+      "ui_sidebar_sidebar",
+      "ui_sidebar_sidebarcontent",
+      "ui_sidebar_sidebarcontext",
+      "ui_sidebar_sidebarcontextprops",
+      "ui_sidebar_sidebarfooter",
+      "ui_sidebar_sidebargroup",
+      "ui_sidebar_sidebargroupaction",
+      "ui_sidebar_sidebargroupcontent",
+      "ui_sidebar_sidebargrouplabel",
+      "ui_sidebar_sidebarheader",
+      "ui_sidebar_sidebarinput",
+      "ui_sidebar_sidebarinset",
+      "ui_sidebar_sidebarmenu",
+      "ui_sidebar_sidebarmenuaction",
+      "ui_sidebar_sidebarmenubadge",
+      "ui_sidebar_sidebarmenubutton",
+      "ui_sidebar_sidebarmenubuttonvariants",
+      "ui_sidebar_sidebarmenuitem",
+      "ui_sidebar_sidebarmenuskeleton",
+      "ui_sidebar_sidebarmenusub",
+      "ui_sidebar_sidebarmenusubbutton",
+      "ui_sidebar_sidebarmenusubitem",
+      "ui_sidebar_sidebarprovider",
+      "ui_sidebar_sidebarrail",
+      "ui_sidebar_sidebarseparator",
+      "ui_sidebar_sidebartrigger",
+      "ui_sidebar_usesidebar",
+      "ui_skeleton_skeleton"
+    ],
+    "1": [
+      "components_markdown_text_codeheader",
+      "components_markdown_text_defaultcomponents",
+      "components_markdown_text_markdowntext",
+      "components_markdown_text_markdowntextimpl",
+      "components_markdown_text_tsx",
+      "components_markdown_text_usecopytoclipboard",
+      "components_reasoning_reasoning",
+      "components_reasoning_reasoningcontent",
+      "components_reasoning_reasoningfade",
+      "components_reasoning_reasoninggroup",
+      "components_reasoning_reasoninggroupimpl",
+      "components_reasoning_reasoningimpl",
+      "components_reasoning_reasoningroot",
+      "components_reasoning_reasoningrootprops",
+      "components_reasoning_reasoningtext",
+      "components_reasoning_reasoningtrigger",
+      "components_reasoning_reasoningvariants",
+      "components_reasoning_tsx",
+      "components_thread_assistantactionbar",
+      "components_thread_assistantmessage",
+      "components_thread_branchpicker",
+      "components_thread_composer",
+      "components_thread_composeraction",
+      "components_thread_editcomposer",
+      "components_thread_messageerror",
+      "components_thread_threadmessage",
+      "components_thread_threadscrolltobottom",
+      "components_thread_threadsuggestionitem",
+      "components_thread_threadsuggestions",
+      "components_thread_threadwelcome",
+      "components_thread_tsx",
+      "components_thread_useractionbar",
+      "components_thread_usermessage",
+      "components_tooltip_icon_button_tooltipiconbutton"
+    ],
+    "2": [
+      "components_attachment_attachmentpreview",
+      "components_attachment_attachmentpreviewdialog",
+      "components_attachment_attachmentpreviewprops",
+      "components_attachment_attachmentremove",
+      "components_attachment_attachmentthumb",
+      "components_attachment_attachmentui",
+      "components_attachment_composeraddattachment",
+      "components_attachment_composerattachments",
+      "components_attachment_tsx",
+      "components_attachment_useattachmentsrc",
+      "components_attachment_usefilesrc",
+      "components_attachment_usermessageattachments",
+      "components_ui_avatar_tsx",
+      "components_ui_dialog_tsx",
+      "ui_avatar_avatar",
+      "ui_avatar_avatarbadge",
+      "ui_avatar_avatarfallback",
+      "ui_avatar_avatargroup",
+      "ui_avatar_avatargroupcount",
+      "ui_avatar_avatarimage",
+      "ui_dialog_dialog",
+      "ui_dialog_dialogclose",
+      "ui_dialog_dialogcontent",
+      "ui_dialog_dialogdescription",
+      "ui_dialog_dialogfooter",
+      "ui_dialog_dialogheader",
+      "ui_dialog_dialogoverlay",
+      "ui_dialog_dialogportal",
+      "ui_dialog_dialogtitle",
+      "ui_dialog_dialogtrigger"
+    ],
+    "3": [
+      "components_tool_fallback_statusiconmap",
+      "components_tool_fallback_toolfallback",
+      "components_tool_fallback_toolfallbackargs",
+      "components_tool_fallback_toolfallbackcontent",
+      "components_tool_fallback_toolfallbackerror",
+      "components_tool_fallback_toolfallbackimpl",
+      "components_tool_fallback_toolfallbackresult",
+      "components_tool_fallback_toolfallbackroot",
+      "components_tool_fallback_toolfallbackrootprops",
+      "components_tool_fallback_toolfallbacktrigger",
+      "components_tool_fallback_toolstatus",
+      "components_tool_fallback_tsx",
+      "components_tool_group_toolgroup",
+      "components_tool_group_toolgroupcomponent",
+      "components_tool_group_toolgroupcontent",
+      "components_tool_group_toolgroupimpl",
+      "components_tool_group_toolgrouproot",
+      "components_tool_group_toolgrouprootprops",
+      "components_tool_group_toolgrouptrigger",
+      "components_tool_group_toolgroupvariants",
+      "components_tool_group_tsx",
+      "components_ui_collapsible_tsx",
+      "ui_collapsible_collapsible",
+      "ui_collapsible_collapsiblecontent",
+      "ui_collapsible_collapsibletrigger"
+    ],
+    "4": [
+      "tf_ai_package_dependencies",
+      "tf_ai_package_dependencies_ai",
+      "tf_ai_package_dependencies_ai_sdk_google",
+      "tf_ai_package_dependencies_ai_sdk_openai",
+      "tf_ai_package_dependencies_assistant_ui_react",
+      "tf_ai_package_dependencies_assistant_ui_react_ai_sdk",
+      "tf_ai_package_dependencies_assistant_ui_react_markdown",
+      "tf_ai_package_dependencies_class_variance_authority",
+      "tf_ai_package_dependencies_clsx",
+      "tf_ai_package_dependencies_lucide_react",
+      "tf_ai_package_dependencies_next",
+      "tf_ai_package_dependencies_radix_ui",
+      "tf_ai_package_dependencies_radix_ui_react_avatar",
+      "tf_ai_package_dependencies_radix_ui_react_collapsible",
+      "tf_ai_package_dependencies_radix_ui_react_dialog",
+      "tf_ai_package_dependencies_radix_ui_react_separator",
+      "tf_ai_package_dependencies_radix_ui_react_slot",
+      "tf_ai_package_dependencies_radix_ui_react_tooltip",
+      "tf_ai_package_dependencies_react",
+      "tf_ai_package_dependencies_react_dom",
+      "tf_ai_package_dependencies_remark_gfm",
+      "tf_ai_package_dependencies_tailwind_merge",
+      "tf_ai_package_dependencies_tw_animate_css",
+      "tf_ai_package_dependencies_tw_shimmer",
+      "tf_ai_package_dependencies_zustand"
+    ],
+    "5": [
+      "app_layout_geistmono",
+      "app_layout_geistsans",
+      "app_layout_metadata",
+      "app_layout_rootlayout",
+      "app_layout_tsx",
+      "components_thread_list_threadlist",
+      "components_thread_list_threadlistitem",
+      "components_thread_list_threadlistitemmore",
+      "components_thread_list_threadlistnew",
+      "components_thread_list_threadlistskeleton",
+      "components_thread_list_tsx",
+      "components_tooltip_icon_button_tooltipiconbuttonprops",
+      "components_tooltip_icon_button_tsx",
+      "components_ui_button_tsx",
+      "components_ui_tooltip_tsx",
+      "lib_utils_ts",
+      "ui_button_button",
+      "ui_button_buttonvariants",
+      "ui_tooltip_tooltip",
+      "ui_tooltip_tooltipcontent",
+      "ui_tooltip_tooltipprovider",
+      "ui_tooltip_tooltiptrigger"
+    ],
+    "6": [
+      "components_json",
+      "tf_ai_components_aliases",
+      "tf_ai_components_aliases_components",
+      "tf_ai_components_aliases_hooks",
+      "tf_ai_components_aliases_lib",
+      "tf_ai_components_aliases_ui",
+      "tf_ai_components_aliases_utils",
+      "tf_ai_components_iconlibrary",
+      "tf_ai_components_registries",
+      "tf_ai_components_registries_assistant_ui",
+      "tf_ai_components_rsc",
+      "tf_ai_components_schema",
+      "tf_ai_components_style",
+      "tf_ai_components_tailwind",
+      "tf_ai_components_tailwind_basecolor",
+      "tf_ai_components_tailwind_config",
+      "tf_ai_components_tailwind_css",
+      "tf_ai_components_tailwind_cssvariables",
+      "tf_ai_components_tailwind_prefix",
+      "tf_ai_components_tsx"
+    ],
+    "7": [
+      "package_json",
+      "tf_ai_package_devdependencies",
+      "tf_ai_package_devdependencies_biomejs_biome",
+      "tf_ai_package_devdependencies_tailwindcss",
+      "tf_ai_package_devdependencies_tailwindcss_postcss",
+      "tf_ai_package_devdependencies_types_node",
+      "tf_ai_package_devdependencies_types_react",
+      "tf_ai_package_devdependencies_types_react_dom",
+      "tf_ai_package_devdependencies_typescript",
+      "tf_ai_package_name",
+      "tf_ai_package_private",
+      "tf_ai_package_scripts",
+      "tf_ai_package_scripts_build",
+      "tf_ai_package_scripts_dev",
+      "tf_ai_package_scripts_format",
+      "tf_ai_package_scripts_format_fix",
+      "tf_ai_package_scripts_lint",
+      "tf_ai_package_scripts_lint_fix",
+      "tf_ai_package_scripts_start",
+      "tf_ai_package_version"
+    ],
+    "8": [
+      "tf_ai_tsconfig_compileroptions",
+      "tf_ai_tsconfig_compileroptions_allowjs",
+      "tf_ai_tsconfig_compileroptions_esmoduleinterop",
+      "tf_ai_tsconfig_compileroptions_incremental",
+      "tf_ai_tsconfig_compileroptions_isolatedmodules",
+      "tf_ai_tsconfig_compileroptions_jsx",
+      "tf_ai_tsconfig_compileroptions_lib",
+      "tf_ai_tsconfig_compileroptions_module",
+      "tf_ai_tsconfig_compileroptions_moduleresolution",
+      "tf_ai_tsconfig_compileroptions_noemit",
+      "tf_ai_tsconfig_compileroptions_paths",
+      "tf_ai_tsconfig_compileroptions_plugins",
+      "tf_ai_tsconfig_compileroptions_resolvejsonmodule",
+      "tf_ai_tsconfig_compileroptions_skiplibcheck",
+      "tf_ai_tsconfig_compileroptions_strict",
+      "tf_ai_tsconfig_compileroptions_target",
+      "tf_ai_tsconfig_exclude",
+      "tf_ai_tsconfig_include",
+      "tf_ai_tsconfig_paths",
+      "tsconfig_json"
+    ],
+    "9": [
+      "app_assistant_assistant",
+      "app_assistant_tsx",
+      "app_page_home",
+      "app_page_tsx",
+      "components_thread_thread",
+      "components_threadlist_sidebar_threadlistsidebar",
+      "components_ui_breadcrumb_tsx",
+      "ui_breadcrumb_breadcrumb",
+      "ui_breadcrumb_breadcrumbellipsis",
+      "ui_breadcrumb_breadcrumbitem",
+      "ui_breadcrumb_breadcrumblink",
+      "ui_breadcrumb_breadcrumblist",
+      "ui_breadcrumb_breadcrumbpage",
+      "ui_breadcrumb_breadcrumbseparator"
+    ],
+    "10": [
+      "app_api_chat_route_ts",
+      "chat_route_post"
+    ],
+    "11": [
+      "next_config_ts",
+      "tf_ai_next_config_nextconfig"
+    ],
+    "12": [
+      "postcss_config_mjs",
+      "tf_ai_postcss_config_config"
+    ],
+    "13": [
+      "rules_graphify",
+      "workflow_graphify"
+    ],
+    "14": [
+      "next_env_d_ts"
+    ]
+  },
+  "cohesion": {
+    "0": 0.08627450980392157,
+    "1": 0.0784313725490196,
+    "2": 0.0896551724137931,
+    "3": 0.10333333333333333,
+    "4": 0.08,
+    "5": 0.1341991341991342,
+    "6": 0.1,
+    "7": 0.1,
+    "8": 0.1,
+    "9": 0.21978021978021978,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0
+  },
+  "gods": [
+    {
+      "id": "lib_utils_cn",
+      "label": "cn()",
+      "degree": 90
+    },
+    {
+      "id": "tf_ai_tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 16
+    },
+    {
+      "id": "tf_ai_package_scripts",
+      "label": "scripts",
+      "degree": 8
+    },
+    {
+      "id": "ui_button_button",
+      "label": "Button()",
+      "degree": 8
+    },
+    {
+      "id": "tf_ai_components_tailwind",
+      "label": "tailwind",
+      "degree": 6
+    },
+    {
+      "id": "tf_ai_components_aliases",
+      "label": "aliases",
+      "degree": 6
+    },
+    {
+      "id": "ui_sidebar_usesidebar",
+      "label": "useSidebar()",
+      "degree": 5
+    },
+    {
+      "id": "ui_sidebar_sidebarmenubutton",
+      "label": "SidebarMenuButton()",
+      "degree": 5
+    },
+    {
+      "id": "ui_tooltip_tooltipcontent",
+      "label": "TooltipContent()",
+      "degree": 5
+    },
+    {
+      "id": "components_attachment_useattachmentsrc",
+      "label": "useAttachmentSrc()",
+      "degree": 4
+    }
+  ],
+  "surprises": [
+    {
+      "source": "cn()",
+      "target": "clsx",
+      "source_files": [
+        "lib/utils.ts",
+        "package.json"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `clsx` unexpectedly reaches hub `cn()`"
+    },
+    {
+      "source": "AttachmentPreview()",
+      "target": "cn()",
+      "source_files": [
+        "components/attachment.tsx",
+        "lib/utils.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities; peripheral node `AttachmentPreview()` unexpectedly reaches hub `cn()`"
+    },
+    {
+      "source": "AttachmentUI()",
+      "target": "cn()",
+      "source_files": [
+        "components/attachment.tsx",
+        "lib/utils.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities; peripheral node `AttachmentUI()` unexpectedly reaches hub `cn()`"
+    },
+    {
+      "source": "ReasoningFade()",
+      "target": "cn()",
+      "source_files": [
+        "components/reasoning.tsx",
+        "lib/utils.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities; peripheral node `ReasoningFade()` unexpectedly reaches hub `cn()`"
+    },
+    {
+      "source": "AssistantMessage()",
+      "target": "cn()",
+      "source_files": [
+        "components/thread.tsx",
+        "lib/utils.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities; peripheral node `AssistantMessage()` unexpectedly reaches hub `cn()`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `cn()` connect `Community 0` to `Community 1`, `Community 2`, `Community 3`, `Community 4`, `Community 5`, `Community 9`?",
+      "why": "High betweenness centrality (0.448) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `dependencies` connect `Community 4` to `Community 7`?",
+      "why": "High betweenness centrality (0.231) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `clsx` connect `Community 4` to `Community 0`?",
+      "why": "High betweenness centrality (0.215) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `$schema`, `style`, `rsc` to the rest of the system?",
+      "why": "93 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.08627450980392157 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 1` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.0784313725490196 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 2` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.0896551724137931 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

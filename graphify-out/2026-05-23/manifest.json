@@ -30,8 +30,8 @@
     "semantic_hash": "7831df54b0184c9a88a681bd02b3e9e4"
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\assistant.tsx": {
-    "mtime": 1779470249.0333333,
-    "ast_hash": "9c3b64b932d7e32eca4178b3f94b040d",
+    "mtime": 1779468165.2459514,
+    "ast_hash": "1f18c0986cb068557a01a749fba9b3d0",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\layout.tsx": {
@@ -45,9 +45,9 @@
     "semantic_hash": "5f437cf3bc09f82f103a11f11c4e4a2a"
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\api\\chat\\route.ts": {
-    "mtime": 1779470292.9670918,
-    "ast_hash": "192d7a7dc31ad1b208b7ef31434e2930",
-    "semantic_hash": ""
+    "mtime": 1779464463.74551,
+    "ast_hash": "e62802518e0d15a6ff8621591a5c8c46",
+    "semantic_hash": "e62802518e0d15a6ff8621591a5c8c46"
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\attachment.tsx": {
     "mtime": 1779462544.121226,
@@ -75,9 +75,9 @@
     "semantic_hash": "64968807b97427740debf2c961154921"
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\thread.tsx": {
-    "mtime": 1779468393.2360208,
-    "ast_hash": "828f5f7da38c068166c84d0db4e42211",
-    "semantic_hash": ""
+    "mtime": 1779462544.2663014,
+    "ast_hash": "40a88e156995f88e4e2303ed091de8d7",
+    "semantic_hash": "40a88e156995f88e4e2303ed091de8d7"
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\threadlist-sidebar.tsx": {
     "mtime": 1779463371.2592497,
@@ -179,29 +179,9 @@
     "ast_hash": "84de69efd46ab0b8430393bd4188f8f2",
     "semantic_hash": "84de69efd46ab0b8430393bd4188f8f2"
   },
-  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\server.ts": {
-    "mtime": 1779470255.435302,
-    "ast_hash": "661875d1f60c33ba8bdc60bb551bbbcd",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\api\\ingest\\route.ts": {
-    "mtime": 1779501375.3245807,
-    "ast_hash": "13444f75c88de700179ddc5774635dfc",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\api\\metrics\\route.ts": {
-    "mtime": 1779499353.4117723,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\sdk\\logger.ts": {
-    "mtime": 1779500459.7836375,
-    "ast_hash": "2379d71942ee19078d4dd887bb19acee",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\workers\\index.ts": {
-    "mtime": 1779499699.7192626,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\websocket-server.ts": {
+    "mtime": 1779468196.7777324,
+    "ast_hash": "89df6dd9bc86068cf6b67561deee55a4",
     "semantic_hash": ""
   }
 }

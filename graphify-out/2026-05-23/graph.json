@@ -643,105 +643,6 @@
       "norm_label": "config"
     },
     {
-      "label": "server.ts",
-      "file_type": "code",
-      "source_file": "server.ts",
-      "source_location": "L1",
-      "id": "server_ts",
-      "community": 5,
-      "norm_label": "server.ts"
-    },
-    {
-      "label": "Session",
-      "file_type": "code",
-      "source_file": "server.ts",
-      "source_location": "L8",
-      "id": "tf_ai_server_session",
-      "community": 5,
-      "norm_label": "session"
-    },
-    {
-      "label": "sessions",
-      "file_type": "code",
-      "source_file": "server.ts",
-      "source_location": "L16",
-      "id": "tf_ai_server_sessions",
-      "community": 5,
-      "norm_label": "sessions"
-    },
-    {
-      "label": "sleep()",
-      "file_type": "code",
-      "source_file": "server.ts",
-      "source_location": "L30",
-      "id": "tf_ai_server_sleep",
-      "community": 5,
-      "norm_label": "sleep()"
-    },
-    {
-      "label": "send()",
-      "file_type": "code",
-      "source_file": "server.ts",
-      "source_location": "L32",
-      "id": "tf_ai_server_send",
-      "community": 5,
-      "norm_label": "send()"
-    },
-    {
-      "label": "resetIdleTimer()",
-      "file_type": "code",
-      "source_file": "server.ts",
-      "source_location": "L40",
-      "id": "tf_ai_server_resetidletimer",
-      "community": 5,
-      "norm_label": "resetidletimer()"
-    },
-    {
-      "label": "streamAIResponse()",
-      "file_type": "code",
-      "source_file": "server.ts",
-      "source_location": "L51",
-      "id": "tf_ai_server_streamairesponse",
-      "community": 5,
-      "norm_label": "streamairesponse()"
-    },
-    {
-      "label": "fetch()",
-      "file_type": "code",
-      "source_file": "server.ts",
-      "source_location": "L114",
-      "id": "tf_ai_server_fetch",
-      "community": 5,
-      "norm_label": "fetch()"
-    },
-    {
-      "label": "open()",
-      "file_type": "code",
-      "source_file": "server.ts",
-      "source_location": "L122",
-      "id": "tf_ai_server_open",
-      "community": 5,
-      "norm_label": "open()"
-    },
-    {
-      "label": "message()",
-      "file_type": "code",
-      "source_file": "server.ts",
-      "source_location": "L137",
-      "id": "tf_ai_server_message",
-      "community": 5,
-      "norm_label": "message()"
-    },
-    {
-      "label": "close()",
-      "file_type": "code",
-      "source_file": "server.ts",
-      "source_location": "L189",
-      "id": "tf_ai_server_close",
-      "community": 5,
-      "norm_label": "close()"
-    },
-    {
       "label": "tsconfig.json",
       "file_type": "code",
       "source_file": "tsconfig.json",
@@ -922,6 +823,105 @@
       "norm_label": "exclude"
     },
     {
+      "label": "websocket-server.ts",
+      "file_type": "code",
+      "source_file": "websocket-server.ts",
+      "source_location": "L1",
+      "id": "websocket_server_ts",
+      "community": 15,
+      "norm_label": "websocket-server.ts"
+    },
+    {
+      "label": "Session",
+      "file_type": "code",
+      "source_file": "websocket-server.ts",
+      "source_location": "L7",
+      "id": "tf_ai_websocket_server_session",
+      "community": 15,
+      "norm_label": "session"
+    },
+    {
+      "label": "sessions",
+      "file_type": "code",
+      "source_file": "websocket-server.ts",
+      "source_location": "L15",
+      "id": "tf_ai_websocket_server_sessions",
+      "community": 15,
+      "norm_label": "sessions"
+    },
+    {
+      "label": "sleep()",
+      "file_type": "code",
+      "source_file": "websocket-server.ts",
+      "source_location": "L31",
+      "id": "tf_ai_websocket_server_sleep",
+      "community": 15,
+      "norm_label": "sleep()"
+    },
+    {
+      "label": "send()",
+      "file_type": "code",
+      "source_file": "websocket-server.ts",
+      "source_location": "L33",
+      "id": "tf_ai_websocket_server_send",
+      "community": 15,
+      "norm_label": "send()"
+    },
+    {
+      "label": "resetIdleTimer()",
+      "file_type": "code",
+      "source_file": "websocket-server.ts",
+      "source_location": "L42",
+      "id": "tf_ai_websocket_server_resetidletimer",
+      "community": 15,
+      "norm_label": "resetidletimer()"
+    },
+    {
+      "label": "streamAIResponse()",
+      "file_type": "code",
+      "source_file": "websocket-server.ts",
+      "source_location": "L54",
+      "id": "tf_ai_websocket_server_streamairesponse",
+      "community": 15,
+      "norm_label": "streamairesponse()"
+    },
+    {
+      "label": "fetch()",
+      "file_type": "code",
+      "source_file": "websocket-server.ts",
+      "source_location": "L118",
+      "id": "tf_ai_websocket_server_fetch",
+      "community": 15,
+      "norm_label": "fetch()"
+    },
+    {
+      "label": "open()",
+      "file_type": "code",
+      "source_file": "websocket-server.ts",
+      "source_location": "L126",
+      "id": "tf_ai_websocket_server_open",
+      "community": 15,
+      "norm_label": "open()"
+    },
+    {
+      "label": "message()",
+      "file_type": "code",
+      "source_file": "websocket-server.ts",
+      "source_location": "L143",
+      "id": "tf_ai_websocket_server_message",
+      "community": 15,
+      "norm_label": "message()"
+    },
+    {
+      "label": "close()",
+      "file_type": "code",
+      "source_file": "websocket-server.ts",
+      "source_location": "L204",
+      "id": "tf_ai_websocket_server_close",
+      "community": 15,
+      "norm_label": "close()"
+    },
+    {
       "label": "assistant.tsx",
       "file_type": "code",
       "source_file": "app/assistant.tsx",
@@ -934,7 +934,7 @@
       "label": "generateId()",
       "file_type": "code",
       "source_file": "app/assistant.tsx",
-      "source_location": "L27",
+      "source_location": "L28",
       "id": "app_assistant_generateid",
       "community": 9,
       "norm_label": "generateid()"
@@ -943,7 +943,7 @@
       "label": "useWebSocketChat()",
       "file_type": "code",
       "source_file": "app/assistant.tsx",
-      "source_location": "L31",
+      "source_location": "L35",
       "id": "app_assistant_usewebsocketchat",
       "community": 9,
       "norm_label": "usewebsocketchat()"
@@ -952,7 +952,7 @@
       "label": "Assistant()",
       "file_type": "code",
       "source_file": "app/assistant.tsx",
-      "source_location": "L204",
+      "source_location": "L186",
       "id": "app_assistant_assistant",
       "community": 9,
       "norm_label": "assistant()"
@@ -1037,33 +1037,6 @@
       "id": "chat_route_post",
       "community": 10,
       "norm_label": "post()"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/ingest/route.ts",
-      "source_location": "L1",
-      "id": "app_api_ingest_route_ts",
-      "community": 19,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "POST()",
-      "file_type": "code",
-      "source_file": "app/api/ingest/route.ts",
-      "source_location": "L3",
-      "id": "ingest_route_post",
-      "community": 19,
-      "norm_label": "post()"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/metrics/route.ts",
-      "source_location": "L1",
-      "id": "app_api_metrics_route_ts",
-      "community": 20,
-      "norm_label": "route.ts"
     },
     {
       "label": "attachment.tsx",
@@ -1152,7 +1125,7 @@
       "source_file": "components/attachment.tsx",
       "source_location": "L188",
       "id": "components_attachment_usermessageattachments",
-      "community": 2,
+      "community": 1,
       "norm_label": "usermessageattachments()"
     },
     {
@@ -1161,7 +1134,7 @@
       "source_file": "components/attachment.tsx",
       "source_location": "L198",
       "id": "components_attachment_composerattachments",
-      "community": 2,
+      "community": 1,
       "norm_label": "composerattachments()"
     },
     {
@@ -1170,7 +1143,7 @@
       "source_file": "components/attachment.tsx",
       "source_location": "L208",
       "id": "components_attachment_composeraddattachment",
-      "community": 2,
+      "community": 1,
       "norm_label": "composeraddattachment()"
     },
     {
@@ -1359,7 +1332,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L1",
       "id": "components_thread_list_tsx",
-      "community": 22,
+      "community": 5,
       "norm_label": "thread-list.tsx"
     },
     {
@@ -1368,7 +1341,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L17",
       "id": "components_thread_list_threadlist",
-      "community": 22,
+      "community": 5,
       "norm_label": "threadlist()"
     },
     {
@@ -1377,7 +1350,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L33",
       "id": "components_thread_list_threadlistnew",
-      "community": 22,
+      "community": 5,
       "norm_label": "threadlistnew()"
     },
     {
@@ -1386,7 +1359,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L47",
       "id": "components_thread_list_threadlistskeleton",
-      "community": 22,
+      "community": 5,
       "norm_label": "threadlistskeleton()"
     },
     {
@@ -1395,7 +1368,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L64",
       "id": "components_thread_list_threadlistitem",
-      "community": 22,
+      "community": 5,
       "norm_label": "threadlistitem()"
     },
     {
@@ -1404,7 +1377,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L77",
       "id": "components_thread_list_threadlistitemmore",
-      "community": 22,
+      "community": 5,
       "norm_label": "threadlistitemmore()"
     },
     {
@@ -1537,7 +1510,7 @@
       "label": "EditComposer()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L382",
+      "source_location": "L394",
       "id": "components_thread_editcomposer",
       "community": 1,
       "norm_label": "editcomposer()"
@@ -1546,7 +1519,7 @@
       "label": "BranchPicker()",
       "file_type": "code",
       "source_file": "components/thread.tsx",
-      "source_location": "L408",
+      "source_location": "L420",
       "id": "components_thread_branchpicker",
       "community": 1,
       "norm_label": "branchpicker()"
@@ -1926,7 +1899,7 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L1",
       "id": "components_ui_button_tsx",
-      "community": 22,
+      "community": 5,
       "norm_label": "button.tsx"
     },
     {
@@ -1935,7 +1908,7 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L7",
       "id": "ui_button_buttonvariants",
-      "community": 22,
+      "community": 5,
       "norm_label": "buttonvariants"
     },
     {
@@ -1944,7 +1917,7 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L41",
       "id": "ui_button_button",
-      "community": 22,
+      "community": 5,
       "norm_label": "button()"
     },
     {
@@ -2569,69 +2542,6 @@
       "norm_label": "cn()"
     },
     {
-      "label": "logger.ts",
-      "file_type": "code",
-      "source_file": "lib/sdk/logger.ts",
-      "source_location": "L1",
-      "id": "lib_sdk_logger_ts",
-      "community": 5,
-      "norm_label": "logger.ts"
-    },
-    {
-      "label": "TokenUsage",
-      "file_type": "code",
-      "source_file": "lib/sdk/logger.ts",
-      "source_location": "L1",
-      "id": "sdk_logger_tokenusage",
-      "community": 5,
-      "norm_label": "tokenusage"
-    },
-    {
-      "label": "LogPayload",
-      "file_type": "code",
-      "source_file": "lib/sdk/logger.ts",
-      "source_location": "L7",
-      "id": "sdk_logger_logpayload",
-      "community": 5,
-      "norm_label": "logpayload"
-    },
-    {
-      "label": "LoggerOptions",
-      "file_type": "code",
-      "source_file": "lib/sdk/logger.ts",
-      "source_location": "L20",
-      "id": "sdk_logger_loggeroptions",
-      "community": 5,
-      "norm_label": "loggeroptions"
-    },
-    {
-      "label": "fireLog()",
-      "file_type": "code",
-      "source_file": "lib/sdk/logger.ts",
-      "source_location": "L32",
-      "id": "sdk_logger_firelog",
-      "community": 5,
-      "norm_label": "firelog()"
-    },
-    {
-      "label": "withLogger()",
-      "file_type": "code",
-      "source_file": "lib/sdk/logger.ts",
-      "source_location": "L54",
-      "id": "sdk_logger_withlogger",
-      "community": 5,
-      "norm_label": "withlogger()"
-    },
-    {
-      "label": "index.ts",
-      "file_type": "code",
-      "source_file": "workers/index.ts",
-      "source_location": "L1",
-      "id": "workers_index_ts",
-      "community": 21,
-      "norm_label": "index.ts"
-    },
-    {
       "label": "README.md",
       "file_type": "document",
       "source_file": "README.md",
@@ -2675,105 +2585,6 @@
       "id": "workflows_graphify_workflow_graphify",
       "community": 17,
       "norm_label": "workflow: graphify"
-    },
-    {
-      "label": "websocket-server.ts",
-      "file_type": "code",
-      "source_file": "websocket-server.ts",
-      "source_location": "L1",
-      "community": 15,
-      "norm_label": "websocket-server.ts",
-      "id": "websocket_server_ts"
-    },
-    {
-      "label": "Session",
-      "file_type": "code",
-      "source_file": "websocket-server.ts",
-      "source_location": "L7",
-      "community": 15,
-      "norm_label": "session",
-      "id": "tf_ai_websocket_server_session"
-    },
-    {
-      "label": "sessions",
-      "file_type": "code",
-      "source_file": "websocket-server.ts",
-      "source_location": "L15",
-      "community": 15,
-      "norm_label": "sessions",
-      "id": "tf_ai_websocket_server_sessions"
-    },
-    {
-      "label": "sleep()",
-      "file_type": "code",
-      "source_file": "websocket-server.ts",
-      "source_location": "L31",
-      "community": 15,
-      "norm_label": "sleep()",
-      "id": "tf_ai_websocket_server_sleep"
-    },
-    {
-      "label": "send()",
-      "file_type": "code",
-      "source_file": "websocket-server.ts",
-      "source_location": "L33",
-      "community": 15,
-      "norm_label": "send()",
-      "id": "tf_ai_websocket_server_send"
-    },
-    {
-      "label": "resetIdleTimer()",
-      "file_type": "code",
-      "source_file": "websocket-server.ts",
-      "source_location": "L42",
-      "community": 15,
-      "norm_label": "resetidletimer()",
-      "id": "tf_ai_websocket_server_resetidletimer"
-    },
-    {
-      "label": "streamAIResponse()",
-      "file_type": "code",
-      "source_file": "websocket-server.ts",
-      "source_location": "L54",
-      "community": 15,
-      "norm_label": "streamairesponse()",
-      "id": "tf_ai_websocket_server_streamairesponse"
-    },
-    {
-      "label": "fetch()",
-      "file_type": "code",
-      "source_file": "websocket-server.ts",
-      "source_location": "L118",
-      "community": 15,
-      "norm_label": "fetch()",
-      "id": "tf_ai_websocket_server_fetch"
-    },
-    {
-      "label": "open()",
-      "file_type": "code",
-      "source_file": "websocket-server.ts",
-      "source_location": "L126",
-      "community": 15,
-      "norm_label": "open()",
-      "id": "tf_ai_websocket_server_open"
-    },
-    {
-      "label": "message()",
-      "file_type": "code",
-      "source_file": "websocket-server.ts",
-      "source_location": "L143",
-      "community": 15,
-      "norm_label": "message()",
-      "id": "tf_ai_websocket_server_message"
-    },
-    {
-      "label": "close()",
-      "file_type": "code",
-      "source_file": "websocket-server.ts",
-      "source_location": "L204",
-      "community": 15,
-      "norm_label": "close()",
-      "id": "tf_ai_websocket_server_close"
     },
     {
       "label": "runAI()",
@@ -3495,205 +3306,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "server_ts",
-      "target": "tf_ai_server_session"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "server_ts",
-      "target": "tf_ai_server_sessions"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "server_ts",
-      "target": "tf_ai_server_sleep"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L32",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "server_ts",
-      "target": "tf_ai_server_send"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L40",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "server_ts",
-      "target": "tf_ai_server_resetidletimer"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L51",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "server_ts",
-      "target": "tf_ai_server_streamairesponse"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L114",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "server_ts",
-      "target": "tf_ai_server_fetch"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L122",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "server_ts",
-      "target": "tf_ai_server_open"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L137",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "server_ts",
-      "target": "tf_ai_server_message"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L189",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "server_ts",
-      "target": "tf_ai_server_close"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L87",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_server_streamairesponse",
-      "target": "tf_ai_server_sleep"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L157",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_server_message",
-      "target": "tf_ai_server_sleep"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L71",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_server_streamairesponse",
-      "target": "tf_ai_server_send"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L158",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_server_message",
-      "target": "tf_ai_server_send"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L107",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_server_streamairesponse",
-      "target": "tf_ai_server_resetidletimer"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L165",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_server_message",
-      "target": "tf_ai_server_resetidletimer"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L134",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_server_open",
-      "target": "tf_ai_server_streamairesponse"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "server.ts",
-      "source_location": "L186",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_server_message",
-      "target": "tf_ai_server_streamairesponse"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "lib/sdk/logger.ts",
-      "source_location": "L37",
-      "weight": 1.0,
-      "source": "sdk_logger_firelog",
-      "target": "tf_ai_server_fetch"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "tsconfig.json",
       "source_location": "L2",
       "weight": 1.0,
@@ -3880,6 +3492,269 @@
       "confidence_score": 1.0,
       "source": "tf_ai_tsconfig_compileroptions_paths",
       "target": "tf_ai_tsconfig_paths"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "websocket_server_ts",
+      "target": "tf_ai_websocket_server_session"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "websocket_server_ts",
+      "target": "tf_ai_websocket_server_sessions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "websocket_server_ts",
+      "target": "tf_ai_websocket_server_sleep"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "websocket_server_ts",
+      "target": "tf_ai_websocket_server_send",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L80",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "websocket_server_ts",
+      "target": "tf_ai_websocket_server_resetidletimer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "websocket_server_ts",
+      "target": "tf_ai_websocket_server_streamairesponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L87",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "websocket_server_ts",
+      "target": "tf_ai_websocket_server_fetch"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L94",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "websocket_server_ts",
+      "target": "tf_ai_websocket_server_open"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L111",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "websocket_server_ts",
+      "target": "tf_ai_websocket_server_message"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L141",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "websocket_server_ts",
+      "target": "tf_ai_websocket_server_close"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "websocket_server_ts",
+      "target": "tf_ai_websocket_server_runai"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "websocket_server_ts",
+      "target": "tf_ai_websocket_server_startidletimer"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "tf_ai_websocket_server_streamairesponse",
+      "target": "tf_ai_websocket_server_sleep",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L164",
+      "weight": 1.0,
+      "source": "tf_ai_websocket_server_message",
+      "target": "tf_ai_websocket_server_sleep",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tf_ai_websocket_server_runai",
+      "target": "tf_ai_websocket_server_sleep"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "tf_ai_websocket_server_streamairesponse",
+      "target": "tf_ai_websocket_server_send",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L165",
+      "weight": 1.0,
+      "source": "tf_ai_websocket_server_message",
+      "target": "tf_ai_websocket_server_send",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L110",
+      "weight": 1.0,
+      "source": "tf_ai_websocket_server_streamairesponse",
+      "target": "tf_ai_websocket_server_resetidletimer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L119",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tf_ai_websocket_server_message",
+      "target": "tf_ai_websocket_server_resetidletimer"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tf_ai_websocket_server_runai",
+      "target": "tf_ai_websocket_server_resetidletimer"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tf_ai_websocket_server_resetidletimer",
+      "target": "tf_ai_websocket_server_startidletimer"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "tf_ai_websocket_server_open",
+      "target": "tf_ai_websocket_server_streamairesponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L200",
+      "weight": 1.0,
+      "source": "tf_ai_websocket_server_message",
+      "target": "tf_ai_websocket_server_streamairesponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L107",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tf_ai_websocket_server_open",
+      "target": "tf_ai_websocket_server_runai"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "websocket-server.ts",
+      "source_location": "L138",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tf_ai_websocket_server_message",
+      "target": "tf_ai_websocket_server_runai"
     },
     {
       "relation": "imports_from",
@@ -4212,16 +4087,6 @@
       "confidence_score": 1.0,
       "source": "app_api_chat_route_ts",
       "target": "chat_route_post"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/ingest/route.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "app_api_ingest_route_ts",
-      "target": "ingest_route_post",
-      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -8064,67 +7929,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "lib/sdk/logger.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_sdk_logger_ts",
-      "target": "sdk_logger_tokenusage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/sdk/logger.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_sdk_logger_ts",
-      "target": "sdk_logger_logpayload"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/sdk/logger.ts",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_sdk_logger_ts",
-      "target": "sdk_logger_loggeroptions"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/sdk/logger.ts",
-      "source_location": "L32",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_sdk_logger_ts",
-      "target": "sdk_logger_firelog"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/sdk/logger.ts",
-      "source_location": "L54",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_sdk_logger_ts",
-      "target": "sdk_logger_withlogger"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/sdk/logger.ts",
-      "source_location": "L180",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sdk_logger_withlogger",
-      "target": "sdk_logger_firelog"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": ".agents/rules/graphify.md",
       "source_location": "L6",
       "weight": 1.0,
@@ -8143,269 +7947,6 @@
       "target": "workflows_graphify_workflow_graphify"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "websocket_server_ts",
-      "target": "tf_ai_websocket_server_session"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "websocket_server_ts",
-      "target": "tf_ai_websocket_server_sessions"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "websocket_server_ts",
-      "target": "tf_ai_websocket_server_sleep"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "websocket_server_ts",
-      "target": "tf_ai_websocket_server_send"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L80",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "websocket_server_ts",
-      "target": "tf_ai_websocket_server_resetidletimer"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L54",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "websocket_server_ts",
-      "target": "tf_ai_websocket_server_streamairesponse"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L87",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "websocket_server_ts",
-      "target": "tf_ai_websocket_server_fetch"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L94",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "websocket_server_ts",
-      "target": "tf_ai_websocket_server_open"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L111",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "websocket_server_ts",
-      "target": "tf_ai_websocket_server_message"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L141",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "websocket_server_ts",
-      "target": "tf_ai_websocket_server_close"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "websocket_server_ts",
-      "target": "tf_ai_websocket_server_runai"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L71",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "websocket_server_ts",
-      "target": "tf_ai_websocket_server_startidletimer"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L88",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_websocket_server_streamairesponse",
-      "target": "tf_ai_websocket_server_sleep"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L164",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_websocket_server_message",
-      "target": "tf_ai_websocket_server_sleep"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L48",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_websocket_server_runai",
-      "target": "tf_ai_websocket_server_sleep"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L72",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_websocket_server_streamairesponse",
-      "target": "tf_ai_websocket_server_send"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L165",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_websocket_server_message",
-      "target": "tf_ai_websocket_server_send"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L110",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_websocket_server_streamairesponse",
-      "target": "tf_ai_websocket_server_resetidletimer"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L119",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_websocket_server_message",
-      "target": "tf_ai_websocket_server_resetidletimer"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L66",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_websocket_server_runai",
-      "target": "tf_ai_websocket_server_resetidletimer"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L82",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_websocket_server_resetidletimer",
-      "target": "tf_ai_websocket_server_startidletimer"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L139",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_websocket_server_open",
-      "target": "tf_ai_websocket_server_streamairesponse"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L200",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_websocket_server_message",
-      "target": "tf_ai_websocket_server_streamairesponse"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L107",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_websocket_server_open",
-      "target": "tf_ai_websocket_server_runai"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "websocket-server.ts",
-      "source_location": "L138",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tf_ai_websocket_server_message",
-      "target": "tf_ai_websocket_server_runai"
-    },
-    {
       "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -8416,6 +7957,5 @@
       "target": "rules_graphify"
     }
   ],
-  "hyperedges": [],
-  "built_at_commit": "a1448b140deb755d559586195fdf60f5d03a598e"
+  "hyperedges": []
 }

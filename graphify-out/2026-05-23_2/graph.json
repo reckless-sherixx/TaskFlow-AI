@@ -1048,15 +1048,6 @@
       "norm_label": "route.ts"
     },
     {
-      "label": "POST()",
-      "file_type": "code",
-      "source_file": "app/api/ingest/route.ts",
-      "source_location": "L3",
-      "id": "ingest_route_post",
-      "community": 19,
-      "norm_label": "post()"
-    },
-    {
       "label": "route.ts",
       "file_type": "code",
       "source_file": "app/api/metrics/route.ts",
@@ -1071,7 +1062,7 @@
       "source_file": "components/attachment.tsx",
       "source_location": "L1",
       "id": "components_attachment_tsx",
-      "community": 2,
+      "community": 3,
       "norm_label": "attachment.tsx"
     },
     {
@@ -1080,7 +1071,7 @@
       "source_file": "components/attachment.tsx",
       "source_location": "L28",
       "id": "components_attachment_usefilesrc",
-      "community": 2,
+      "community": 3,
       "norm_label": "usefilesrc()"
     },
     {
@@ -1089,7 +1080,7 @@
       "source_file": "components/attachment.tsx",
       "source_location": "L48",
       "id": "components_attachment_useattachmentsrc",
-      "community": 2,
+      "community": 3,
       "norm_label": "useattachmentsrc()"
     },
     {
@@ -1098,7 +1089,7 @@
       "source_file": "components/attachment.tsx",
       "source_location": "L63",
       "id": "components_attachment_attachmentpreviewprops",
-      "community": 2,
+      "community": 3,
       "norm_label": "attachmentpreviewprops"
     },
     {
@@ -1107,7 +1098,7 @@
       "source_file": "components/attachment.tsx",
       "source_location": "L67",
       "id": "components_attachment_attachmentpreview",
-      "community": 2,
+      "community": 3,
       "norm_label": "attachmentpreview()"
     },
     {
@@ -1116,7 +1107,7 @@
       "source_file": "components/attachment.tsx",
       "source_location": "L84",
       "id": "components_attachment_attachmentpreviewdialog",
-      "community": 2,
+      "community": 3,
       "norm_label": "attachmentpreviewdialog()"
     },
     {
@@ -1125,7 +1116,7 @@
       "source_file": "components/attachment.tsx",
       "source_location": "L109",
       "id": "components_attachment_attachmentthumb",
-      "community": 2,
+      "community": 3,
       "norm_label": "attachmentthumb()"
     },
     {
@@ -1134,7 +1125,7 @@
       "source_file": "components/attachment.tsx",
       "source_location": "L126",
       "id": "components_attachment_attachmentui",
-      "community": 2,
+      "community": 3,
       "norm_label": "attachmentui()"
     },
     {
@@ -1143,7 +1134,7 @@
       "source_file": "components/attachment.tsx",
       "source_location": "L174",
       "id": "components_attachment_attachmentremove",
-      "community": 2,
+      "community": 3,
       "norm_label": "attachmentremove()"
     },
     {
@@ -1152,7 +1143,7 @@
       "source_file": "components/attachment.tsx",
       "source_location": "L188",
       "id": "components_attachment_usermessageattachments",
-      "community": 2,
+      "community": 3,
       "norm_label": "usermessageattachments()"
     },
     {
@@ -1161,7 +1152,7 @@
       "source_file": "components/attachment.tsx",
       "source_location": "L198",
       "id": "components_attachment_composerattachments",
-      "community": 2,
+      "community": 3,
       "norm_label": "composerattachments()"
     },
     {
@@ -1170,7 +1161,7 @@
       "source_file": "components/attachment.tsx",
       "source_location": "L208",
       "id": "components_attachment_composeraddattachment",
-      "community": 2,
+      "community": 3,
       "norm_label": "composeraddattachment()"
     },
     {
@@ -1359,7 +1350,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L1",
       "id": "components_thread_list_tsx",
-      "community": 22,
+      "community": 2,
       "norm_label": "thread-list.tsx"
     },
     {
@@ -1368,7 +1359,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L17",
       "id": "components_thread_list_threadlist",
-      "community": 22,
+      "community": 2,
       "norm_label": "threadlist()"
     },
     {
@@ -1377,7 +1368,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L33",
       "id": "components_thread_list_threadlistnew",
-      "community": 22,
+      "community": 2,
       "norm_label": "threadlistnew()"
     },
     {
@@ -1386,7 +1377,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L47",
       "id": "components_thread_list_threadlistskeleton",
-      "community": 22,
+      "community": 2,
       "norm_label": "threadlistskeleton()"
     },
     {
@@ -1395,7 +1386,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L64",
       "id": "components_thread_list_threadlistitem",
-      "community": 22,
+      "community": 2,
       "norm_label": "threadlistitem()"
     },
     {
@@ -1404,7 +1395,7 @@
       "source_file": "components/thread-list.tsx",
       "source_location": "L77",
       "id": "components_thread_list_threadlistitemmore",
-      "community": 22,
+      "community": 2,
       "norm_label": "threadlistitemmore()"
     },
     {
@@ -1791,7 +1782,7 @@
       "source_file": "components/ui/avatar.tsx",
       "source_location": "L1",
       "id": "components_ui_avatar_tsx",
-      "community": 2,
+      "community": 3,
       "norm_label": "avatar.tsx"
     },
     {
@@ -1800,7 +1791,7 @@
       "source_file": "components/ui/avatar.tsx",
       "source_location": "L8",
       "id": "ui_avatar_avatar",
-      "community": 2,
+      "community": 3,
       "norm_label": "avatar()"
     },
     {
@@ -1809,7 +1800,7 @@
       "source_file": "components/ui/avatar.tsx",
       "source_location": "L28",
       "id": "ui_avatar_avatarimage",
-      "community": 2,
+      "community": 3,
       "norm_label": "avatarimage()"
     },
     {
@@ -1818,7 +1809,7 @@
       "source_file": "components/ui/avatar.tsx",
       "source_location": "L41",
       "id": "ui_avatar_avatarfallback",
-      "community": 2,
+      "community": 3,
       "norm_label": "avatarfallback()"
     },
     {
@@ -1827,7 +1818,7 @@
       "source_file": "components/ui/avatar.tsx",
       "source_location": "L57",
       "id": "ui_avatar_avatarbadge",
-      "community": 2,
+      "community": 3,
       "norm_label": "avatarbadge()"
     },
     {
@@ -1836,7 +1827,7 @@
       "source_file": "components/ui/avatar.tsx",
       "source_location": "L73",
       "id": "ui_avatar_avatargroup",
-      "community": 2,
+      "community": 3,
       "norm_label": "avatargroup()"
     },
     {
@@ -1845,7 +1836,7 @@
       "source_file": "components/ui/avatar.tsx",
       "source_location": "L86",
       "id": "ui_avatar_avatargroupcount",
-      "community": 2,
+      "community": 3,
       "norm_label": "avatargroupcount()"
     },
     {
@@ -1926,7 +1917,7 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L1",
       "id": "components_ui_button_tsx",
-      "community": 22,
+      "community": 2,
       "norm_label": "button.tsx"
     },
     {
@@ -1935,7 +1926,7 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L7",
       "id": "ui_button_buttonvariants",
-      "community": 22,
+      "community": 2,
       "norm_label": "buttonvariants"
     },
     {
@@ -1944,7 +1935,7 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L41",
       "id": "ui_button_button",
-      "community": 22,
+      "community": 2,
       "norm_label": "button()"
     },
     {
@@ -3498,9 +3489,9 @@
       "source_file": "server.ts",
       "source_location": "L8",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "server_ts",
-      "target": "tf_ai_server_session"
+      "target": "tf_ai_server_session",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3508,9 +3499,9 @@
       "source_file": "server.ts",
       "source_location": "L16",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "server_ts",
-      "target": "tf_ai_server_sessions"
+      "target": "tf_ai_server_sessions",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3518,9 +3509,9 @@
       "source_file": "server.ts",
       "source_location": "L30",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "server_ts",
-      "target": "tf_ai_server_sleep"
+      "target": "tf_ai_server_sleep",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3528,9 +3519,9 @@
       "source_file": "server.ts",
       "source_location": "L32",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "server_ts",
-      "target": "tf_ai_server_send"
+      "target": "tf_ai_server_send",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3538,9 +3529,9 @@
       "source_file": "server.ts",
       "source_location": "L40",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "server_ts",
-      "target": "tf_ai_server_resetidletimer"
+      "target": "tf_ai_server_resetidletimer",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3548,9 +3539,9 @@
       "source_file": "server.ts",
       "source_location": "L51",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "server_ts",
-      "target": "tf_ai_server_streamairesponse"
+      "target": "tf_ai_server_streamairesponse",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3558,9 +3549,9 @@
       "source_file": "server.ts",
       "source_location": "L114",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "server_ts",
-      "target": "tf_ai_server_fetch"
+      "target": "tf_ai_server_fetch",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3568,9 +3559,9 @@
       "source_file": "server.ts",
       "source_location": "L122",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "server_ts",
-      "target": "tf_ai_server_open"
+      "target": "tf_ai_server_open",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3578,9 +3569,9 @@
       "source_file": "server.ts",
       "source_location": "L137",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "server_ts",
-      "target": "tf_ai_server_message"
+      "target": "tf_ai_server_message",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3588,9 +3579,9 @@
       "source_file": "server.ts",
       "source_location": "L189",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "server_ts",
-      "target": "tf_ai_server_close"
+      "target": "tf_ai_server_close",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3599,9 +3590,9 @@
       "source_file": "server.ts",
       "source_location": "L87",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "tf_ai_server_streamairesponse",
-      "target": "tf_ai_server_sleep"
+      "target": "tf_ai_server_sleep",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3610,9 +3601,9 @@
       "source_file": "server.ts",
       "source_location": "L157",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "tf_ai_server_message",
-      "target": "tf_ai_server_sleep"
+      "target": "tf_ai_server_sleep",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3621,9 +3612,9 @@
       "source_file": "server.ts",
       "source_location": "L71",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "tf_ai_server_streamairesponse",
-      "target": "tf_ai_server_send"
+      "target": "tf_ai_server_send",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3632,9 +3623,9 @@
       "source_file": "server.ts",
       "source_location": "L158",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "tf_ai_server_message",
-      "target": "tf_ai_server_send"
+      "target": "tf_ai_server_send",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3643,9 +3634,9 @@
       "source_file": "server.ts",
       "source_location": "L107",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "tf_ai_server_streamairesponse",
-      "target": "tf_ai_server_resetidletimer"
+      "target": "tf_ai_server_resetidletimer",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3654,9 +3645,9 @@
       "source_file": "server.ts",
       "source_location": "L165",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "tf_ai_server_message",
-      "target": "tf_ai_server_resetidletimer"
+      "target": "tf_ai_server_resetidletimer",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3665,9 +3656,9 @@
       "source_file": "server.ts",
       "source_location": "L134",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "tf_ai_server_open",
-      "target": "tf_ai_server_streamairesponse"
+      "target": "tf_ai_server_streamairesponse",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -3676,9 +3667,9 @@
       "source_file": "server.ts",
       "source_location": "L186",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "tf_ai_server_message",
-      "target": "tf_ai_server_streamairesponse"
+      "target": "tf_ai_server_streamairesponse",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4212,16 +4203,6 @@
       "confidence_score": 1.0,
       "source": "app_api_chat_route_ts",
       "target": "chat_route_post"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/ingest/route.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "app_api_ingest_route_ts",
-      "target": "ingest_route_post",
-      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -8067,9 +8048,9 @@
       "source_file": "lib/sdk/logger.ts",
       "source_location": "L1",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "lib_sdk_logger_ts",
-      "target": "sdk_logger_tokenusage"
+      "target": "sdk_logger_tokenusage",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -8077,9 +8058,9 @@
       "source_file": "lib/sdk/logger.ts",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "lib_sdk_logger_ts",
-      "target": "sdk_logger_logpayload"
+      "target": "sdk_logger_logpayload",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -8087,9 +8068,9 @@
       "source_file": "lib/sdk/logger.ts",
       "source_location": "L20",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "lib_sdk_logger_ts",
-      "target": "sdk_logger_loggeroptions"
+      "target": "sdk_logger_loggeroptions",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -8097,9 +8078,9 @@
       "source_file": "lib/sdk/logger.ts",
       "source_location": "L32",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "lib_sdk_logger_ts",
-      "target": "sdk_logger_firelog"
+      "target": "sdk_logger_firelog",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -8107,9 +8088,9 @@
       "source_file": "lib/sdk/logger.ts",
       "source_location": "L54",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "lib_sdk_logger_ts",
-      "target": "sdk_logger_withlogger"
+      "target": "sdk_logger_withlogger",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -8118,9 +8099,9 @@
       "source_file": "lib/sdk/logger.ts",
       "source_location": "L180",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "sdk_logger_withlogger",
-      "target": "sdk_logger_firelog"
+      "target": "sdk_logger_firelog",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
