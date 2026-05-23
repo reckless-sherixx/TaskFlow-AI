@@ -28,7 +28,6 @@ import {
   type ConversationMeta,
 } from "@/lib/store/conversation-store";
 
-// ── Types ─────────────────────────────────────────────
 
 export type GeminiModelId = string;
 
@@ -37,14 +36,10 @@ export type TokenStats = {
   total: number;
 };
 
-// ── Helpers ───────────────────────────────────────────
-
 let _idCounter = 0;
 function generateId() {
   return `msg-${Date.now()}-${++_idCounter}`;
 }
-
-// ── WebSocket Chat Hook ───────────────────────────────
 
 function useWebSocketChat(conversationModel: string, activeId: string | null) {
   const [messages, setMessages] = useState<ThreadMessage[]>([]);
@@ -77,8 +72,6 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
     setWsKey(generateId());
   }, []);
 
-  // ── Debounced Typing Notifier ─────────────────────
-
   const sendTypingEvent = useCallback((type: "user_typing" | "user_stopped_typing") => {
     const ws = wsRef.current;
     if (ws && ws.readyState === WebSocket.OPEN) {
@@ -90,7 +83,7 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
   }, []);
 
   const notifyTyping = useCallback(() => {
-    // Send typing event (debounced — only if not already sent)
+    // Send typing event 
     if (!isTypingSentRef.current) {
       isTypingSentRef.current = true;
       sendTypingEvent("user_typing");
@@ -117,7 +110,7 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
     };
   }, []);
 
-  // Sync activeId changes from outside (sidebar clicks)
+  // Sync activeId changes from outside
   useEffect(() => {
     if (activeId !== connectedConversationIdRef.current) {
       connectedConversationIdRef.current = activeId;
@@ -456,7 +449,6 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
   };
 }
 
-// ── Main Component ────────────────────────────────────
 
 export const Assistant = () => {
   const [selectedModel, setSelectedModel] = useState<GeminiModelId>(DEFAULT_MODEL);
@@ -464,7 +456,6 @@ export const Assistant = () => {
   const [isChatLoading, setIsChatLoading] = useState(false);
   const store = useConversationStore();
 
-  // Apply dark mode to <html>
   useEffect(() => {
     const root = document.documentElement;
     if (isDark) {
@@ -474,13 +465,11 @@ export const Assistant = () => {
     }
   }, [isDark]);
 
-  // Detect system preference on mount
   useEffect(() => {
     const mq = window.matchMedia("(prefers-color-scheme: dark)");
     setIsDark(mq.matches);
   }, []);
 
-  // Hydrate sidebar from DB on mount
   useEffect(() => {
     if (store.hydrated) return;
 
