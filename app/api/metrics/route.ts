@@ -3,7 +3,20 @@ import { registry } from "../../../lib/metrics/prometheus";
 
 export async function GET() {
   try {
-    const metrics = await registry.metrics();
+    let metrics = await registry.metrics();
+
+    try {
+      const res = await fetch("http://127.0.0.1:8080/metrics", {
+        next: { revalidate: 0 }
+      });
+      if (res.ok) {
+        const wsMetrics = await res.text();
+        metrics += "\n" + wsMetrics;
+      }
+    } catch (wsErr) {
+      console.warn("Could not fetch metrics from WS server:", wsErr instanceof Error ? wsErr.message : wsErr);
+    }
+
     return new NextResponse(metrics, {
       status: 200,
       headers: {

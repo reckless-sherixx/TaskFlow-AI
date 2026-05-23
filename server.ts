@@ -346,6 +346,19 @@ Bun.serve({
 
 	fetch(req, server) {
 		const url = new URL(req.url);
+		if (url.pathname === "/metrics" || url.pathname === "/api/metrics") {
+			try {
+				const { registry } = require("./lib/metrics/prometheus");
+				return new Response(registry.metrics(), {
+					headers: {
+						"Content-Type": registry.contentType,
+					},
+				});
+			} catch (err) {
+				return new Response("Error generating metrics", { status: 500 });
+			}
+		}
+
 		const model = resolveModel(url.searchParams.get("model"));
 		const conversationId = url.searchParams.get("conversationId") || undefined;
 
