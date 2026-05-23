@@ -1,10 +1,6 @@
 import { type Job, Worker } from "bullmq";
 import Redis from "ioredis";
-import {
-	createConversation,
-	insertInferenceLog,
-	insertMessage,
-} from "../lib/db/queries";
+import { insertInferenceLog } from "../lib/db/queries";
 import { redact } from "../lib/pii/redact";
 import { IngestPayloadSchema } from "../lib/sdk/types";
 
@@ -22,36 +18,8 @@ const worker = new Worker(
 		const redactedInput = redact(validPayload.inputPreview);
 		const redactedOutput = redact(validPayload.outputPreview);
 
-		let conversationId = validPayload.conversationId;
-		let messageId = validPayload.messageId;
-
-		if (!conversationId) {
-			const conv = await createConversation({
-				title: "Auto-generated conversation",
-				status: "active",
-				model: validPayload.model,
-				provider: validPayload.provider,
-			});
-			conversationId = conv.id;
-		}
-
-		if (!messageId && redactedInput) {
-			const msg = await insertMessage({
-				conversationId,
-				role: "user",
-				content: redactedInput,
-			});
-			messageId = msg.id;
-		}
-
-		if (redactedOutput) {
-			await insertMessage({
-				conversationId,
-				role: "assistant",
-				content: redactedOutput,
-			});
-		}
-
+		// Inference telemetry only — conversation/message persistence
+		// is handled directly by the WebSocket server for reliability.
 		await insertInferenceLog({
 			model: validPayload.model,
 			provider: validPayload.provider,
@@ -62,8 +30,8 @@ const worker = new Worker(
 			inputPreview: redactedInput,
 			outputPreview: redactedOutput,
 			errorMessage: validPayload.error,
-			conversationId,
-			messageId,
+			conversationId: validPayload.conversationId,
+			messageId: validPayload.messageId,
 		});
 	},
 	{ connection },

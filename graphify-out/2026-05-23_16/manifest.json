@@ -10,8 +10,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\next.config.ts": {
-    "mtime": 1779517270.788451,
-    "ast_hash": "860ef0ef261a038c28b441ea3de7d61e",
+    "mtime": 1779501825.5540693,
+    "ast_hash": "ae6821ccdcf6ca1575216c643b7a3d7c",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\package.json": {
@@ -30,8 +30,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\assistant.tsx": {
-    "mtime": 1779514992.070465,
-    "ast_hash": "5d01501af895c446212d9d4795f82ccd",
+    "mtime": 1779512331.3727562,
+    "ast_hash": "2f147e5ae6d5d6d80defd7fbe66e7e68",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\layout.tsx": {
@@ -80,8 +80,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\threadlist-sidebar.tsx": {
-    "mtime": 1779514340.2996323,
-    "ast_hash": "d7007caa876ccafcdaa19183027763cb",
+    "mtime": 1779512362.0341299,
+    "ast_hash": "727aba609e56448c5b06c6e4a2468245",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\tool-fallback.tsx": {
@@ -180,8 +180,8 @@
     "semantic_hash": "84de69efd46ab0b8430393bd4188f8f2"
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\server.ts": {
-    "mtime": 1779514916.5603921,
-    "ast_hash": "810dee9bffe1a4da633cfa7dd13c5514",
+    "mtime": 1779512274.0822124,
+    "ast_hash": "08b7545564df5e389c68fc249838966b",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\api\\ingest\\route.ts": {
@@ -195,8 +195,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\sdk\\logger.ts": {
-    "mtime": 1779517210.0701413,
-    "ast_hash": "4149d27abb4e036ba80af1c7de1c95d0",
+    "mtime": 1779501937.462927,
+    "ast_hash": "bf48266b50b38d384763466225772cac",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\drizzle.config.ts": {
@@ -270,18 +270,18 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\ai\\models.ts": {
-    "mtime": 1779516601.605289,
-    "ast_hash": "9cebf436f75f8c1c186da866e3ea3fdd",
+    "mtime": 1779512204.5737581,
+    "ast_hash": "8320123ab55a4be7b298913523a4ff6e",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\errors\\ai-errors.ts": {
-    "mtime": 1779512975.8275015,
-    "ast_hash": "ebcef0549058b5b0d354a4793ea7441f",
+    "mtime": 1779512203.5291235,
+    "ast_hash": "962d65b3d247eda1d4435e50915439b6",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\store\\conversation-store.ts": {
-    "mtime": 1779512932.7824433,
-    "ast_hash": "11082235ced8e00a2c4f5ef409acaad6",
+    "mtime": 1779512221.1401565,
+    "ast_hash": "61cdfcf681d2ced9118e5488cd56e96b",
     "semantic_hash": ""
   }
 }

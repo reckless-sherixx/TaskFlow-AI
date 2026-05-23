@@ -1,11 +1,11 @@
 # Graph Report - tf_ai  (2026-05-23)
 
 ## Corpus Check
-- 57 files · ~14,265 words
+- 57 files · ~14,274 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 556 nodes · 858 edges · 45 communities (40 shown, 5 thin omitted)
+- 552 nodes · 852 edges · 49 communities (44 shown, 5 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -54,6 +54,10 @@
 - [[_COMMUNITY_Community 42|Community 42]]
 - [[_COMMUNITY_Community 43|Community 43]]
 - [[_COMMUNITY_Community 44|Community 44]]
+- [[_COMMUNITY_Community 45|Community 45]]
+- [[_COMMUNITY_Community 46|Community 46]]
+- [[_COMMUNITY_Community 47|Community 47]]
+- [[_COMMUNITY_Community 48|Community 48]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `cn()` - 90 edges
@@ -79,19 +83,19 @@
 - `AssistantMessage()` --calls--> `cn()`  [EXTRACTED]
   components/thread.tsx → lib/utils.ts
 
-## Communities (45 total, 5 thin omitted)
+## Communities (49 total, 5 thin omitted)
 
 ### Community 0 - "UI Components (Sidebar)"
-Cohesion: 0.06
-Nodes (50): GitHubIcon(), ThreadList(), Props, useIsMobile(), cn(), Avatar(), AvatarBadge(), AvatarFallback() (+42 more)
+Cohesion: 0.10
+Nodes (24): useIsMobile(), Separator(), Sidebar(), SidebarContext, SidebarContextProps, SidebarGroup(), SidebarGroupAction(), SidebarGroupContent() (+16 more)
 
 ### Community 1 - "UI Components (Dialog)"
 Cohesion: 0.12
 Nodes (3): AssistantMessage(), BranchPicker(), Thread()
 
 ### Community 2 - "Package Dependencies"
-Cohesion: 0.08
-Nodes (26): geistMono, geistSans, metadata, AttachmentPreview(), AttachmentPreviewDialog(), AttachmentPreviewProps, AttachmentThumb(), AttachmentUI() (+18 more)
+Cohesion: 0.11
+Nodes (18): AttachmentPreview(), AttachmentPreviewDialog(), AttachmentPreviewProps, AttachmentThumb(), AttachmentUI(), ComposerAddAttachment(), ComposerAttachments(), useAttachmentSrc() (+10 more)
 
 ### Community 3 - "Tailwind & Aliases"
 Cohesion: 0.18
@@ -103,7 +107,7 @@ Nodes (40): dependencies, ai, @ai-sdk/google, @ai-sdk/openai, @assistant-ui/reac
 
 ### Community 5 - "TypeScript Config"
 Cohesion: 0.10
-Nodes (35): buildContextWindow(), CoreMessage, estimateTokens(), warnIfOverBudget(), createConversation(), insertMessage(), updateConversationStatus(), updateConversationTitle() (+27 more)
+Nodes (34): buildContextWindow(), CoreMessage, estimateTokens(), warnIfOverBudget(), createConversation(), insertMessage(), updateConversationStatus(), updateConversationTitle() (+26 more)
 
 ### Community 6 - "Thread Components"
 Cohesion: 0.10
@@ -214,28 +218,44 @@ Cohesion: 0.40
 Nodes (5): conversation_id, name, notNull, primaryKey, type
 
 ### Community 44 - "Community 44"
-Cohesion: 0.11
-Nodes (23): getModelsByProvider(), isValidModel(), MODEL_LABELS, ModelEntry, MODELS, resolveModel(), VALID_MODELS, Assistant() (+15 more)
+Cohesion: 0.12
+Nodes (20): isValidModel(), MODEL_LABELS, resolveModel(), VALID_MODELS, Assistant(), GEMINI_MODELS, GeminiModelId, TokenStats (+12 more)
+
+### Community 45 - "Community 45"
+Cohesion: 0.14
+Nodes (11): GitHubIcon(), ThreadList(), Props, Button(), buttonVariants, SidebarContent(), SidebarFooter(), SidebarHeader() (+3 more)
+
+### Community 46 - "Community 46"
+Cohesion: 0.18
+Nodes (14): cn(), Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage(), Sheet() (+6 more)
+
+### Community 47 - "Community 47"
+Cohesion: 0.31
+Nodes (6): TooltipIconButtonProps, Input(), Tooltip(), TooltipContent(), TooltipProvider(), TooltipTrigger()
+
+### Community 48 - "Community 48"
+Cohesion: 0.40
+Nodes (3): geistMono, geistSans, metadata
 
 ## Knowledge Gaps
-- **260 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+255 more)
+- **257 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+252 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `UI Components (Sidebar)` to `UI Components (Dialog)`, `Package Dependencies`, `Package Scripts`, `Community 44`, `Community 22`, `Community 23`, `Community 24`, `Community 25`?**
+- **Why does `cn()` connect `Community 46` to `UI Components (Sidebar)`, `UI Components (Dialog)`, `Package Dependencies`, `Package Scripts`, `Community 44`, `Community 45`, `Community 47`, `Community 22`, `Community 23`, `Community 24`, `Community 25`?**
   _High betweenness centrality (0.159) - this node is a cross-community bridge._
-- **Why does `clsx` connect `Package Scripts` to `UI Components (Sidebar)`?**
+- **Why does `clsx` connect `Package Scripts` to `Community 46`?**
   _High betweenness centrality (0.089) - this node is a cross-community bridge._
 - **What connects `$schema`, `style`, `rsc` to the rest of the system?**
-  _260 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _257 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `UI Components (Sidebar)` be split into smaller, more focused modules?**
-  _Cohesion score 0.06479113384484228 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09686609686609686 - nodes in this community are weakly interconnected._
 - **Should `UI Components (Dialog)` be split into smaller, more focused modules?**
   _Cohesion score 0.125 - nodes in this community are weakly interconnected._
 - **Should `Package Dependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.08403361344537816 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11462450592885376 - nodes in this community are weakly interconnected._
 - **Should `Package Scripts` be split into smaller, more focused modules?**
   _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._

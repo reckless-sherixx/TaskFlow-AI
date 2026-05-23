@@ -85,3 +85,27 @@ export async function insertInferenceLog(
 	const [newLog] = await db.insert(inferenceLogs).values(data).returning();
 	return newLog;
 }
+
+export async function updateConversationStatus(
+	id: string,
+	status: string,
+) {
+	const [updated] = await db
+		.update(conversations)
+		.set({ status, updatedAt: new Date() })
+		.where(eq(conversations.id, id))
+		.returning();
+	return updated;
+}
+
+export async function updateConversationTitle(
+	id: string,
+	title: string,
+) {
+	const [updated] = await db
+		.update(conversations)
+		.set({ title, updatedAt: new Date() })
+		.where(eq(conversations.id, id))
+		.returning();
+	return updated;
+}

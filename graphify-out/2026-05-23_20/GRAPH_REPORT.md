@@ -1,7 +1,7 @@
 # Graph Report - tf_ai  (2026-05-23)
 
 ## Corpus Check
-- 57 files · ~14,265 words
+- 57 files · ~14,263 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary

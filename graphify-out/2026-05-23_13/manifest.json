@@ -10,8 +10,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\next.config.ts": {
-    "mtime": 1779517270.788451,
-    "ast_hash": "860ef0ef261a038c28b441ea3de7d61e",
+    "mtime": 1779501825.5540693,
+    "ast_hash": "ae6821ccdcf6ca1575216c643b7a3d7c",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\package.json": {
@@ -30,8 +30,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\assistant.tsx": {
-    "mtime": 1779514992.070465,
-    "ast_hash": "5d01501af895c446212d9d4795f82ccd",
+    "mtime": 1779501833.2991164,
+    "ast_hash": "ef52f38e8564bea3f1a9b2c68538cb39",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\layout.tsx": {
@@ -75,13 +75,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\thread.tsx": {
-    "mtime": 1779507928.5684438,
-    "ast_hash": "a2c7c26d7a7de81f5176878a1e7855dd",
+    "mtime": 1779501832.638252,
+    "ast_hash": "ec0b41faa000be2c8d11bb89956ed293",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\threadlist-sidebar.tsx": {
-    "mtime": 1779514340.2996323,
-    "ast_hash": "d7007caa876ccafcdaa19183027763cb",
+    "mtime": 1779501832.574782,
+    "ast_hash": "33b4b9b49fe58aa5f2235e814c20d588",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\components\\tool-fallback.tsx": {
@@ -180,8 +180,8 @@
     "semantic_hash": "84de69efd46ab0b8430393bd4188f8f2"
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\server.ts": {
-    "mtime": 1779514916.5603921,
-    "ast_hash": "810dee9bffe1a4da633cfa7dd13c5514",
+    "mtime": 1779505360.248314,
+    "ast_hash": "67990d033a2f73551ebba0d2b647c16b",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\api\\ingest\\route.ts": {
@@ -195,8 +195,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\sdk\\logger.ts": {
-    "mtime": 1779517210.0701413,
-    "ast_hash": "4149d27abb4e036ba80af1c7de1c95d0",
+    "mtime": 1779501937.462927,
+    "ast_hash": "bf48266b50b38d384763466225772cac",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\drizzle.config.ts": {
@@ -225,8 +225,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\db\\queries.ts": {
-    "mtime": 1779506598.7243423,
-    "ast_hash": "ca73c278fd3e8a85e760da36a8608944",
+    "mtime": 1779505652.3664715,
+    "ast_hash": "4afb7836eede2f2e720891dcf0978749",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\db\\schema.ts": {
@@ -245,8 +245,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\worker\\index.ts": {
-    "mtime": 1779506676.6495163,
-    "ast_hash": "708192f520d432c9a264be66d312366f",
+    "mtime": 1779505125.6334877,
+    "ast_hash": "18f7d1eb3e699509a9e40be6120650a6",
     "semantic_hash": ""
   },
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\pii\\redact.ts": {
@@ -262,26 +262,6 @@
   "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\app\\api\\conversations\\[id]\\route.ts": {
     "mtime": 1779504430.621745,
     "ast_hash": "1e96b0432204d68563e54ad92bdc8867",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\ai\\context.ts": {
-    "mtime": 1779507405.4839475,
-    "ast_hash": "28c6a0b403d6526ec0336c1492e91f3f",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\ai\\models.ts": {
-    "mtime": 1779516601.605289,
-    "ast_hash": "9cebf436f75f8c1c186da866e3ea3fdd",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\errors\\ai-errors.ts": {
-    "mtime": 1779512975.8275015,
-    "ast_hash": "ebcef0549058b5b0d354a4793ea7441f",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ezboi\\Documents\\Cohort_3.0\\tf_ai\\lib\\store\\conversation-store.ts": {
-    "mtime": 1779512932.7824433,
-    "ast_hash": "11082235ced8e00a2c4f5ef409acaad6",
     "semantic_hash": ""
   }
 }

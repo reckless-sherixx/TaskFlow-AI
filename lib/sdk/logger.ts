@@ -67,23 +67,29 @@ export async function withLogger<T>(
                 const originalStream = streamContainer.textStream;
                 let fullText = "";
 
-                streamContainer.textStream = {
-                    async *[Symbol.asyncIterator]() {
-                        try {
-                            for await (const chunk of originalStream) {
-                                fullText += chunk;
-                                yield chunk;
-                            }
-                            report("success", { outputPreview: fullText });
-                        } catch (err) {
-                            report("error", {
-                                error: err instanceof Error ? err.message : String(err),
-                            });
-                            throw err;
+                return new Proxy(res, {
+                    get(target: any, prop: string | symbol, receiver: any) {
+                        if (prop === "textStream") {
+                            return {
+                                async *[Symbol.asyncIterator]() {
+                                    try {
+                                        for await (const chunk of originalStream) {
+                                            fullText += chunk;
+                                            yield chunk;
+                                        }
+                                        report("success", { outputPreview: fullText });
+                                    } catch (err) {
+                                        report("error", {
+                                            error: err instanceof Error ? err.message : String(err),
+                                        });
+                                        throw err;
+                                    }
+                                },
+                            };
                         }
+                        return Reflect.get(target, prop, receiver);
                     },
-                };
-                return res;
+                }) as T;
             }
         }
 

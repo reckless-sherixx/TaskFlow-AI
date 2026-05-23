@@ -1096,7 +1096,7 @@
       "label": "Assistant()",
       "file_type": "code",
       "source_file": "app/assistant.tsx",
-      "source_location": "L333",
+      "source_location": "L334",
       "id": "app_assistant_assistant",
       "community": 44,
       "norm_label": "assistant()"
@@ -4336,7 +4336,7 @@
       "label": "VALID_MODELS",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L30",
+      "source_location": "L27",
       "id": "ai_models_valid_models",
       "community": 44,
       "norm_label": "valid_models"
@@ -4345,7 +4345,7 @@
       "label": "MODEL_LABELS",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L34",
+      "source_location": "L31",
       "id": "ai_models_model_labels",
       "community": 44,
       "norm_label": "model_labels"
@@ -4354,7 +4354,7 @@
       "label": "getModelsByProvider()",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L39",
+      "source_location": "L36",
       "id": "ai_models_getmodelsbyprovider",
       "community": 44,
       "norm_label": "getmodelsbyprovider()"
@@ -4363,7 +4363,7 @@
       "label": "isValidModel()",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L48",
+      "source_location": "L45",
       "id": "ai_models_isvalidmodel",
       "community": 44,
       "norm_label": "isvalidmodel()"
@@ -4372,7 +4372,7 @@
       "label": "resolveModel()",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L52",
+      "source_location": "L49",
       "id": "ai_models_resolvemodel",
       "community": 44,
       "norm_label": "resolvemodel()"
@@ -5908,9 +5908,9 @@
       "source_file": "server.ts",
       "source_location": "L16",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "server_ts",
-      "target": "tf_ai_server_openrouter"
+      "target": "tf_ai_server_openrouter",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -8701,9 +8701,9 @@
       "source_file": "components/threadlist-sidebar.tsx",
       "source_location": "L17",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "components_threadlist_sidebar_tsx",
-      "target": "ai_models_getmodelsbyprovider"
+      "target": "ai_models_getmodelsbyprovider",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -12993,9 +12993,9 @@
       "source_file": "lib/ai/models.ts",
       "source_location": "L9",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "lib_ai_models_ts",
-      "target": "ai_models_modelentry"
+      "target": "ai_models_modelentry",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -13003,9 +13003,9 @@
       "source_file": "lib/ai/models.ts",
       "source_location": "L15",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "lib_ai_models_ts",
-      "target": "ai_models_models"
+      "target": "ai_models_models",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -13033,9 +13033,9 @@
       "source_file": "lib/ai/models.ts",
       "source_location": "L36",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "lib_ai_models_ts",
-      "target": "ai_models_getmodelsbyprovider"
+      "target": "ai_models_getmodelsbyprovider",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",

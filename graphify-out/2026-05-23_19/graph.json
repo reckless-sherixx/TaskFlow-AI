@@ -4336,7 +4336,7 @@
       "label": "VALID_MODELS",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L30",
+      "source_location": "L26",
       "id": "ai_models_valid_models",
       "community": 44,
       "norm_label": "valid_models"
@@ -4345,7 +4345,7 @@
       "label": "MODEL_LABELS",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L34",
+      "source_location": "L30",
       "id": "ai_models_model_labels",
       "community": 44,
       "norm_label": "model_labels"
@@ -4354,7 +4354,7 @@
       "label": "getModelsByProvider()",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L39",
+      "source_location": "L35",
       "id": "ai_models_getmodelsbyprovider",
       "community": 44,
       "norm_label": "getmodelsbyprovider()"
@@ -4363,7 +4363,7 @@
       "label": "isValidModel()",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L48",
+      "source_location": "L44",
       "id": "ai_models_isvalidmodel",
       "community": 44,
       "norm_label": "isvalidmodel()"
@@ -4372,7 +4372,7 @@
       "label": "resolveModel()",
       "file_type": "code",
       "source_file": "lib/ai/models.ts",
-      "source_location": "L52",
+      "source_location": "L48",
       "id": "ai_models_resolvemodel",
       "community": 44,
       "norm_label": "resolvemodel()"

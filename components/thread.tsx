@@ -64,9 +64,6 @@ export const Thread: FC = () => {
 				className="relative flex flex-1 flex-col overflow-x-auto overflow-y-scroll scroll-smooth"
 			>
 				<div className="mx-auto flex w-full max-w-(--thread-max-width) flex-1 flex-col px-4 pt-4">
-					<AuiIf condition={(s) => s.thread.isEmpty}>
-						<ThreadWelcome />
-					</AuiIf>
 
 					<div
 						data-slot="aui_message-group"
