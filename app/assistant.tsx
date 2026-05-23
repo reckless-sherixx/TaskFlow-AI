@@ -51,7 +51,7 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
   const [isRunning, setIsRunning] = useState(false);
   const [isAiTyping, setIsAiTyping] = useState(false);
   const [isAiStreaming, setIsAiStreaming] = useState(false);
-  const [tokenStats, setTokenStats] = useState<TokenStats>({ used: 0, total: 1_000_000 });
+  const [tokenStats, setTokenStats] = useState<TokenStats>({ used: 0, total: 50_000 });
   const wsRef = useRef<WebSocket | null>(null);
   const conversationIdRef = useRef<string | null>(null);
   const connectedConversationIdRef = useRef<string | null>(null);
@@ -69,7 +69,7 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
 
   const connect = useCallback((model: string) => {
     setMessages([]);
-    setTokenStats({ used: 0, total: 1_000_000 });
+    setTokenStats({ used: 0, total: 50_000 });
     setIsAiTyping(false);
     setIsAiStreaming(false);
     conversationIdRef.current = null;

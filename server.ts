@@ -2,7 +2,12 @@
 import { createOpenAI } from "@ai-sdk/openai";
 import { type CoreMessage, streamText } from "ai";
 import Redis from "ioredis";
-import { buildContextWindow, buildInterruptionContext, warnIfOverBudget } from "./lib/ai/context";
+import {
+	buildContextWindow,
+	buildInterruptionContext,
+	estimateTokens,
+	warnIfOverBudget,
+} from "./lib/ai/context";
 import { resolveModel } from "./lib/ai/models";
 import {
 	createConversation,
@@ -290,6 +295,12 @@ async function streamAIResponse(
 				const usage = await result.usage;
 				tokensUsed = usage?.totalTokens ?? 0;
 			} catch { }
+
+			if (!tokensUsed || tokensUsed === 0) {
+				const promptTokens = estimateTokens(contextMessages);
+				const completionTokens = Math.ceil((session.partialResponse?.length || 0) / 4);
+				tokensUsed = promptTokens + completionTokens;
+			}
 
 			send(ws, { type: "ai_done", tokensUsed });
 
