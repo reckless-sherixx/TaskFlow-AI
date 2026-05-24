@@ -110,6 +110,15 @@ export async function updateConversationTitle(
 	return updated;
 }
 
+export async function getConversationById(id: string) {
+	const [conv] = await db
+		.select()
+		.from(conversations)
+		.where(eq(conversations.id, id));
+	return conv ?? null;
+}
+
+
 export async function updateMessageStatus(
 	id: string,
 	status: string,

@@ -59,7 +59,7 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
 
   const store = useConversationStore();
 
-  // Track connection identity so we can reconnect
+  // Track connection identity to reconnect
   const [wsKey, setWsKey] = useState(() => generateId());
 
   const connect = useCallback((model: string) => {
@@ -346,6 +346,12 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
           setIsAiStreaming(false);
           store.setAiTyping(false);
           currentAssistantIdRef.current = null;
+
+          const targetConvId = data.conversationId || conversationIdRef.current;
+          if (targetConvId) {
+            store.updateStatus(targetConvId, "completed");
+          }
+
           setMessages((prev) => [
             ...prev,
             {
@@ -363,6 +369,20 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
               metadata: {},
             } as unknown as ThreadMessage,
           ]);
+          break;
+        }
+
+        case "conversation_cancelled": {
+          if (data.conversationId) {
+            store.updateStatus(data.conversationId, "cancelled");
+          }
+          break;
+        }
+
+        case "conversation_resumed": {
+          if (data.conversationId) {
+            store.updateStatus(data.conversationId, "active");
+          }
           break;
         }
       }
@@ -385,6 +405,13 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
     const textPart = message.content.find((c) => c.type === "text");
     const text = textPart && textPart.type === "text" ? textPart.text : "";
     if (!text.trim()) return;
+
+    // Prevent sending if conversation is cancelled or completed
+    const state = useConversationStore.getState();
+    const activeConv = state.conversations.find((c) => c.id === state.activeId);
+    if (activeConv && activeConv.status !== "active") {
+      return;
+    }
 
     // Clear typing state on send
     if (typingTimerRef.current) {
@@ -423,6 +450,20 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
     }
   }, []);
 
+  const cancelConversation = useCallback(() => {
+    const ws = wsRef.current;
+    if (ws && ws.readyState === WebSocket.OPEN) {
+      ws.send(JSON.stringify({ type: "cancel_conversation" }));
+    }
+  }, []);
+
+  const resumeConversation = useCallback((convId: string) => {
+    const ws = wsRef.current;
+    if (ws && ws.readyState === WebSocket.OPEN) {
+      ws.send(JSON.stringify({ type: "resume_conversation", conversationId: convId }));
+    }
+  }, []);
+
   const runtime = useExternalStoreRuntime({
     messages,
     isRunning,
@@ -446,6 +487,8 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
     isAiTyping,
     isAiStreaming,
     notifyTyping,
+    cancelConversation,
+    resumeConversation,
   };
 }
 
@@ -513,6 +556,8 @@ export const Assistant = () => {
     isAiTyping,
     isAiStreaming,
     notifyTyping,
+    cancelConversation,
+    resumeConversation,
   } = useWebSocketChat(conversationModel, store.activeId);
 
   // Start a brand new conversation with the currently selected model
@@ -570,6 +615,8 @@ export const Assistant = () => {
             onToggleDark={() => setIsDark((d) => !d)}
             onNewThread={startNewThread}
             onSwitchConversation={switchToConversation}
+            onCancelConversation={cancelConversation}
+            onResumeConversation={resumeConversation}
           />
           <SidebarInset>
             <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
@@ -594,6 +641,7 @@ export const Assistant = () => {
                 isAiTyping={isAiTyping}
                 isAiStreaming={isAiStreaming}
                 isLoadingChat={isChatLoading}
+                disabled={activeConv ? activeConv.status !== "active" : false}
                 onComposerInput={notifyTyping}
               />
             </div>

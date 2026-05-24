@@ -53,6 +53,7 @@ type ThreadProps = {
 	isAiTyping?: boolean;
 	isAiStreaming?: boolean;
 	isLoadingChat?: boolean;
+	disabled?: boolean;
 	onComposerInput?: () => void;
 };
 
@@ -60,6 +61,7 @@ export const Thread: FC<ThreadProps> = ({
 	isAiTyping = false,
 	isAiStreaming = false,
 	isLoadingChat = false,
+	disabled = false,
 	onComposerInput,
 }) => {
 	const typingLabel = isAiTyping
@@ -118,7 +120,7 @@ export const Thread: FC<ThreadProps> = ({
 
 					<ThreadPrimitive.ViewportFooter className="aui-thread-viewport-footer sticky bottom-0 mt-auto flex flex-col gap-4 overflow-visible rounded-t-(--composer-radius) bg-background pb-4 md:pb-6">
 						<ThreadScrollToBottom />
-						<Composer onComposerInput={onComposerInput} />
+						<Composer disabled={disabled} onComposerInput={onComposerInput} />
 					</ThreadPrimitive.ViewportFooter>
 				</div>
 			</ThreadPrimitive.Viewport>
@@ -193,7 +195,7 @@ const ThreadSuggestionItem: FC = () => {
 	);
 };
 
-const Composer: FC<{ onComposerInput?: () => void }> = ({ onComposerInput }) => {
+const Composer: FC<{ disabled?: boolean, onComposerInput?: () => void }> = ({ disabled, onComposerInput }) => {
 	return (
 		<ComposerPrimitive.Root className="aui-composer-root relative flex w-full flex-col">
 			<ComposerPrimitive.AttachmentDropzone asChild>
@@ -203,21 +205,22 @@ const Composer: FC<{ onComposerInput?: () => void }> = ({ onComposerInput }) => 
 				>
 					<ComposerAttachments />
 					<ComposerPrimitive.Input
-						placeholder="Send a message..."
-						className="aui-composer-input max-h-32 min-h-10 w-full resize-none bg-transparent px-1.75 py-1 text-sm outline-none placeholder:text-muted-foreground/80"
+						placeholder={disabled ? "This chat is ended. Resume to continue." : "Send a message..."}
+						className="aui-composer-input max-h-32 min-h-10 w-full resize-none bg-transparent px-1.75 py-1 text-sm outline-none placeholder:text-muted-foreground/80 disabled:cursor-not-allowed disabled:opacity-50"
 						rows={1}
-						autoFocus
+						autoFocus={!disabled}
 						aria-label="Message input"
 						onChange={onComposerInput}
+						disabled={disabled}
 					/>
-					<ComposerAction />
+					<ComposerAction disabled={disabled} />
 				</div>
 			</ComposerPrimitive.AttachmentDropzone>
 		</ComposerPrimitive.Root>
 	);
 };
 
-const ComposerAction: FC = () => {
+const ComposerAction: FC<{ disabled?: boolean }> = ({ disabled }) => {
 	return (
 		<div className="aui-composer-action-wrapper relative flex items-center justify-between">
 			<ComposerAddAttachment />
@@ -231,6 +234,7 @@ const ComposerAction: FC = () => {
 						size="icon"
 						className="aui-composer-send size-8 rounded-full"
 						aria-label="Send message"
+						disabled={disabled}
 					>
 						<ArrowUpIcon className="aui-composer-send-icon size-4" />
 					</TooltipIconButton>

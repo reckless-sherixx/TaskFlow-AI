@@ -16,8 +16,26 @@ import {
 	updateConversationTitle,
 } from "./lib/db/queries";
 import { classifyAIError } from "./lib/errors/ai-errors";
-import { wsConnectionsActive } from "./lib/metrics/prometheus";
+import {
+	wsConnectionsActive,
+	wsConnectionEvents,
+	conversationLifecycle,
+	streamInterruptions,
+	llmErrorsByType,
+	registry
+} from "./lib/metrics/prometheus";
 import { withLogger } from "./lib/sdk/logger";
+
+process.on("unhandledRejection", (err: any) => {
+	if (err && (err.name === "AI_APICallError" || err.name === "AI_RetryError" || err?.vercel?.ai?.error || (err.message && err.message.includes("Provider returned error")))) {
+		const classified = classifyAIError(err);
+		const model = err.requestBodyValues?.model || "unknown";
+		llmErrorsByType.inc({ model, provider: "openrouter", error_code: classified.code });
+		console.error(`Global AI error caught [${classified.code}]:`, err);
+	} else {
+		console.error("Unhandled rejection:", err);
+	}
+});
 
 const openrouter = createOpenAI({
 	baseURL: "https://openrouter.ai/api/v1",
@@ -67,7 +85,7 @@ redisSub.on("message", async (channel, message) => {
 
 			for (const [ws, session] of sessions.entries()) {
 				if (session.conversationId === conversationId) {
-					console.log(`[ws] Cancelling session ${conversationId} via Redis`);
+					console.log(`Cancelling session ${conversationId} via Redis`);
 					if (session.isStreaming && session.abortController) {
 						session.abortController.abort();
 					}
@@ -76,7 +94,7 @@ redisSub.on("message", async (channel, message) => {
 				}
 			}
 		} catch (err) {
-			console.error("[ws] Error processing Redis cancel-session:", err);
+			console.error("Error processing Redis cancel-session:", err);
 		}
 	}
 });
@@ -144,7 +162,7 @@ function startTypingNudgeTimer(session: Session, ws: any) {
 			Math.floor(Math.random() * TYPING_NUDGE_MESSAGES.length)
 		];
 		send(ws, { type: "typing_nudge", message: nudge });
-		console.log(`[ws] Sent typing nudge for ${session.conversationId}`);
+		console.log(`Sent typing nudge for ${session.conversationId}`);
 	}, TYPING_NUDGE_MS);
 }
 
@@ -167,7 +185,7 @@ function resetIdleTimer(session: Session, ws: any) {
 
 async function handleIdlePhase1(session: Session, ws: any) {
 	session.idlePhase = 1;
-	console.log(`[ws] Idle phase 1 — sending nudge for ${session.conversationId}`);
+	console.log(`Idle phase 1 — sending nudge for ${session.conversationId}`);
 
 	await streamAIResponse(session, ws, { isIdleProbe: true });
 
@@ -181,7 +199,7 @@ async function handleIdlePhase1(session: Session, ws: any) {
 
 async function handleIdlePhase2(session: Session, ws: any) {
 	session.idlePhase = 2;
-	console.log(`[ws] Idle phase 2 — terminating ${session.conversationId}`);
+	console.log(`Idle phase 2 — terminating ${session.conversationId}`);
 
 	clearIdleTimer(session);
 
@@ -191,11 +209,12 @@ async function handleIdlePhase2(session: Session, ws: any) {
 
 	if (session.conversationId) {
 		updateConversationStatus(session.conversationId, "completed").catch(
-			(err) => console.error("[ws] Failed to complete conversation:", err),
+			(err) => console.error("Failed to complete conversation:", err),
 		);
+		conversationLifecycle.inc({ action: "completed" });
 	}
 
-	send(ws, { type: "conversation_ended", reason: "idle_timeout" });
+	send(ws, { type: "conversation_ended", reason: "idle_timeout", conversationId: session.conversationId });
 }
 
 
@@ -274,7 +293,7 @@ async function streamAIResponse(
 
 			session.tokenCount++;
 
-			// Yield character by character to ensure smooth human-like pacing
+
 			const chars = chunk.split('');
 			for (const char of chars) {
 				if (session.generationId !== thisGenerationId) break;
@@ -317,7 +336,7 @@ async function streamAIResponse(
 						content: session.partialResponse,
 						status: "completed",
 					}).catch((err) =>
-						console.error("[ws] Failed to persist assistant message:", err),
+						console.error("Failed to persist assistant message:", err),
 					);
 				}
 			}
@@ -337,8 +356,10 @@ async function streamAIResponse(
 			return;
 		}
 
+		llmErrorsByType.inc({ model: session.model, provider: "openrouter", error_code: classified.code });
+
 		if (classified.shouldLog) {
-			console.error(`[ws] AI error [${classified.code}]:`, err);
+			console.error(`AI error [${classified.code}]:`, err);
 		}
 
 		send(ws, {
@@ -369,7 +390,6 @@ Bun.serve({
 		const url = new URL(req.url);
 		if (url.pathname === "/metrics" || url.pathname === "/api/metrics") {
 			try {
-				const { registry } = require("./lib/metrics/prometheus");
 				const metricsText = await registry.metrics();
 				return new Response(metricsText, {
 					headers: {
@@ -390,8 +410,9 @@ Bun.serve({
 
 	websocket: {
 		async open(ws) {
-			console.log("[ws] client connected");
+			console.log("client connected");
 			wsConnectionsActive.inc();
+			wsConnectionEvents.inc({ event: "connected" });
 
 			const model = (ws.data as { model: string })?.model || resolveModel(null);
 			const conversationId = (ws.data as { conversationId?: string })?.conversationId;
@@ -417,7 +438,7 @@ Bun.serve({
 
 			if (conversationId) {
 				session.conversationId = conversationId;
-				console.log(`[ws] Resuming conversation ${conversationId}`);
+				console.log(`Resuming conversation ${conversationId}`);
 				try {
 					const { getMessages } = await import("./lib/db/queries");
 					const dbMsgs = await getMessages(conversationId);
@@ -425,9 +446,9 @@ Bun.serve({
 						role: m.role,
 						content: m.content,
 					}));
-					console.log(`[ws] Loaded ${session.history.length} messages from history`);
+					console.log(`Loaded ${session.history.length} messages from history`);
 				} catch (err) {
-					console.error("[ws] Failed to load messages for conversation:", err);
+					console.error("Failed to load messages for conversation:", err);
 				}
 				resetIdleTimer(session, ws);
 			} else {
@@ -440,9 +461,10 @@ Bun.serve({
 					});
 					session.conversationId = conv.id;
 					send(ws, { type: "conversation_created", conversationId: conv.id, model });
-					console.log(`[ws] Created conversation ${conv.id} with model ${model}`);
+					console.log(`Created conversation ${conv.id} with model ${model}`);
+					conversationLifecycle.inc({ action: "created" });
 				} catch (err) {
-					console.error("[ws] Failed to create conversation:", err);
+					console.error("Failed to create conversation:", err);
 				}
 
 				await streamAIResponse(session, ws, { isGreeting: true });
@@ -484,9 +506,9 @@ Bun.serve({
 
 				// IMMEDIATELY INTERRUPT if AI is streaming
 				if (session.isStreaming && session.abortController) {
-					console.log(`[ws] User started typing. Interrupting AI generation for ${session.conversationId}`);
+					console.log(`User started typing. Interrupting AI generation for ${session.conversationId}`);
 					session.abortController.abort();
-					
+
 					session.lastInterruption = {
 						partialContent: session.partialResponse,
 						interruptedAtToken: session.tokenCount,
@@ -506,7 +528,7 @@ Bun.serve({
 								content: session.partialResponse,
 								status: "interrupted",
 							}).catch((err) =>
-								console.error("[ws] Failed to persist interrupted message:", err),
+								console.error("Failed to persist interrupted message:", err),
 							);
 						}
 					}
@@ -522,6 +544,8 @@ Bun.serve({
 						type: "ai_interrupted",
 						conversationId: session.conversationId,
 					})).catch(() => { });
+
+					streamInterruptions.inc({ model: session.model });
 				}
 
 				return;
@@ -550,7 +574,7 @@ Bun.serve({
 								content: session.partialResponse,
 								status: "interrupted",
 							}).catch((err) =>
-								console.error("[ws] Failed to persist interrupted message:", err),
+								console.error("Failed to persist interrupted message:", err),
 							);
 						}
 					}
@@ -567,6 +591,49 @@ Bun.serve({
 						type: "ai_interrupted",
 						conversationId: session.conversationId,
 					})).catch(() => { });
+
+					streamInterruptions.inc({ model: session.model });
+				}
+				return;
+			}
+
+			if (data.type === "cancel_conversation") {
+				if (session.isStreaming && session.abortController) {
+					session.abortController.abort();
+					streamInterruptions.inc({ model: session.model });
+				}
+				if (session.conversationId) {
+					updateConversationStatus(session.conversationId, "cancelled").catch(err =>
+						console.error("Failed to cancel conversation:", err)
+					);
+					conversationLifecycle.inc({ action: "cancelled" });
+					send(ws, { type: "conversation_cancelled", conversationId: session.conversationId });
+				}
+				return;
+			}
+
+			if (data.type === "resume_conversation" && data.conversationId) {
+				session.conversationId = data.conversationId;
+				try {
+					const { getConversationById, getMessages } = await import("./lib/db/queries");
+					const conv = await getConversationById(data.conversationId);
+					if (conv) {
+						session.model = conv.model || resolveModel(null);
+						await updateConversationStatus(data.conversationId, "active");
+						conversationLifecycle.inc({ action: "resumed" });
+					}
+
+					const dbMsgs = await getMessages(data.conversationId);
+					session.history = dbMsgs.map((m) => ({
+						role: m.role,
+						content: m.content,
+					}));
+
+					session.hasReceivedUserMessage = true;
+					send(ws, { type: "conversation_resumed", conversationId: data.conversationId, model: session.model });
+					console.log(`Resumed conversation ${data.conversationId}`);
+				} catch (err) {
+					console.error("Failed to resume conversation:", err);
 				}
 				return;
 			}
@@ -604,7 +671,7 @@ Bun.serve({
 							content: session.partialResponse,
 							status: "interrupted",
 						}).catch((err) =>
-							console.error("[ws] Failed to persist interrupted message:", err),
+							console.error("Failed to persist interrupted message:", err),
 						);
 					}
 				}
@@ -621,6 +688,8 @@ Bun.serve({
 					type: "ai_interrupted",
 					conversationId: session.conversationId,
 				})).catch(() => { });
+
+				streamInterruptions.inc({ model: session.model });
 			}
 
 			session.history.push({ role: "user", content: data.text });
@@ -631,14 +700,14 @@ Bun.serve({
 					role: "user",
 					content: data.text,
 				}).catch((err) =>
-					console.error("[ws] Failed to persist user message:", err),
+					console.error("Failed to persist user message:", err),
 				);
 
 				if (!session.hasReceivedUserMessage) {
 					session.hasReceivedUserMessage = true;
 					const title = data.text.substring(0, 80);
 					updateConversationTitle(session.conversationId, title).catch(
-						(err) => console.error("[ws] Failed to update title:", err),
+						(err) => console.error("Failed to update title:", err),
 					);
 
 					send(ws, {
@@ -653,8 +722,9 @@ Bun.serve({
 		},
 
 		close(ws) {
-			console.log("[ws] client disconnected");
+			console.log("client disconnected");
 			wsConnectionsActive.dec();
+			wsConnectionEvents.inc({ event: "disconnected" });
 			const session = sessions.get(ws);
 			if (!session) return;
 
@@ -666,4 +736,4 @@ Bun.serve({
 	},
 });
 
-console.log(`[ws] WebSocket server listening on ws://localhost:${PORT}`);
+console.log(`WebSocket server listening on ws://localhost:${PORT}`);

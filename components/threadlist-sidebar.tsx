@@ -1,6 +1,6 @@
 "use client";
 
-import { MessagesSquare, Moon, PlusIcon, Sun, Zap, Trash2 } from "lucide-react";
+import { MessagesSquare, Moon, PlusIcon, Sun, Zap, Trash2, XCircle, PlayCircle } from "lucide-react";
 import type * as React from "react";
 import {
 	Sidebar,
@@ -25,6 +25,8 @@ type Props = React.ComponentProps<typeof Sidebar> & {
 	onToggleDark: () => void;
 	onNewThread: () => void;
 	onSwitchConversation: (id: string) => void;
+	onCancelConversation: () => void;
+	onResumeConversation: (id: string) => void;
 };
 
 type ConversationGroup = {
@@ -78,6 +80,8 @@ export function ThreadListSidebar({
 	onToggleDark,
 	onNewThread,
 	onSwitchConversation,
+	onCancelConversation,
+	onResumeConversation,
 	...props
 }: Props) {
 	const { conversations, activeId, removeConversation } = useConversationStore();
@@ -153,24 +157,60 @@ export function ThreadListSidebar({
 									key={conv.id}
 									type="button"
 									onClick={() => onSwitchConversation(conv.id)}
-									className={`group/item flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm transition-colors hover:bg-muted ${
+									className={`group/item flex flex-col w-full items-start rounded-lg px-3 py-2 text-left text-sm transition-colors hover:bg-muted ${
 										activeId === conv.id
 											? "bg-muted font-medium"
 											: ""
 									}`}
 								>
-									<span className="truncate text-foreground overflow-hidden whitespace-nowrap">
-										{conv.title || "New Conversation"}
-									</span>
-									<div
-										role="button"
-										tabIndex={0}
-										onClick={(e) => handleDelete(e, conv.id)}
-										onKeyDown={(e) => e.key === 'Enter' && handleDelete(e as any, conv.id)}
-										className="opacity-0 group-hover/item:opacity-100 p-1 hover:bg-background rounded transition-opacity"
-									>
-										<Trash2 className="size-3.5 text-muted-foreground hover:text-red-500" />
+									<div className="flex w-full items-center justify-between">
+										<div className="flex items-center gap-2 overflow-hidden">
+											<span className={`size-1.5 rounded-full shrink-0 ${
+												conv.status === 'active' ? 'bg-emerald-500' :
+												conv.status === 'cancelled' ? 'bg-red-500' :
+												'bg-muted-foreground'
+											}`} />
+											<span className="truncate text-foreground overflow-hidden whitespace-nowrap">
+												{conv.title || "New Conversation"}
+											</span>
+										</div>
+										<div
+											role="button"
+											tabIndex={0}
+											onClick={(e) => handleDelete(e, conv.id)}
+											onKeyDown={(e) => e.key === 'Enter' && handleDelete(e as any, conv.id)}
+											className="opacity-0 group-hover/item:opacity-100 p-1 hover:bg-background rounded transition-opacity"
+										>
+											<Trash2 className="size-3.5 text-muted-foreground hover:text-red-500" />
+										</div>
 									</div>
+
+									{activeId === conv.id && conv.status === "active" && (
+										<div className="mt-2 w-full">
+											<Button 
+												variant="ghost" 
+												size="sm" 
+												className="w-full text-xs text-red-500 hover:text-red-600 hover:bg-red-500/10 justify-start h-7" 
+												onClick={(e) => { e.stopPropagation(); onCancelConversation(); }}
+											>
+												<XCircle className="size-3.5 mr-2" />
+												Cancel Chat
+											</Button>
+										</div>
+									)}
+									{activeId === conv.id && conv.status !== "active" && (
+										<div className="mt-2 w-full">
+											<Button 
+												variant="ghost" 
+												size="sm" 
+												className="w-full text-xs text-emerald-500 hover:text-emerald-600 hover:bg-emerald-500/10 justify-start h-7" 
+												onClick={(e) => { e.stopPropagation(); onResumeConversation(conv.id); }}
+											>
+												<PlayCircle className="size-3.5 mr-2" />
+												Resume Chat
+											</Button>
+										</div>
+									)}
 								</button>
 							))}
 						</div>

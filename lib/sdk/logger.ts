@@ -53,7 +53,7 @@ export async function withLogger<T>(
 
     const report = (status: "success" | "error", extra?: Partial<LogPayload>) => {
         const latency = Date.now() - start;
-        
+
         // Prometheus metrics
         llmRequestsTotal.inc({ model: options.model, provider: options.provider, status });
         llmLatencyMs.observe({ model: options.model }, latency);

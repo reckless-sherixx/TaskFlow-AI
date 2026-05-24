@@ -54,7 +54,14 @@ export function classifyAIError(err: unknown): ClassifiedError {
 		return { userMessage: "", code: "ABORT", shouldLog: false };
 	}
 
-	const rawMessage = err instanceof Error ? err.message : String(err);
+	let rawMessage = err instanceof Error ? err.message : String(err);
+	
+	if (typeof err === "object" && err !== null) {
+		const anyErr = err as any;
+		if (typeof anyErr.responseBody === "string") {
+			rawMessage += " " + anyErr.responseBody;
+		}
+	}
 
 	for (const entry of ERROR_MAP) {
 		if (entry.pattern.test(rawMessage)) {

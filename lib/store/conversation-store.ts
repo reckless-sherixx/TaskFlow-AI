@@ -26,6 +26,7 @@ type ConversationStore = {
 	setActive: (id: string | null) => void;
 	updateTitle: (id: string, title: string) => void;
 	updatePreview: (id: string, preview: string) => void;
+	updateStatus: (id: string, status: string) => void;
 	setAiTyping: (typing: boolean) => void;
 	setUserTyping: (typing: boolean) => void;
 	markHydrated: () => void;
@@ -74,6 +75,13 @@ export const useConversationStore = create<ConversationStore>((set) => ({
 				c.id === id
 					? { ...c, lastMessagePreview: preview.substring(0, 100), updatedAt: new Date().toISOString() }
 					: c,
+			),
+		})),
+
+	updateStatus: (id, status) =>
+		set((state) => ({
+			conversations: state.conversations.map((c) =>
+				c.id === id ? { ...c, status } : c,
 			),
 		})),
 
