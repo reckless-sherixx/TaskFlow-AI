@@ -1144,12 +1144,12 @@ All DB writes in the WebSocket server are fire-and-forget with error logging. A 
         │ (Bun)    │ │ (Bun)    │ │ (Bun)    │
         └────┬─────┘ └─────┬────┘ └─────┬────┘
              │             │            │
-             └──────┬──────┘────────────┘
+             └──────┬──────┘────────────┘ 
                     ▼
-             ┌──────────┐
-             │  Redis    │
-             │  Pub/Sub  │
-             └──────────┘
+             ┌────────────┐
+             │  Redis     │
+             │  Pub/Sub   │
+             └────────────┘
 ```
 
 **Already distributed-safe:** PostgreSQL writes, Redis Pub/Sub (`cancel-session` broadcasts to all WS servers), BullMQ workers (multiple replicas consume from the same queue with job locking).
