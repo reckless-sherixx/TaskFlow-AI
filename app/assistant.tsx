@@ -6,6 +6,8 @@ import {
   useExternalStoreRuntime,
 } from "@assistant-ui/react";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { MessagesSquare } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Thread } from "@/components/thread";
 import { ThreadListSidebar } from "@/components/threadlist-sidebar";
 import {
@@ -29,7 +31,7 @@ import {
 } from "@/lib/store/conversation-store";
 
 
-export type GeminiModelId = string;
+export type ModelId = string;
 
 export type TokenStats = {
   used: number;
@@ -60,7 +62,7 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
   const store = useConversationStore();
 
   // Track connection identity to reconnect
-  const [wsKey, setWsKey] = useState(() => generateId());
+  const [wsKey, setWsKey] = useState<string | null>(null);
 
   const connect = useCallback((model: string) => {
     setMessages([]);
@@ -115,11 +117,16 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
     if (activeId !== connectedConversationIdRef.current) {
       connectedConversationIdRef.current = activeId;
       conversationIdRef.current = activeId;
-      setWsKey(generateId());
+      if (activeId) {
+        setWsKey(generateId());
+      } else {
+        setWsKey(null);
+      }
     }
   }, [activeId]);
 
   useEffect(() => {
+    if (!wsKey) return;
     const targetId = connectedConversationIdRef.current;
     const idParam = targetId ? `&conversationId=${encodeURIComponent(targetId)}` : "";
     const wsUrl = `ws://${window.location.hostname}:8080?model=${encodeURIComponent(conversationModel)}${idParam}`;
@@ -489,12 +496,13 @@ function useWebSocketChat(conversationModel: string, activeId: string | null) {
     notifyTyping,
     cancelConversation,
     resumeConversation,
+    wsKey,
   };
 }
 
 
 export const Assistant = () => {
-  const [selectedModel, setSelectedModel] = useState<GeminiModelId>(DEFAULT_MODEL);
+  const [selectedModel, setSelectedModel] = useState<ModelId>(DEFAULT_MODEL);
   const [isDark, setIsDark] = useState(false);
   const [isChatLoading, setIsChatLoading] = useState(false);
   const store = useConversationStore();
@@ -558,15 +566,16 @@ export const Assistant = () => {
     notifyTyping,
     cancelConversation,
     resumeConversation,
+    wsKey,
   } = useWebSocketChat(conversationModel, store.activeId);
 
-  // Start a brand new conversation with the currently selected model
-  const startNewThread = useCallback(() => {
+  const prepareNewThread = useCallback(() => {
     store.setActive(null);
-    connect(selectedModel);
-  }, [connect, selectedModel, store]);
+  }, [store]);
 
-  // Switch to an existing conversation 
+  const startChat = useCallback(() => {
+    connect(selectedModel);
+  }, [connect, selectedModel]);
   const switchToConversation = useCallback(
     async (convId: string) => {
       store.setActive(convId);
@@ -595,7 +604,7 @@ export const Assistant = () => {
           conversationIdRef.current = convId;
         }
       } catch (err) {
-        console.error("[switch] Failed to load conversation:", err);
+        console.error("Failed to load conversation:", err);
       } finally {
         setIsChatLoading(false);
       }
@@ -613,7 +622,7 @@ export const Assistant = () => {
             onModelChange={setSelectedModel}
             isDark={isDark}
             onToggleDark={() => setIsDark((d) => !d)}
-            onNewThread={startNewThread}
+            onNewThread={prepareNewThread}
             onSwitchConversation={switchToConversation}
             onCancelConversation={cancelConversation}
             onResumeConversation={resumeConversation}
@@ -637,13 +646,28 @@ export const Assistant = () => {
               </Breadcrumb>
             </header>
             <div className="flex-1 overflow-hidden">
-              <Thread
-                isAiTyping={isAiTyping}
-                isAiStreaming={isAiStreaming}
-                isLoadingChat={isChatLoading}
-                disabled={activeConv ? activeConv.status !== "active" : false}
-                onComposerInput={notifyTyping}
-              />
+              {!activeConv && !wsKey ? (
+                <div className="flex h-full flex-col items-center justify-center space-y-4">
+                  <div className="rounded-full bg-primary/10 p-4">
+                    <MessagesSquare className="size-8 text-primary" />
+                  </div>
+                  <h2 className="text-2xl font-semibold tracking-tight">Welcome to TaskFlow AI</h2>
+                  <p className="text-muted-foreground text-center max-w-[400px]">
+                    Start a new conversation to explore ideas, ask questions, or just chat.
+                  </p>
+                  <Button onClick={startChat} size="lg" className="mt-4 cursor-pointer">
+                    Start Chat
+                  </Button>
+                </div>
+              ) : (
+                <Thread
+                  isAiTyping={isAiTyping}
+                  isAiStreaming={isAiStreaming}
+                  isLoadingChat={isChatLoading}
+                  disabled={activeConv ? activeConv.status !== "active" : false}
+                  onComposerInput={notifyTyping}
+                />
+              )}
             </div>
           </SidebarInset>
         </div>

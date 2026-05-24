@@ -13,14 +13,14 @@ import {
 	SidebarRail,
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
-import type { GeminiModelId, TokenStats } from "@/app/assistant";
+import type { ModelId, TokenStats } from "@/app/assistant";
 import { getModelsByProvider } from "@/lib/ai/models";
 import { useConversationStore, type ConversationMeta } from "@/lib/store/conversation-store";
 
 type Props = React.ComponentProps<typeof Sidebar> & {
 	tokenStats: TokenStats;
-	selectedModel: GeminiModelId;
-	onModelChange: (m: GeminiModelId) => void;
+	selectedModel: ModelId;
+	onModelChange: (m: ModelId) => void;
 	isDark: boolean;
 	onToggleDark: () => void;
 	onNewThread: () => void;
@@ -249,7 +249,7 @@ export function ThreadListSidebar({
 					</p>
 					<select
 						value={selectedModel}
-						onChange={(e) => onModelChange(e.target.value as GeminiModelId)}
+						onChange={(e) => onModelChange(e.target.value as ModelId)}
 						className="w-full rounded-md border border-input bg-background px-2.5 py-1.5 text-xs text-foreground shadow-sm transition-colors focus:outline-none focus:ring-1 focus:ring-ring cursor-pointer"
 					>
 						{Object.entries(getModelsByProvider()).map(([provider, models]) => (
