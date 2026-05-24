@@ -8,6 +8,7 @@ TaskFlow orchestrates conversations between users and large language models thro
 
 ## Table of Contents
 
+- [Video Demo](#video-demo)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Architecture Overview](#architecture-overview)
@@ -23,6 +24,9 @@ TaskFlow orchestrates conversations between users and large language models thro
 - [Future Improvements](#future-improvements)
 
 ---
+## Video Demo
+
+
 
 ## Features
 
@@ -1128,17 +1132,17 @@ All DB writes in the WebSocket server are fire-and-forget with error logging. A 
 ### Horizontal Scaling Path
 
 ```
-                    ┌──────────────┐
+                    ┌───────────────┐
                     │ Load Balancer │
                     │ (sticky WS)   │
-                    └──┬────┬───┬──┘
+                    └──┬────┬───┬───┘
                        │    │   │
               ┌────────┘    │   └────────┐
               ▼             ▼            ▼
         ┌──────────┐ ┌──────────┐ ┌──────────┐
         │  WS-1    │ │  WS-2    │ │  WS-3    │
         │ (Bun)    │ │ (Bun)    │ │ (Bun)    │
-        └────┬─────┘ └────┬─────┘ └────┬─────┘
+        └────┬─────┘ └─────┬────┘ └─────┬────┘
              │             │            │
              └──────┬──────┘────────────┘
                     ▼
@@ -1401,6 +1405,13 @@ tf_ai/
 │       ├── datasource.yml
 │       ├── dashboard.yml
 │       └── dashboard.json
+├── k8s/                              # Kubernetes manifests (kind self-hosted deployment)
+│   ├── 01-config.yaml                # Configuration maps (Redis, DNS)
+│   ├── 02-db-redis.yaml              # PostgreSQL & Redis Deployments, Services, PVCs
+│   ├── 03-app.yaml                   # Next.js Web App & WebSocket Deployment & Service
+│   ├── 04-worker.yaml                # BullMQ Background Worker Deployment
+│   └── 05-observability.yaml         # Prometheus & Grafana deployments, dashboards, datasource configs
+│
 ├── drizzle/                          # Drizzle migration output
 ├── server.ts                         # Bun WebSocket server
 ├── docker-compose.yml
