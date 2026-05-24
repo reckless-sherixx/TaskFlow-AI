@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker
+  labels:
+    app: worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: worker
+  template:
+    metadata:
+      labels:
+        app: worker
+    spec:
+      containers:
+        - name: worker
+          image: taskflow-worker:local
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: REDIS_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: taskflow-config
+                  key: REDIS_URL
+            - name: BUN_CONFIG_DNS_RESOLVER
+              valueFrom:
+                configMapKeyRef:
+                  name: taskflow-config
+                  key: BUN_CONFIG_DNS_RESOLVER
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: taskflow-secrets
+                  key: DATABASE_URL
+            - name: OPENROUTER_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: taskflow-secrets
+                  key: OPENROUTER_API_KEY

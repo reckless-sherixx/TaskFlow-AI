@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: taskflow-config
+data:
+  REDIS_URL: "redis://redis:6379"
+  BUN_CONFIG_DNS_RESOLVER: "system"
